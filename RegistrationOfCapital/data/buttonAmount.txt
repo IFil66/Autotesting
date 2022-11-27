@@ -1,0 +1,100 @@
+
+1	https://capital.com.by/en	 0/0	 1/1	 0/0	 0/0	 1/1	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0
+
+2	https://capital.com/	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 0/0	 0/0
+
+3	https://capital.com/0x-to-us-dollar-chart	 0/0	 0/0	 0/0	 2/12	 1/1	 0/0	 0/0	 0/0	 0/42	 1/1	 1/1	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 1/1
+
+4	https://capital.com/1life-healthcare-inc-share-price	 0/0	 0/0	 0/0	 2/12	 1/1	 0/0	 0/0	 0/0	 0/42	 1/1	 1/1	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 1/1
+
+5	https://capital.com/2009-supervisory-capital-assessment-program-definition	 0/0	 0/0	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+6	https://capital.com/2010-european-union-bank-stress-test-definition	 0/0	 0/0	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+7	https://capital.com/2010-flash-crash-definition	 0/0	 0/0	 0/0	 0/0	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+8	https://capital.com/2011-european-union-bank-stress-test-definition	 0/0	 0/0	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+9	https://capital.com/2012-jpmorgan-chase-trading-loss-definition	 0/0	 0/0	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+10	https://capital.com/2014-european-union-bank-stress-test-definition	 0/0	 0/0	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+11	https://capital.com/2016-european-union-bank-stress-test-definition	 0/0	 0/0	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+12	https://capital.com/2022-fifa-world-cup-crypto-best-performing-fan-tokens	 0/0	 0/0	 0/0	 2/15	 1/1	 0/0	 0/0	 0/0	 5/62	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+13	https://capital.com/21st-century-fox-share-price	 0/0	 0/0	 0/0	 2/12	 1/1	 0/0	 0/0	 0/0	 0/42	 1/1	 1/1	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 1/1
+
+14	https://capital.com/3d-systems-corporation-share-price	 0/0	 0/0	 0/0	 2/12	 1/1	 0/0	 0/0	 0/0	 0/42	 1/1	 1/1	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 1/1
+
+15	https://capital.com/3i-group-plc-ord-73-19-22p-share-price	 0/0	 0/0	 0/0	 1/12	 1/1	 0/0	 0/0	 0/0	 0/42	 1/1	 1/1	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 1/1
+
+16	https://capital.com/3i-infrastructure-plc-share-price	 0/0	 0/0	 0/0	 1/12	 1/1	 0/0	 0/0	 0/0	 0/42	 1/1	 1/1	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 1/1
+
+17	https://capital.com/3m-lawyers-conflict-aearo-bankruptcy-mmm-veterans-earplugs-faulty-legal-minefield	 0/0	 0/0	 0/0	 2/15	 1/1	 0/0	 0/0	 0/0	 5/62	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+18	https://capital.com/3m-share-price	 0/0	 0/0	 0/0	 2/12	 1/1	 0/0	 0/0	 0/0	 0/42	 1/1	 1/1	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 1/1
+
+19	https://capital.com/4imprint-group-plc-ord-38-6-13p-share-price	 0/0	 0/0	 0/0	 1/12	 1/1	 0/0	 0/0	 0/0	 0/42	 1/1	 1/1	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 1/1
+
+20	https://capital.com/5-most-common-cryptocurrency-scams-and-how-to-avoid-them	 0/0	 0/0	 0/0	 2/15	 1/1	 0/0	 0/0	 0/0	 5/62	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+21	https://capital.com/888-holdings-plc-share-price	 0/0	 0/0	 0/0	 2/12	 1/1	 0/0	 0/0	 0/0	 0/42	 1/1	 1/1	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 1/1
+
+22	https://capital.com/?license=ASIC	 0/0	 0/0	 0/0	 2/12	 1/1	 0/0	 0/0	 0/0	 13/100	 0/0	 0/0	 0/0	 1/1	 2/2	 1/1	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+23	https://capital.com/?license=CCSTV	 0/0	 0/0	 0/0	 2/12	 1/1	 0/0	 0/0	 0/0	 13/100	 0/0	 0/0	 0/0	 1/1	 2/2	 1/1	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+24	https://capital.com/?license=CYSEC	 0/0	 0/0	 0/0	 1/12	 1/1	 0/0	 0/0	 0/0	 12/96	 0/0	 0/0	 0/0	 1/1	 2/2	 1/1	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+25	https://capital.com/?license=FCA	 0/0	 0/0	 0/0	 1/12	 1/1	 0/0	 0/0	 0/0	 13/86	 0/0	 0/0	 0/0	 1/1	 2/2	 1/1	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+26	https://capital.com/?license=NBRB	 0/0	 0/0	 0/0	 2/12	 1/1	 0/0	 0/0	 0/0	 13/100	 0/0	 0/0	 0/0	 1/1	 2/2	 1/1	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+27	https://capital.com/?license=SEY	 0/0	 0/0	 0/0	 1/12	 1/1	 0/0	 0/0	 0/0	 13/100	 0/0	 0/0	 0/0	 1/1	 2/2	 1/1	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+28	https://capital.com/SP-case-shiller-home-price-indices-definition	 0/0	 0/0	 0/0	 0/0	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+29	https://capital.com/a-credit-rating-definition	 0/0	 0/0	 0/0	 0/0	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+30	https://capital.com/a-quick-guide-to-short-selling-and-short-trading	 0/0	 0/0	 0/0	 2/15	 1/1	 0/0	 0/0	 0/0	 5/62	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+31	https://capital.com/aa-credit-rating-definition	 0/0	 0/0	 0/0	 0/0	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+32	https://capital.com/aaa-credit-rating-definition	 0/0	 0/0	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+33	https://capital.com/abb-ltd-share-price	 0/0	 0/0	 0/0	 2/12	 1/1	 0/0	 0/0	 0/0	 0/42	 1/1	 1/1	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 1/1
+
+34	https://capital.com/abbott-share-price	 0/0	 0/0	 0/0	 1/12	 1/1	 0/0	 0/0	 0/0	 0/42	 1/1	 1/1	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 1/1
+
+35	https://capital.com/abbvie-share-price	 0/0	 0/0	 0/0	 1/12	 1/1	 0/0	 0/0	 0/0	 0/42	 1/1	 1/1	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 1/1
+
+36	https://capital.com/abercrombie-fitch-co-share-price	 0/0	 0/0	 0/0	 1/12	 1/1	 0/0	 0/0	 0/0	 0/42	 1/1	 1/1	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 1/1
+
+37	https://capital.com/abn-amro-group-n-v-share-price	 0/0	 0/0	 0/0	 1/12	 1/1	 0/0	 0/0	 0/0	 0/42	 1/1	 1/1	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 1/1
+
+38	https://capital.com/abnormal-return-definition	 0/0	 0/0	 0/0	 0/0	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+39	https://capital.com/about-us	 0/0	 0/0	 0/0	 0/0	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+40	https://capital.com/about-us?license=ASIC	 0/0	 0/0	 0/0	 0/0	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+41	https://capital.com/about-us?license=CCSTV	 0/0	 0/0	 0/0	 0/0	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+42	https://capital.com/about-us?license=CYSEC	 0/0	 0/0	 0/0	 0/0	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 1/1	 0/0
+
+43	https://capital.com/about-us?license=FCA	 0/0	 0/0	 0/0	 0/0	 1/1	 0/0	 0/0	 0/0	 0/35	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 1/1	 0/0
+
+44	https://capital.com/about-us?license=NBRB	 0/0	 0/0	 0/0	 0/0	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+45	https://capital.com/about-us?license=SEY	 0/0	 0/0	 0/0	 0/0	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+46	https://capital.com/absolute-return-funds-definition	 0/0	 0/0	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+47	https://capital.com/accelerated-monitoring-fees-definition	 0/0	 0/0	 0/0	 0/0	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+48	https://capital.com/accelerated-return-note-definition	 0/0	 0/0	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+49	https://capital.com/accelerated-share-repurchase-definition	 0/0	 0/0	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/42	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 0/0
+
+50	https://capital.com/accenture-share-price	 0/0	 0/0	 0/0	 2/12	 1/1	 0/0	 0/0	 0/0	 0/42	 1/1	 1/1	 0/0	 1/1	 1/1	 0/0	 0/0	 0/0	 0/0	 0/1	 0/0	 0/0	 0/0	 1/1	 1/1
