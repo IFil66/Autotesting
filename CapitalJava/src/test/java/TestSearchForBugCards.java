@@ -25,13 +25,13 @@ public class TestSearchForBugCards {
 
   // Адреса проверяемых разделов
   // Страница проверки раздела Акции
-  //String urlAddress = "https://capital.com/ru/kotirovki-aktsiy";
+  String urlAddress = "https://capital.com/ru/kotirovki-aktsiy";
 
   // Страница проверки раздела Индексы
-  String urlAddress = "https://capital.com/ru/mirovyye-fondovyye-indeksy";
+//  String urlAddress = "https://capital.com/ru/mirovyye-fondovyye-indeksy";
 
   // Страница проверки раздела Сырьевые товары
-  //String urlAddress = "https://capital.com/ru/tseny-na-syryo";
+//  String urlAddress = "https://capital.com/ru/tseny-na-syryo";
 
   // Страница проверки раздела Forex
   // String urlAddress = "https://capital.com/ru/forex";
