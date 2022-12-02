@@ -32,11 +32,11 @@ public class Methods {
   // Settings WebDriver - END
 
   String logText = "";
-  static String filesAddressOfReportForSectionShares = "data/reportAboutBugCardsForSectionShares.txt";
-  static String filesAddressOfReportForSectionIndices = "data/reportAboutBugCardsForSectionIndices.txt";
-  static String filesAddressOfReportForSectionCommodities = "data/reportAboutBugCardsForSectionCommodities.txt";
-  static String filesAddressOfReportForSectionCryptocurrencies = "data/reportAboutBugCardsForSectionCryptocurrencies.txt";
-  static String filesAddressOfReportForSectionForex = "data/reportAboutBugCardsForSectionForex.txt";
+  static String filesAddressOfReportForSectionForex = "data/1_reportAboutBugCardsForSectionForex.txt";
+  static String filesAddressOfReportForSectionIndices = "data/2_reportAboutBugCardsForSectionIndices.txt";
+  static String filesAddressOfReportForSectionCommodities = "data/3_reportAboutBugCardsForSectionCommodities.txt";
+  static String filesAddressOfReportForSectionCryptocurrencies = "data/4_reportAboutBugCardsForSectionCryptocurrencies.txt";
+  static String filesAddressOfReportForSectionShares = "data/5_reportAboutBugCardsForSectionShares.txt";
   int totalBugCards = 0;
 
   // Variables of locators
@@ -58,11 +58,11 @@ public class Methods {
     return equals(driver.findElement(locatorOfLastPageNumber).isDisplayed());
   }
 
-  public int searchLastPageNumber(String url) {
+  public int getLastPageNumber(String url) {
     // create variable of last page number
     int lastPageNumber;
 
-    // go to checking page
+    // Go to checking page
     driver.navigate().to(url);
 
     // Get last page number
@@ -74,7 +74,7 @@ public class Methods {
   }
 
 
-  // Метод выявления бракованных карточек на страницах
+  // Search method for bug cards on a page
   public void searchCardOnPage(String url, String addressOfReportFile)
   {
     PrintWriter writer = null;
@@ -84,12 +84,12 @@ public class Methods {
       throw new RuntimeException(e);
     }
 
-    int number = searchLastPageNumber(url);
+    int number = getLastPageNumber(url);
 
-    // Цикл перебора страниц с 1 до последней в выдаче
+    // Cycle through pages from first to last page
     for (int n = 1; n <= number; n++)
     {
-      // Условие перехода на нужную страницу для поиска бракованных карточек товаров
+      // Condition for moving to the next page to search
       if (n == 1)
       {
         driver.navigate().to(url);
@@ -97,37 +97,37 @@ public class Methods {
         driver.navigate().to(url + "/" + n);
       }
 
-      // Вычисление количества строк на исследуемой странице
+      // Calculating the number of rows on the checked page
       var totalElementsOnPage = driver.findElements(locatorAllStringsOnTableOfTradeInstruments).size();
 
-      // Цикл перебора строк с товарами с 1 по последнюю
+      // Cycle through rows with trading instruments from first to last
       for (int stringNumber = 1; stringNumber<= totalElementsOnPage; stringNumber++)
       {
-        // Получение названия товара из ячейки в DOM-дереве
+        // Get trading instrument name
         String nameOfElement = driver.findElement(By.cssSelector(locatorsFirstPartForElementsName + stringNumber
                 + locatorsSecondPartForElementsName)).getText();
 
-        // Получение показателя Sell из ячейки в DOM-дереве
+        // Get a value of the Sell parameter
         String valueOfElementSell = driver.findElement(By.cssSelector(locatorsFirstPartForElementSell + stringNumber
                 + locatorsSecondPartForElementSell)).getText();
 
-        // Получение URL багованной карточки
+        // Get bug card URL
         String linkOfBugCard = driver.findElement(By.cssSelector(locatorsFirstPartForElementLink + stringNumber
                 + locatorsSecondPartForElementLink)).getAttribute("href");
 
-        // Условие сравнения, выявляющее товары с отсутствующим показателем Sell. Добавляет такие товары в результирующую переменную.
+        // Condition for detecting trading instrument with missing Sell parameter. Will add this trading instrument into report file.
         if (valueOfElementSell.length() == 1) {
-          writer.write("\n" + "На странице: " + "\t" + linkOfBugCard + "\t" + "В карточке торгового инструмента: " + nameOfElement
-                  + "\t" + " не подгружается информация о цене покупки");
+          writer.write("\n" + "On page: " + "\t" + linkOfBugCard + "\t" + "Trading instrument: " + nameOfElement
+                  + "\t" + " no data on the value of the trading instrument");
           totalBugCards++;
         }
       }
     }
     if (totalBugCards == 0){
-      writer.write("Замечательно! Бракованных карточек не обнаружено.");
+      writer.write("Congratulations! Bug cards not found.");
     } else {
-      // Включение в отчёт стороки Итого
-      writer.write("\n" + "\n" + "Итого карточек:  " + totalBugCards + "\n" + "Как?! Опять писать багрепорты?");
+      // Add into report file row "Total cards"
+      writer.write("\n" + "\n" + "Total cards:  " + "\t" + totalBugCards);
     }
     writer.flush();
     writer.close();
