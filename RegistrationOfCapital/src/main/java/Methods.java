@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.WheelInput;
 
 import javax.swing.*;
 import java.io.*;
@@ -223,11 +224,31 @@ public class Methods {
 
   public void checkingVisibilityOfBtnAndClickingIt(By locatorBtn) {
     WebElement btn = driver.findElement(locatorBtn);
-    new Actions(driver).scrollToElement(btn);
+    if (driver.findElement(By.cssSelector("#onetrust-accept-btn-handler")).isDisplayed()) {
+      timeOut(2);
+      driver.findElement(By.cssSelector("#onetrust-accept-btn-handler")).click();
+      timeOut(1);
+    }
     Assertions.assertTrue(btn.isDisplayed(), "Кнопка не видна на странице");
     btn.click();
   }
 
+  public void scrollToElement(By locatorElement, int x, int y) {
+    WebElement element = driver.findElement(locatorElement);
+    int coordinateX = element.getRect().x;
+    int coordinateY = element.getRect().y;
+    new Actions(driver)
+            .scrollByAmount(coordinateX + x, coordinateY + y)
+            .perform();
+  }
 
+  public void cursorMovementFromElementAndClick(By locatorElement) {
+    WebElement element = driver.findElement(locatorElement);
 
+    new Actions(driver).moveToElement(element, 0,10).click();
+  }
+
+  public String getUrlOfLink(By locator) {
+    return driver.findElement(locator).getAttribute("href");
+  }
 }
