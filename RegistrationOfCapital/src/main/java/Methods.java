@@ -210,7 +210,7 @@ public class Methods {
   // Проверка появления формы авторизации (Login)
   public void checkingAppearanceLoginForm() {
     WebElement LoginFormH1 = driver.findElement(locatorLoginFormH1);
-    Assertions.assertTrue(LoginFormH1.isDisplayed(), "Форма 'Login' не появилась");
+    Assertions.assertTrue(LoginFormH1.isDisplayed(), "'Login' form not showing");
     driver.findElement(locatorLoginFormBtnCancel).click();
   }
 
@@ -218,17 +218,19 @@ public class Methods {
   // Проверка появления формы регистрации (Sign up)
   public void checkingAppearanceSingUpForm() {
     WebElement LoginFormH1 = driver.findElement(locatorSignUpFormH1);
-    Assertions.assertTrue(LoginFormH1.isDisplayed(), "Форма 'Sing up' не появилась");
+    Assertions.assertTrue(LoginFormH1.isDisplayed(), "'Sing up' form not showing");
     driver.findElement(locatorSignUpFormBtnCancel).click();
   }
 
   public void checkingVisibilityOfBtnAndClickingIt(By locatorBtn) {
     WebElement btn = driver.findElement(locatorBtn);
-    if (driver.findElement(By.cssSelector("#onetrust-accept-btn-handler")).isDisplayed()) {
-      timeOut(2);
-      driver.findElement(By.cssSelector("#onetrust-accept-btn-handler")).click();
-      timeOut(1);
-    }
+//     Checking visibility of the cookie notice
+//    if (driver.findElement(By.cssSelector("#onetrust-accept-btn-handler")).isDisplayed()) {
+//      timeOut(1);
+//      System.out.println("У элемента с локатором" + "\n" + locatorBtn + "\n" + "обраружено окно с COOKIES");
+//      driver.findElement(By.cssSelector("#onetrust-accept-btn-handler")).click();
+//      timeOut(1);
+//    }
     Assertions.assertTrue(btn.isDisplayed(), "Кнопка не видна на странице");
     btn.click();
   }
@@ -251,4 +253,10 @@ public class Methods {
   public String getUrlOfLink(By locator) {
     return driver.findElement(locator).getAttribute("href");
   }
+
+  public void takeScreenshot(String fileAddress) throws IOException {
+    File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+    FileUtils.copyFile(scrFile, new File(fileAddress));
+  }
 }
+
