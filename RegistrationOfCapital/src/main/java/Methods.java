@@ -76,7 +76,7 @@ public class Methods {
   long start = System.currentTimeMillis();
   long end = start + 10 * 1000;
 
-   //Вызов временной задержки
+   // Call of timeout
   public void timeOut(int sec){
     for(int i = 0; i < sec; i++ ){
       try {
@@ -88,13 +88,13 @@ public class Methods {
   }
 
   //
-  // Выявление всех страниц
+  // Search all pages
 
-  // Парсинг страницы
-  // 1. Парсинг WebElements
-  // 2. Выделение из WebElements ссылок
-  // 3. Добавление уникальных ссылок в лист
-  // Вариант 1 (1 локатор)
+  // Page parsing
+  // 1. WebElements parsing
+  // 2. Get WebElement's link
+  // 3. Add unique links to HashSet
+  // Option 1 (one locator)
   public HashSet<String> parsingElementsAndCreateUniqueElementsInList(HashSet<String> whereToAdd, By elementLocator) {
     ArrayList<WebElement> internalList1 = new ArrayList<>(driver.findElements(elementLocator));
     ArrayList<String> internalList2 = new ArrayList<>();
@@ -104,7 +104,7 @@ public class Methods {
     whereToAdd.addAll(internalList2);
     return whereToAdd;
   }
-  // Вариант 2 (2 локатора)
+  // Option 2 (two locators)
   public HashSet<String> parsingElementsAndCreateUniqueElementsInList2(HashSet<String> whereToAdd, By element1Locator, By element2Locator) {
     ArrayList<WebElement> internalList1 = new ArrayList<>(driver.findElements(element1Locator));
     ArrayList<WebElement> internalList2 = new ArrayList<>(driver.findElements(element2Locator));
@@ -118,31 +118,31 @@ public class Methods {
   }
 
 
-  // Обновление списка URL, по которым совершается обход сайта
+  // Update the list of URL
   public ArrayList updateUrlList(ArrayList whereToAdd, HashSet whatToAdd) {
     whereToAdd.addAll(whereToAdd.size(), whatToAdd);
     return whereToAdd;
   }
 
-  // Дополнение списка URL одним элементом
+  // Adding a single element to the list of URL
   public HashSet updateUrl(HashSet whereToAdd, String whatElementToAdd) {
     whereToAdd.add(whatElementToAdd);
     return whereToAdd;
   }
 
-  // Получить URL для обхода программой
+  // Get URL from the list of URL
   public String getElement(String elementVariable, ArrayList<String> whereToGet, int numberOfListElement) {
     elementVariable = whereToGet.get(numberOfListElement);
     return elementVariable;
   }
 
-  // Получение URL текущей страницы
+  // Get URL the current page
   public String getCurrentUrl() {
     return driver.getCurrentUrl();
   }
 
 
-//   Проверка кнопок
+//   Checking buttons
   public int findButtonThatISVisible(By locator) {
     int counter = 0;
     ArrayList<WebElement> internalList1 = new ArrayList<>(driver.findElements(locator));
@@ -159,7 +159,7 @@ public class Methods {
     return counter = driver.findElements(locator).size();
   }
 
-  // Чтение файла с URL и внесение их в список для применения в алгоритме прохождения данных страниц сайта
+  // Reading the file having the list of URL and adding the URL to ArrayList to check the pages
   public ArrayList transferDataFromFileToList(ArrayList listUrl, String fileAddress) {
     try {
       BufferedReader urlFile = new BufferedReader(new FileReader(fileAddress));
@@ -186,8 +186,6 @@ public class Methods {
   }
   // Search url methods - END
 
-
-
   // Main page methods - START
 
   public void goToPageAndCheckingUrl(String url) {
@@ -197,7 +195,7 @@ public class Methods {
     }
   }
 
-  // Проверка соответствия лицензии и если не та, то переход на нужную
+  // Checking licence
   public void checkLicense(By locatorBtnLicenseMenu, String nameLicense, By locatorBtnLicense) {
     WebElement btnLicenseMenu = driver.findElement(locatorBtnLicenseMenu);
     if(!nameLicense.equals(btnLicenseMenu.getText())) {
@@ -207,7 +205,7 @@ public class Methods {
     }
   }
 
-  // Проверка появления формы авторизации (Login)
+  // Checking if the Login form appears
   public void checkingAppearanceLoginForm() {
     WebElement LoginFormH1 = driver.findElement(locatorLoginFormH1);
     Assertions.assertTrue(LoginFormH1.isDisplayed(), "'Login' form not showing");
@@ -215,7 +213,7 @@ public class Methods {
   }
 
 
-  // Проверка появления формы регистрации (Sign up)
+  // Checking if the SignUp form appears
   public void checkingAppearanceSingUpForm() {
     WebElement LoginFormH1 = driver.findElement(locatorSignUpFormH1);
     Assertions.assertTrue(LoginFormH1.isDisplayed(), "'Sing up' form not showing");
@@ -227,11 +225,10 @@ public class Methods {
 //     Checking visibility of the cookie notice
 //    if (driver.findElement(By.cssSelector("#onetrust-accept-btn-handler")).isDisplayed()) {
 //      timeOut(1);
-//      System.out.println("У элемента с локатором" + "\n" + locatorBtn + "\n" + "обраружено окно с COOKIES");
 //      driver.findElement(By.cssSelector("#onetrust-accept-btn-handler")).click();
 //      timeOut(1);
 //    }
-    Assertions.assertTrue(btn.isDisplayed(), "Кнопка не видна на странице");
+    Assertions.assertTrue(btn.isDisplayed(), "The button not showing");
     btn.click();
   }
 
@@ -259,4 +256,3 @@ public class Methods {
     FileUtils.copyFile(scrFile, new File(fileAddress));
   }
 }
-
