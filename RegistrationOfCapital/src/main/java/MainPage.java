@@ -14,40 +14,10 @@ public class MainPage extends Methods{
   // URL
   String urlMainPage = "https://capital.com";
 
-  // License
-  By locatorBtnLicenseMenu = By.cssSelector("button.cc-toggleLicense__btn");
-  By locatorBtnLicenseOfASIC = By.xpath("//a[contains(@href, 'license')] [contains(., 'ASIC')]");
-  String nameLicenseASIC = "Capital Com Australia Pty Ltd";
-  By locatorBtnLicenseOfFCA = By.xpath("//a[contains(@href, 'license')] [contains(., 'FCA')]");
-  String nameLicenseFCA = "Capital Com UK Limited";
-  By locatorBtnLicenseOfCYSEC = By.xpath("//a[contains(@href, 'license')] [contains(., 'CYSEC')]");
-  String nameLicenseCYSEC = "Capital Com SV Investments Limited";
-  By locatorBtnLicenseOfNBRB = By.xpath("//a[contains(@href, 'license')] [contains(., 'NBRB')]");
-  String nameLicenseNBRB = "Capital Com Bel";
-  By locatorBtnLicenseOfForex = By.xpath("//a[contains(@href, 'license')] [contains(., 'Forex')]");
-  String nameLicenseForex = "Smart Forex Broker LLC";
-  By locatorBtnLicenseOfFSA = By.xpath("//a[contains(@href, 'license')] [contains(., 'FSA')]");
-  String nameLicenseFSA = "Capital Com Stock and CFD Investing Ltd";
-
-  // Login form
-  By locatorLoginFormH1 = Methods.locatorLoginFormH1;
-  By locatorLoginFormFieldEmail = By.cssSelector("#l_overlay input[type = 'email']");
-  By locatorLoginFormFieldPassword = By.cssSelector("#l_overlay input[type = 'password']");
-  By locatorLoginFormBtnCancel = Methods.locatorLoginFormBtnCancel;
-
-  // Sign up form
-  By locatorSignUpFormH1 = Methods.locatorSignUpFormH1;
-  By locatorSignUpFormFieldEmail = By.cssSelector("#s_overlay input[type = 'email']");
-  By locatorSignUpFormFieldPassword = By.cssSelector("#s_overlay input[type = 'password']");
-  By locatorSignUpFormBtnCancel = Methods.locatorSignUpFormBtnCancel;
-
-
   // Header
-  By locatorHeaderBtnLogIn = By.cssSelector("#wg_loginBtn");
-  By locatorHeaderBtnTradeNow = By.cssSelector("a[data-type = 'btn_header']");
+  // here used locators of buttons "Log in" and "Trade now" from class "Locators"
 
-
-  //Main banner (English site version) - START
+  // Section "Main banner" - START
   // Slide number 1
   By locatorMainBannerBtnOne = By.cssSelector("button[type = 'button'][data-slick-index = '0']");
   By locatorMainBannerSlideOneBtnToSignUp = By.cssSelector("div[class*='slick-slide'][data-slick-index = '0'] a[href = '/trading/signup']");
@@ -65,10 +35,10 @@ public class MainPage extends Methods{
 
   // Slide number 4
   By locatorMainBannerBtnFour = By.cssSelector("button[type = 'button'][data-slick-index = '3']");
-  //Main banner (English site version) - END
+  // Section "Main banner" - END
 
 
-  // Widget market - START
+  // Section Widget "Trading instrument" - START
   // Locators first option
   // Tab Most traded (codeName - mtr, number 7)
   // Tab Commodities (codeName - com, number 7)
@@ -139,17 +109,13 @@ public class MainPage extends Methods{
     return driver.findElements(By.cssSelector(locatorNumberOfElements1
             + codeName + locatorNumberOfElements2)).size();
   }
-  // Widget market - END
+  // Section Widget "Trading instrument" - END
 
-  // Section "Still looking for a broker you can trust?" - START
-    By locatorStillLookingForBrokerYouCanTrustIconUserPlus = By.cssSelector("i[data-type = 'banner_with_steps']");
-  // Section "Still looking for a broker you can trust?" - END
+  // Section "Still looking for a broker you can trust?"
+  // here used locator of button "user plus" from class "Locators"
 
-  // Section Widget “Promo Market” - START
-  By locatorWidgetPromoMarketTab = By.cssSelector("div.cc-sliderFade__item");
-  By locatorWidgetPromoMarketTabName = By.cssSelector("div.cc-sliderFade__item.active strong");
-  By locatorWidgetPromoMarketBtnTradeNow = By.cssSelector("div.cc-sliderFade__item.active div.hideXs.btn");
-  // Section Widget “Promo Market” - END
+  // Section Widget “Promo Market”
+  // here used locator of button "Trade Now" from class "Locators"
 
   //Section "Explore our platform" - START
   String expectedURLResultExploreOrPlatform = "";
@@ -161,9 +127,8 @@ public class MainPage extends Methods{
   String expectedUrlResultNewToTradingBtnPractiseForFree = "https://capital.com/trading/signup";
  //Section "New to trading" - END
 
-  // Section "Trading calculator" - START
-  By locatorTradingCalculatorBtnStartTrading = By.cssSelector("div[data-type = 'btn_calculator']");
-  // Section "Trading calculator" - END
+  // Section "Trading calculator"
+  // here used locator of button "Start trading" from class "Locators"
 
   // Section "Trader's Dashboard" - START
   By locatorTradersDashboard = By.cssSelector("div.tradersDashboard__item");
@@ -171,21 +136,20 @@ public class MainPage extends Methods{
   String locatorTradersDashboardBtnTrad2 = ") button";
   // Section "Trader's Dashboard" - END
 
-  // Section "Why choose Capital.com? Our numbers speak for themselves." - START
-  By locatorWhyChooseCapitalComBtnTryNow = By.cssSelector("a[data-type = 'banner_with_counter_hor_counter_hor_newBlack_764']");
-  // Section "Why choose Capital.com? Our numbers speak for themselves." - END
+  // Section "Why choose Capital.com? Our numbers speak for themselves"
+  // here used locator of button "Try now" from class "Locators"
 
-
+  // assert
   // Tests registration elements in Header
   @Order(1)
   @Test
   public void checkingIn_PageHeader_BtnLogIn() throws IOException {
     // arrange
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
-    scrollToElement(locatorHeaderBtnLogIn,0,0);
-    checkingVisibilityOfBtnAndClickingIt(locatorHeaderBtnLogIn);
+    scrollToElement(Locators.headerBtnLogIn,0,0);
+    checkingVisibilityOfBtnAndClickingIt(Locators.headerBtnLogIn);
     timeOut(1);
     // assert
     checkingAppearanceLoginForm();
@@ -197,11 +161,11 @@ public class MainPage extends Methods{
   @Test
   public void checkingIn_PageHeader_BtnTradeNow() throws IOException {
     // arrange
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
-    scrollToElement(locatorHeaderBtnTradeNow,0,0);
-    checkingVisibilityOfBtnAndClickingIt(locatorHeaderBtnTradeNow);
+    scrollToElement(Locators.headerBtnTradeNow,0,0);
+    checkingVisibilityOfBtnAndClickingIt(Locators.headerBtnTradeNow);
     timeOut(1);
     // assert
     checkingAppearanceSingUpForm();
@@ -214,8 +178,8 @@ public class MainPage extends Methods{
   @Test
   public void checkingInSection_MainBannerTabOne_BtnOpenAccount() throws IOException {
     // arrange
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(locatorMainBannerBtnOne,0,-200);
     driver.findElement(locatorMainBannerBtnOne).click();
@@ -232,8 +196,8 @@ public class MainPage extends Methods{
   @Test
   public void checkingInSection_MainBannerTabThree_BtnStartTrading() throws IOException {
     // arrange
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(locatorMainBannerBtnThree,0,-300);
     timeOut(5);
@@ -254,8 +218,8 @@ public class MainPage extends Methods{
   @Test
   public void checkingInSection_TradingInstrumentWidgetTabMostTraded_BtnsTrade1() throws IOException {
     // arrange
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(locatorTradingInstrumentWidgetTabMostTraded1,0,-300);
     checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabMostTraded1);
@@ -268,8 +232,8 @@ public class MainPage extends Methods{
   @Test
   public void checkingInSection_TradingInstrumentWidgetTabCommodities_BtnsTrade1() throws IOException {
     // arrange
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(locatorTradingInstrumentWidgetTabCommodities1,0,-300);
     checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabCommodities1);
@@ -281,8 +245,8 @@ public class MainPage extends Methods{
   @Test
   public void checkingInSection_TradingInstrumentWidgetTabIndices_BtnsTrade1() throws IOException {
     // arrange
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(locatorTradingInstrumentWidgetTabIndices1,0,-300);
     checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabIndices1);
@@ -295,8 +259,8 @@ public class MainPage extends Methods{
   @Test
   public void checkingInSection_TradingInstrumentWidgetTabShares_BtnsTrade1() throws IOException {
     // arrange
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(locatorTradingInstrumentWidgetTabShares1,0,-300);
     checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabShares1);
@@ -309,8 +273,8 @@ public class MainPage extends Methods{
   @Test
   public void checkingInSection_TradingInstrumentWidgetTabForex_BtnsTrade1() throws IOException {
     // arrange
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(locatorTradingInstrumentWidgetTabForex1,0,-300);
     checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabForex1);
@@ -323,8 +287,8 @@ public class MainPage extends Methods{
   @Test
   public void checkingInSection_TradingInstrumentWidgetTabETFs_BtnsTrade1() throws IOException {
     // arrange
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(locatorTradingInstrumentWidgetTabETFs1,0,-300);
     checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabETFs1);
@@ -344,8 +308,8 @@ public class MainPage extends Methods{
             + locatorTradingInstrumentWidgetTabs2_2);
     countNumberOfElements(codeName);
     // act
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     timeOut(1);
     scrollToElement(localLocator,0,-300);
     checkingVisibilityOfBtnAndClickingIt(localLocator);
@@ -363,8 +327,8 @@ public class MainPage extends Methods{
             + locatorTradingInstrumentWidgetTabs2_2);
     countNumberOfElements(codeName);
     // act
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     timeOut(1);
     scrollToElement(localLocator,0,-300);
     checkingVisibilityOfBtnAndClickingIt(localLocator);
@@ -382,8 +346,8 @@ public class MainPage extends Methods{
             + locatorTradingInstrumentWidgetTabs2_2);
     countNumberOfElements(codeName);
     // act
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     timeOut(1);
     scrollToElement(localLocator,0,-300);
     checkingVisibilityOfBtnAndClickingIt(localLocator);
@@ -401,8 +365,8 @@ public class MainPage extends Methods{
             + locatorTradingInstrumentWidgetTabs2_2);
     countNumberOfElements(codeName);
     // act
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     timeOut(1);
     scrollToElement(localLocator,0,-300);
     checkingVisibilityOfBtnAndClickingIt(localLocator);
@@ -420,8 +384,8 @@ public class MainPage extends Methods{
             + locatorTradingInstrumentWidgetTabs2_2);
     countNumberOfElements(codeName);
     // act
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     timeOut(1);
     scrollToElement(localLocator,0,-300);
     checkingVisibilityOfBtnAndClickingIt(localLocator);
@@ -439,8 +403,8 @@ public class MainPage extends Methods{
             + locatorTradingInstrumentWidgetTabs2_2);
     countNumberOfElements(codeName);
     // act
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     timeOut(1);
     scrollToElement(localLocator,0,-300);
     checkingVisibilityOfBtnAndClickingIt(localLocator);
@@ -454,12 +418,12 @@ public class MainPage extends Methods{
   @Test
   public void checkingInSection_StillLookingForBrokerYouCanTrust_BtnTryNow() throws IOException {
     // arrange
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     timeOut(1);
     // act
-    scrollToElement(locatorStillLookingForBrokerYouCanTrustIconUserPlus, 0, -200);
-    checkingVisibilityOfBtnAndClickingIt(locatorStillLookingForBrokerYouCanTrustIconUserPlus);
+    scrollToElement(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus, 0, -200);
+    checkingVisibilityOfBtnAndClickingIt(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus);
     timeOut(1);
     // assert
     checkingAppearanceSingUpForm();
@@ -471,26 +435,11 @@ public class MainPage extends Methods{
   @Test
   public void checkingInSection_WidgetPromoMarket_BtnTradeNow() throws IOException {
     // arrange
-    HashSet tabNamesHashSet = new HashSet<>();
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     timeOut(1);
     // act
-    int totalTabs = driver.findElements(locatorWidgetPromoMarketTab).size();
-    scrollToElement(locatorWidgetPromoMarketTab, 0, -300);
-    while(tabNamesHashSet.size() < totalTabs) {
-      String tabName = driver.findElement(locatorWidgetPromoMarketTabName).getText();
-      if(!tabNamesHashSet.contains(tabName)) {
-        tabNamesHashSet.add(tabName);
-        checkingVisibilityOfBtnAndClickingIt(locatorWidgetPromoMarketBtnTradeNow);
-        timeOut(2);
-        // assert
-        checkingAppearanceSingUpForm();
-    }
-      cursorMovementFromElementAndClick(locatorWidgetPromoMarketBtnTradeNow);
-      timeOut(1);
-      continue;
-    }
+    checkingModuleWidgetPromoMarket();
     takeScreenshot("data/screenshots/mainPage/checkingInSection_WidgetPromoMarket_BtnTradeNow.png");
   }
 
@@ -499,8 +448,8 @@ public class MainPage extends Methods{
   @Test
   public void checkingInSection_ExploreOurPlatform_BtnTryNow() throws IOException {
     // arrange
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     timeOut(1);
     // act
     scrollToElement(locatorExploreOurPlatformBtnTryNow, 0, 0);
@@ -517,7 +466,7 @@ public class MainPage extends Methods{
   @Test
   public void checkingInSection_NewToTrading_BtnPractiseForFree() throws IOException {
     // arrange
-    goToPageAndCheckingUrl(urlMainPage);
+    goToPageAndCheckUrl(urlMainPage);
     // act
     scrollToElement(locatorNewToTradingBtnPractiseForFree,0,0);
     //assert
@@ -533,12 +482,12 @@ public class MainPage extends Methods{
   @Test
   public void checkingInSection_TradingCalculator_BtnStartTrading() throws IOException {
     // arrange
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     timeOut(1);
     // act
     scrollToElement(locatorExploreOurPlatformBtnTryNow, 0, 0);
-    checkingVisibilityOfBtnAndClickingIt(locatorTradingCalculatorBtnStartTrading);
+    checkingVisibilityOfBtnAndClickingIt(Locators.moduleTradingCalculatorBtnStartTrading);
     timeOut(1);
     // assert
     checkingAppearanceSingUpForm();
@@ -551,8 +500,8 @@ public class MainPage extends Methods{
   @Test
   public void checkingInSection_TradersDashboard_BtnsTrade() throws IOException {
     // arrange
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     timeOut(1);
     // act
     scrollToElement(locatorTradersDashboard, 0, -200);
@@ -572,12 +521,12 @@ public class MainPage extends Methods{
   @Test
   public void checkingInSection_WhyChooseCapitalCom_BtnTryNow() throws IOException {
     // arrange
-    goToPageAndCheckingUrl(urlMainPage);
-    checkLicense(locatorBtnLicenseMenu, nameLicenseFCA, locatorBtnLicenseOfFCA);
+    goToPageAndCheckUrl(urlMainPage);
+    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
     timeOut(1);
     // act
-    scrollToElement(locatorWhyChooseCapitalComBtnTryNow, 0, 0);
-    checkingVisibilityOfBtnAndClickingIt(locatorWhyChooseCapitalComBtnTryNow);
+    scrollToElement(Locators.moduleWhyChooseCapitalComBtnTryNow, 0, 0);
+    checkingVisibilityOfBtnAndClickingIt(Locators.moduleWhyChooseCapitalComBtnTryNow);
     timeOut(1);
     // assert
     checkingAppearanceSingUpForm();

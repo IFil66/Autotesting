@@ -3,24 +3,17 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.WheelInput;
-
-import javax.swing.*;
 import java.io.*;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 public class Methods {
 
-  // Settings WebDriver - START
+  // Settings of WebDriver - START
   static WebDriver driver;
 
   @BeforeAll
@@ -31,6 +24,7 @@ public class Methods {
     FirefoxOptions options = new FirefoxOptions();
     driver = new FirefoxDriver(options);
 
+    // Timeout settings
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 //    driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(0));
 //    driver.manage().timeouts().setScriptTimeout(Duration.ofSeconds(1));
@@ -49,20 +43,7 @@ public class Methods {
   // Settings WebDriver - END
 
 
-  // Variables
-
-  // variables of Main page - START
-  // Login form
-  static By locatorLoginFormH1 = By.cssSelector("#l_overlay div.h1");
-  static By locatorLoginFormBtnCancel = By.cssSelector("#l_overlay button.button-cleared");
-
-  // Sign up form
-  static By locatorSignUpFormH1 = By.cssSelector("#s_overlay div.h1");
-  static By locatorSignUpFormBtnCancel = By.cssSelector("#s_overlay button.button-cleared");
-  // Main page - END
-
-
-  String variableUrl;
+  // Variables - START
   static HashSet<String> hashUniqueLinksFromWebElements = new HashSet<>();
   static ArrayList<String> listUrl = new ArrayList<>();
   static HashSet<String> hashUrlDone = new HashSet<>();
@@ -72,11 +53,9 @@ public class Methods {
   static String fileAddressWithUrls = "data/urlList.txt";
   static String fileHasFinalResult = "data/buttonAmount.txt";
   static String fileWithFinalUrls = "data/finalUrls.txt";
+  // Variables - END
 
-  long start = System.currentTimeMillis();
-  long end = start + 10 * 1000;
-
-   // Call of timeout
+  // Call timeout
   public void timeOut(int sec){
     for(int i = 0; i < sec; i++ ){
       try {
@@ -87,13 +66,171 @@ public class Methods {
     }
   }
 
-  //
-  // Search all pages
+  // Get URL the current page
+  public String getCurrentUrl() {
+    return driver.getCurrentUrl();
+  }
+
+  // Method to go to the page and check the current URL
+  public void goToPageAndCheckUrl(String url) {
+    driver.navigate().to(url);
+    if (url != getCurrentUrl()) {
+      driver.navigate().to(url);
+    }
+  }
+
+  // Checking a licence
+  public void checkLicense(By locatorBtnLicenseMenu, String nameLicense, By locatorBtnLicense) {
+    WebElement btnLicenseMenu = driver.findElement(locatorBtnLicenseMenu);
+    if(!nameLicense.equals(btnLicenseMenu.getText())) {
+      btnLicenseMenu.click();
+      timeOut(1);
+      driver.findElement(locatorBtnLicense).click();
+    }
+  }
+
+  // Checking if the Login form appears
+  public void checkingAppearanceLoginForm() {
+    WebElement LoginFormH1 = driver.findElement(Locators.loginFormH1);
+    Assertions.assertTrue(LoginFormH1.isDisplayed(), "'Login' form not showing");
+    driver.findElement(Locators.loginFormBtnCancel).click();
+  }
+
+  // Checking if the SignUp form appears
+  public void checkingAppearanceSingUpForm() {
+    WebElement LoginFormH1 = driver.findElement(Locators.signUpFormH1);
+    Assertions.assertTrue(LoginFormH1.isDisplayed(), "'Sing up' form not showing");
+    driver.findElement(Locators.signUpFormBtnCancel).click();
+  }
+
+  // Method to check the visibility of a button and click on it
+  public void checkingVisibilityOfBtnAndClickingIt(By locatorBtn) {
+    WebElement btn = driver.findElement(locatorBtn);
+//     Checking visibility of the cookie notice
+//    if (driver.findElement(By.cssSelector("#onetrust-accept-btn-handler")).isDisplayed()) {
+//      timeOut(1);
+//      driver.findElement(By.cssSelector("#onetrust-accept-btn-handler")).click();
+//      timeOut(1);
+//    }
+    Assertions.assertTrue(btn.isDisplayed(), "The button not showing");
+    btn.click();
+  }
+
+  // Method to scroll screen to element
+  public void scrollToElement(By locatorElement, int x, int y) {
+    WebElement element = driver.findElement(locatorElement);
+    int coordinateX = element.getRect().x;
+    int coordinateY = element.getRect().y;
+    new Actions(driver)
+            .scrollByAmount(coordinateX + x, coordinateY + y)
+            .perform();
+  }
+
+  // Method to move the cursor relative to an element
+  public void cursorMovementFromElementAndClick(By locatorElement) {
+    WebElement element = driver.findElement(locatorElement);
+    new Actions(driver).moveToElement(element, 0,10).click();
+  }
+
+  // Method to get the link URL
+  public String getUrlOfLink(By locator) {
+    return driver.findElement(locator).getAttribute("href");
+  }
+
+  // Method to take a screenshot
+  public void takeScreenshot(String fileAddress) throws IOException {
+    File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+    FileUtils.copyFile(scrFile, new File(fileAddress));
+  }
+
+  // Trading instrument cards Methods - START
+  // Methods to search all Trading instrument card pages and writing their URL to file - START
+  public void getUrlOfTradingInstrumentCardsAndWriteItToFile(String fileAddress, String url) {
+    PrintWriter writer = null;
+    try {
+      writer = new PrintWriter(fileAddress);
+    } catch (FileNotFoundException e) {
+      throw new RuntimeException(e);
+    }
+    driver.navigate().to(url);
+    if(driver.getCurrentUrl() != url) {
+      driver.navigate().to(url);
+    }
+    int numberOfLastPage = getNumberOfLastPage(SearchUrl.locatorNumberOfLastPage);
+    for(int i = 1; i <= numberOfLastPage; i++) {
+      System.out.println("Go to page number " + i);
+      if(i ==1) {
+        int numberOfElements = getNumberOfTradingInstrumentsOnPage();
+        for(int n = 1; n <= numberOfElements; n++) {
+          System.out.println("Get trading instrument URL in row number " + n);
+          String tradingInstrumentURL = driver.findElement(By.cssSelector(SearchUrl.locatorOfTableRow1
+                  + n + SearchUrl.locatorOfTableRow2)).getAttribute("href");
+          writer.write(tradingInstrumentURL + "\n");
+        }
+      }
+      else {
+        driver.navigate().to(url + "/" + i);
+        int numberOfElements = getNumberOfTradingInstrumentsOnPage();
+        for(int n = 1; n <= numberOfElements; n++) {
+          System.out.println("Get trading instrument URL in row number " + n);
+          String tradingInstrumentURL = driver.findElement(By.cssSelector(SearchUrl.locatorOfTableRow1
+                  + n + SearchUrl.locatorOfTableRow2)).getAttribute("href");
+          writer.write(tradingInstrumentURL + "\n");
+        }
+      }
+    }
+    writer.flush();
+    writer.close();
+  }
+
+  public int getNumberOfTradingInstrumentsOnPage() {
+    return driver.findElements(By.cssSelector("tr a[data-type = 'wdg_markets_deep']")).size();
+  }
+
+  public int getNumberOfLastPage(By locatorOfElement) {
+    return Integer.parseInt(driver.findElement(locatorOfElement).getText());
+  }
+  // Methods to search all Trading instrument card pages and writing their URL to file - START
+
+  public void checkingAllRegistrationBtnOnPage(String addressFile, String url) {
+
+
+  }
+  // Trading instrument cards Methods - END
+
+
+  // Module Widget “Promo Market” - START
+  public void checkingModuleWidgetPromoMarket() {
+    HashSet tabNamesHashSet = new HashSet<>();
+    int totalTabs = driver.findElements(Locators.moduleWidgetPromoMarketTab).size();
+    scrollToElement(Locators.moduleWidgetPromoMarketTab, 0, -300);
+    while(tabNamesHashSet.size() < totalTabs) {
+      String tabName = driver.findElement(Locators.moduleWidgetPromoMarketTabName).getText();
+      if(!tabNamesHashSet.contains(tabName)) {
+        tabNamesHashSet.add(tabName);
+        checkingVisibilityOfBtnAndClickingIt(Locators.moduleWidgetPromoMarketBtnTradeNow);
+        timeOut(2);
+        // assert
+        checkingAppearanceSingUpForm();
+      }
+      cursorMovementFromElementAndClick(Locators.moduleWidgetPromoMarketBtnTradeNow);
+      timeOut(1);
+      continue;
+    }
+  }
+  // Module Widget “Promo Market” - END
+
+
+
+
+  // -------------------------------
+  // Search all pages of Capital.com
 
   // Page parsing
   // 1. WebElements parsing
   // 2. Get WebElement's link
   // 3. Add unique links to HashSet
+
   // Option 1 (one locator)
   public HashSet<String> parsingElementsAndCreateUniqueElementsInList(HashSet<String> whereToAdd, By elementLocator) {
     ArrayList<WebElement> internalList1 = new ArrayList<>(driver.findElements(elementLocator));
@@ -117,8 +254,7 @@ public class Methods {
     return whereToAdd;
   }
 
-
-  // Update the list of URL
+  // Search url methods - START
   public ArrayList updateUrlList(ArrayList whereToAdd, HashSet whatToAdd) {
     whereToAdd.addAll(whereToAdd.size(), whatToAdd);
     return whereToAdd;
@@ -136,13 +272,7 @@ public class Methods {
     return elementVariable;
   }
 
-  // Get URL the current page
-  public String getCurrentUrl() {
-    return driver.getCurrentUrl();
-  }
-
-
-//   Checking buttons
+  //   Checking buttons
   public int findButtonThatISVisible(By locator) {
     int counter = 0;
     ArrayList<WebElement> internalList1 = new ArrayList<>(driver.findElements(locator));
@@ -168,7 +298,7 @@ public class Methods {
         if(internalLine == null) {
           break;
         }
-       listUrl.add(internalLine);
+        listUrl.add(internalLine);
       }
     } catch (FileNotFoundException e) {
       throw new RuntimeException(e);
@@ -185,74 +315,4 @@ public class Methods {
     writer.close();
   }
   // Search url methods - END
-
-  // Main page methods - START
-
-  public void goToPageAndCheckingUrl(String url) {
-    driver.navigate().to(url);
-    if (url != getCurrentUrl()) {
-      driver.navigate().to(url);
-    }
-  }
-
-  // Checking licence
-  public void checkLicense(By locatorBtnLicenseMenu, String nameLicense, By locatorBtnLicense) {
-    WebElement btnLicenseMenu = driver.findElement(locatorBtnLicenseMenu);
-    if(!nameLicense.equals(btnLicenseMenu.getText())) {
-      btnLicenseMenu.click();
-      timeOut(1);
-      driver.findElement(locatorBtnLicense).click();
-    }
-  }
-
-  // Checking if the Login form appears
-  public void checkingAppearanceLoginForm() {
-    WebElement LoginFormH1 = driver.findElement(locatorLoginFormH1);
-    Assertions.assertTrue(LoginFormH1.isDisplayed(), "'Login' form not showing");
-    driver.findElement(locatorLoginFormBtnCancel).click();
-  }
-
-
-  // Checking if the SignUp form appears
-  public void checkingAppearanceSingUpForm() {
-    WebElement LoginFormH1 = driver.findElement(locatorSignUpFormH1);
-    Assertions.assertTrue(LoginFormH1.isDisplayed(), "'Sing up' form not showing");
-    driver.findElement(locatorSignUpFormBtnCancel).click();
-  }
-
-  public void checkingVisibilityOfBtnAndClickingIt(By locatorBtn) {
-    WebElement btn = driver.findElement(locatorBtn);
-//     Checking visibility of the cookie notice
-//    if (driver.findElement(By.cssSelector("#onetrust-accept-btn-handler")).isDisplayed()) {
-//      timeOut(1);
-//      driver.findElement(By.cssSelector("#onetrust-accept-btn-handler")).click();
-//      timeOut(1);
-//    }
-    Assertions.assertTrue(btn.isDisplayed(), "The button not showing");
-    btn.click();
-  }
-
-  public void scrollToElement(By locatorElement, int x, int y) {
-    WebElement element = driver.findElement(locatorElement);
-    int coordinateX = element.getRect().x;
-    int coordinateY = element.getRect().y;
-    new Actions(driver)
-            .scrollByAmount(coordinateX + x, coordinateY + y)
-            .perform();
-  }
-
-  public void cursorMovementFromElementAndClick(By locatorElement) {
-    WebElement element = driver.findElement(locatorElement);
-
-    new Actions(driver).moveToElement(element, 0,10).click();
-  }
-
-  public String getUrlOfLink(By locator) {
-    return driver.findElement(locator).getAttribute("href");
-  }
-
-  public void takeScreenshot(String fileAddress) throws IOException {
-    File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-    FileUtils.copyFile(scrFile, new File(fileAddress));
-  }
 }
