@@ -6,6 +6,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.WheelInput;
+
 import java.io.*;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -25,9 +27,12 @@ public class Methods {
     driver = new FirefoxDriver(options);
 
     // Timeout settings
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+//    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 //    driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(0));
 //    driver.manage().timeouts().setScriptTimeout(Duration.ofSeconds(1));
+
+    driver.manage().window().fullscreen();
+    driver.manage().deleteAllCookies();
   }
 
   @AfterAll
@@ -44,22 +49,28 @@ public class Methods {
 
 
   // Variables - START
+
   static HashSet<String> hashUniqueLinksFromWebElements = new HashSet<>();
   static ArrayList<String> listUrl = new ArrayList<>();
   static HashSet<String> hashUrlDone = new HashSet<>();
+  private int numberOfURL = 1;
   private int i = 0;
   int amount = 1;
 
   static String fileAddressWithUrls = "data/urlList.txt";
   static String fileHasFinalResult = "data/buttonAmount.txt";
   static String fileWithFinalUrls = "data/finalUrls.txt";
+
+  static By locatorOfCookies = By.cssSelector("#onetrust-accept-btn-handler");
   // Variables - END
 
   // Call timeout
-  public void timeOut(int sec){
-    for(int i = 0; i < sec; i++ ){
+  int waitingTime = 10000;
+
+  public void timeOut(int milliSec){
+    for(int i = 0; i < milliSec; i = i + 250 ){
       try {
-        Thread.sleep(1000);
+        Thread.sleep(250);
       } catch (InterruptedException e) {
         throw new RuntimeException(e);
       }
@@ -80,11 +91,11 @@ public class Methods {
   }
 
   // Checking a licence
-  public void checkLicense(By locatorBtnLicenseMenu, String nameLicense, By locatorBtnLicense) {
-    WebElement btnLicenseMenu = driver.findElement(locatorBtnLicenseMenu);
+  public void checkLicense(String nameLicense, By locatorBtnLicense) {
+    WebElement btnLicenseMenu = driver.findElement(Locators.licenseBtnMenu);
     if(!nameLicense.equals(btnLicenseMenu.getText())) {
       btnLicenseMenu.click();
-      timeOut(1);
+      waitingOfElement(locatorBtnLicense);
       driver.findElement(locatorBtnLicense).click();
     }
   }
@@ -108,28 +119,37 @@ public class Methods {
     WebElement btn = driver.findElement(locatorBtn);
 //     Checking visibility of the cookie notice
 //    if (driver.findElement(By.cssSelector("#onetrust-accept-btn-handler")).isDisplayed()) {
-//      timeOut(1);
+//      timeOut(1000);
 //      driver.findElement(By.cssSelector("#onetrust-accept-btn-handler")).click();
-//      timeOut(1);
+//      timeOut(1000);
 //    }
     Assertions.assertTrue(btn.isDisplayed(), "The button not showing");
     btn.click();
   }
 
   // Method to scroll screen to element
-  public void scrollToElement(By locatorElement, int x, int y) {
-    WebElement element = driver.findElement(locatorElement);
-    int coordinateX = element.getRect().x;
-    int coordinateY = element.getRect().y;
-    new Actions(driver)
-            .scrollByAmount(coordinateX + x, coordinateY + y)
-            .perform();
+  public void scrollToElement(By locatorElement, int coordinateX, int coordinateY) {
+    if(waitAndCheckingVisibilityOfElement(locatorElement)) {
+      WebElement element = driver.findElement(locatorElement);
+      int coordinateXOfElement = element.getRect().x;
+      int coordinateYOfElement = element.getRect().y;
+      new Actions(driver).scrollByAmount(0,-50000).perform();
+      new Actions(driver).scrollByAmount(coordinateXOfElement + coordinateX,coordinateYOfElement + coordinateY).perform();
+    }
+    else {
+      System.out.println("Method 'scrollToElement' failed because element is not visible");
+    }
   }
 
   // Method to move the cursor relative to an element
   public void cursorMovementFromElementAndClick(By locatorElement) {
-    WebElement element = driver.findElement(locatorElement);
-    new Actions(driver).moveToElement(element, 0,10).click();
+    if(waitAndCheckingVisibilityOfElement(locatorElement)) {
+      WebElement element = driver.findElement(locatorElement);
+      new Actions(driver).moveToElement(element, 0,10).click();
+    }
+    else {
+      System.out.println("Method 'cursorMovementFromElementAndClick' failed because element is not visible");
+    }
   }
 
   // Method to get the link URL
@@ -190,13 +210,169 @@ public class Methods {
   public int getNumberOfLastPage(By locatorOfElement) {
     return Integer.parseInt(driver.findElement(locatorOfElement).getText());
   }
+
+
   // Methods to search all Trading instrument card pages and writing their URL to file - START
 
-  public void checkingAllRegistrationBtnOnPage(String addressFile, String url) {
-
-
+  // Main method
+  public String checkingAllRegistrationBtnOnPage() {
+    String localReport = getCurrentUrl() + "\t";
+    System.out.println("Element - " + numberOfURL++ + " - " + localReport);
+    return localReport
+            + checkingTheBtnToGoToLoginFormAndCreateReport(Locators.headerBtnLogIn) + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.headerBtnTradeNow) + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(TradingInstrumentCards.locatorTradingInstrumentNamePanelBtnAddToFavourite) + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(TradingInstrumentCards.locatorWidgetBtnBell) + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(TradingInstrumentCards.locatorWidgetBtnViewDetailedChart) + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(TradingInstrumentCards.locatorWidgetBtnSell) + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(TradingInstrumentCards.locatorWidgetBtnBuy) + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(TradingInstrumentCards.locatorWidgetBtnCreateAccount) + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.moduleWhyChooseCapitalComBtnTryNow) + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.moduleTradingCalculatorBtnStartTrading) + "\t"
+            + checkingModuleWidgetPromoMarketForTradingInstrumentCard() + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus) + "\t" + "\n"
+            ;
   }
+
+  // Subordinate methods
+  public String checkShowingUpLoginFormAndCreateReport() {
+    String localReport = waitAndCheckingVisibilityOfElement(Locators.loginFormH1) &&
+            waitAndCheckingVisibilityOfElement(Locators.loginFormFieldEmail) &&
+            waitAndCheckingVisibilityOfElement(Locators.loginFormFieldPassword) &&
+            waitAndCheckingVisibilityOfElement(Locators.loginFormBtnCancel) ?
+            "Pass" : "Fail ('Login' form not showing up)";
+    waitAndClickElement(Locators.loginFormBtnCancel);
+    return localReport;
+  }
+
+  public String checkShowingUpSignUpFormAndCreateReport() {
+    String localReport = waitAndCheckingVisibilityOfElement(Locators.signUpFormH1) &&
+            waitAndCheckingVisibilityOfElement(Locators.signUpFormFieldEmail) &&
+            waitAndCheckingVisibilityOfElement(Locators.signUpFormFieldPassword) &&
+            waitAndCheckingVisibilityOfElement(Locators.signUpFormBtnCancel) ?
+            "Pass" : "Fail ('Sign up' form not showing up)";
+    waitAndClickElement(Locators.signUpFormBtnCancel);
+    return localReport;
+  }
+
+  public String checkingTheBtnToGoToLoginFormAndCreateReport(By btnLocator) {
+    String localReport = "";
+    localReport = waitAndCheckingVisibilityOfElement(btnLocator) ? localReport : "Fail (Button isn't visible)";
+    if(localReport == "") {
+      System.out.println("Starts - " + driver.findElement(btnLocator).getText());
+      System.out.println(driver.findElement(btnLocator).getText());
+      scrollToElement(btnLocator,0,-500);
+      waitAndClickElement(btnLocator);
+      waitingOfElement(Locators.loginFormH1);
+      localReport = checkShowingUpLoginFormAndCreateReport();
+      System.out.println("Finished - " + driver.findElement(btnLocator).getText());
+    }
+    System.out.println(localReport);
+    return localReport;
+  }
+  public String checkingTheBtnToGoToSignUpFormAndCreateReport(By btnLocator) {
+    String localReport = "";
+    localReport = waitAndCheckingVisibilityOfElement(btnLocator) ? localReport : "Fail (Button isn't visible)";
+    if(localReport == "") {
+      System.out.println("Starts - " + driver.findElement(btnLocator).getText());
+      scrollToElement(btnLocator,0,-500);
+      waitAndClickElement(btnLocator);
+      waitingOfElement(Locators.signUpFormH1);
+      localReport = checkShowingUpSignUpFormAndCreateReport();
+      System.out.println("Finished - " + driver.findElement(btnLocator).getText());
+    }
+    System.out.println(localReport);
+    return localReport;
+  }
+
+  // Module Widget “Promo Market” - START
+  public String checkingModuleWidgetPromoMarketForTradingInstrumentCard() {
+    String localReport = "";
+    scrollToElement(Locators.moduleWidgetPromoMarketTabName, 0,-500);
+    localReport = waitAndCheckingVisibilityOfElement(Locators.moduleWidgetPromoMarketTabName)
+            ? localReport : "Fail (Button isn't visible)";
+    if(localReport == "") {
+      HashSet tabNamesHashSet = new HashSet<>();
+      int totalTabs = driver.findElements(Locators.moduleWidgetPromoMarketTab).size();
+      System.out.println("Starts - Total elements - " + totalTabs + "\n");
+      while(tabNamesHashSet.size() < totalTabs) {
+        System.out.println("Element - " + driver.findElement(Locators.moduleWidgetPromoMarketTabName).getText() + " " + tabNamesHashSet.size() + " èç " + totalTabs);
+        String tabName = driver.findElement(Locators.moduleWidgetPromoMarketTabName).getText();
+        if(!tabNamesHashSet.contains(tabName)) {
+          tabNamesHashSet.add(tabName);
+         waitAndClickElement(Locators.moduleWidgetPromoMarketBtnTradeNow);
+          // assert
+          localReport = checkShowingUpSignUpFormAndCreateReport();
+        }
+        // This cursor movement is necessary to remove the tooltip of module Widget “Promo Market”
+        cursorMovementFromElementAndClick(Locators.moduleWidgetPromoMarketBtnTradeNow);
+        timeOut(250);
+        continue;
+      }
+    }
+    System.out.println("Finished checking the block");
+    return localReport;
+  }
+
+  // Methods with exceptions - START
+
+  public void waitingOfElement(By locatorOfElement) {
+    for (int time = 0;; time = time + 250) {
+      if (time >= waitingTime) {
+        System.out.println("Method 'waitingOfElement': Element waiting is over. Element (" + locatorOfElement + ") don't visibility.");
+        break;
+      }
+      try {
+        if (driver.findElement(locatorOfElement).isDisplayed()) {
+          break;
+        }
+      } catch (Exception e) {
+        timeOut(250);
+        continue;
+      }
+    }
+  }
+
+  public boolean waitAndCheckingVisibilityOfElement(By locatorOfElement) {
+    boolean isVisibility = false;
+    for (int time = 0;; time = time + 250) {
+      if (time >= waitingTime) {
+        System.out.println("Method 'waitAndCheckingVisibilityOfElement': Element waiting is over. Element (" + locatorOfElement + ") don't visibility.");
+        break;
+      }
+      try {
+        if (driver.findElement(locatorOfElement).isDisplayed()) {
+          isVisibility = true;
+          break;
+        }
+      } catch (Exception e) {
+        timeOut(250);
+        continue;
+      }
+    }
+    return isVisibility;
+  }
+
+  public void waitAndClickElement(By locatorOfElement) {
+    for (int time = 0;; time = time + 250) {
+      if (time >= waitingTime) {
+        System.out.println("Method 'waitAndClickElement': Element waiting is over. Element (" + locatorOfElement + ") don't visibility.");
+        break;
+      }
+      try {
+        if (driver.findElement(locatorOfElement).isDisplayed()) {
+          driver.findElement(locatorOfElement).click();
+          break;
+        }
+      } catch (Exception e) {
+        timeOut(250);
+        continue;
+      }
+    }
+  }
+// Methods with exceptions - END
   // Trading instrument cards Methods - END
+
 
 
   // Module Widget “Promo Market” - START
@@ -209,16 +385,17 @@ public class Methods {
       if(!tabNamesHashSet.contains(tabName)) {
         tabNamesHashSet.add(tabName);
         checkingVisibilityOfBtnAndClickingIt(Locators.moduleWidgetPromoMarketBtnTradeNow);
-        timeOut(2);
+        timeOut(2000);
         // assert
         checkingAppearanceSingUpForm();
       }
       cursorMovementFromElementAndClick(Locators.moduleWidgetPromoMarketBtnTradeNow);
-      timeOut(1);
+      timeOut(1000);
       continue;
     }
   }
   // Module Widget “Promo Market” - END
+
 
 
 

@@ -99,7 +99,7 @@ public class MainPage extends Methods{
       }
       else {
         checkingVisibilityOfBtnAndClickingIt(currentLocator);
-        timeOut(2);
+        timeOut(2000);
         checkingAppearanceSingUpForm();
       }
     }
@@ -146,11 +146,11 @@ public class MainPage extends Methods{
   public void checkingIn_PageHeader_BtnLogIn() throws IOException {
     // arrange
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(Locators.headerBtnLogIn,0,0);
     checkingVisibilityOfBtnAndClickingIt(Locators.headerBtnLogIn);
-    timeOut(1);
+    timeOut(1000);
     // assert
     checkingAppearanceLoginForm();
 
@@ -162,11 +162,11 @@ public class MainPage extends Methods{
   public void checkingIn_PageHeader_BtnTradeNow() throws IOException {
     // arrange
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(Locators.headerBtnTradeNow,0,0);
     checkingVisibilityOfBtnAndClickingIt(Locators.headerBtnTradeNow);
-    timeOut(1);
+    timeOut(1000);
     // assert
     checkingAppearanceSingUpForm();
 
@@ -179,13 +179,13 @@ public class MainPage extends Methods{
   public void checkingInSection_MainBannerTabOne_BtnOpenAccount() throws IOException {
     // arrange
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(locatorMainBannerBtnOne,0,-200);
     driver.findElement(locatorMainBannerBtnOne).click();
     scrollToElement(locatorMainBannerSlideOneBtnToSignUp,0,-200);
     checkingVisibilityOfBtnAndClickingIt(locatorMainBannerSlideOneBtnToSignUp);
-    timeOut(1);
+    timeOut(1000);
     // assert
     checkingAppearanceSingUpForm();
 
@@ -197,15 +197,15 @@ public class MainPage extends Methods{
   public void checkingInSection_MainBannerTabThree_BtnStartTrading() throws IOException {
     // arrange
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(locatorMainBannerBtnThree,0,-300);
     timeOut(5);
     driver.findElement(locatorMainBannerBtnThree).click();
-    timeOut(1);
+    timeOut(1000);
 //    scrollToElement(locatorMainBannersSlideThreeBtnStartTrading,0,-200);
     checkingVisibilityOfBtnAndClickingIt(locatorMainBannersSlideThreeBtnStartTrading);
-    timeOut(1);
+    timeOut(1000);
     // assert
     checkingAppearanceSingUpForm();
 
@@ -219,7 +219,7 @@ public class MainPage extends Methods{
   public void checkingInSection_TradingInstrumentWidgetTabMostTraded_BtnsTrade1() throws IOException {
     // arrange
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(locatorTradingInstrumentWidgetTabMostTraded1,0,-300);
     checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabMostTraded1);
@@ -233,7 +233,7 @@ public class MainPage extends Methods{
   public void checkingInSection_TradingInstrumentWidgetTabCommodities_BtnsTrade1() throws IOException {
     // arrange
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(locatorTradingInstrumentWidgetTabCommodities1,0,-300);
     checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabCommodities1);
@@ -246,7 +246,7 @@ public class MainPage extends Methods{
   public void checkingInSection_TradingInstrumentWidgetTabIndices_BtnsTrade1() throws IOException {
     // arrange
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(locatorTradingInstrumentWidgetTabIndices1,0,-300);
     checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabIndices1);
@@ -260,7 +260,7 @@ public class MainPage extends Methods{
   public void checkingInSection_TradingInstrumentWidgetTabShares_BtnsTrade1() throws IOException {
     // arrange
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(locatorTradingInstrumentWidgetTabShares1,0,-300);
     checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabShares1);
@@ -274,7 +274,7 @@ public class MainPage extends Methods{
   public void checkingInSection_TradingInstrumentWidgetTabForex_BtnsTrade1() throws IOException {
     // arrange
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(locatorTradingInstrumentWidgetTabForex1,0,-300);
     checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabForex1);
@@ -288,7 +288,7 @@ public class MainPage extends Methods{
   public void checkingInSection_TradingInstrumentWidgetTabETFs_BtnsTrade1() throws IOException {
     // arrange
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(locatorTradingInstrumentWidgetTabETFs1,0,-300);
     checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabETFs1);
@@ -309,8 +309,8 @@ public class MainPage extends Methods{
     countNumberOfElements(codeName);
     // act
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    timeOut(1000);
     scrollToElement(localLocator,0,-300);
     checkingVisibilityOfBtnAndClickingIt(localLocator);
     //assert
@@ -328,8 +328,8 @@ public class MainPage extends Methods{
     countNumberOfElements(codeName);
     // act
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    timeOut(1000);
     scrollToElement(localLocator,0,-300);
     checkingVisibilityOfBtnAndClickingIt(localLocator);
     //assert
@@ -347,8 +347,8 @@ public class MainPage extends Methods{
     countNumberOfElements(codeName);
     // act
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    timeOut(1000);
     scrollToElement(localLocator,0,-300);
     checkingVisibilityOfBtnAndClickingIt(localLocator);
     //assert
@@ -366,8 +366,8 @@ public class MainPage extends Methods{
     countNumberOfElements(codeName);
     // act
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    timeOut(1000);
     scrollToElement(localLocator,0,-300);
     checkingVisibilityOfBtnAndClickingIt(localLocator);
     //assert
@@ -385,8 +385,8 @@ public class MainPage extends Methods{
     countNumberOfElements(codeName);
     // act
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    timeOut(1000);
     scrollToElement(localLocator,0,-300);
     checkingVisibilityOfBtnAndClickingIt(localLocator);
     //assert
@@ -404,8 +404,8 @@ public class MainPage extends Methods{
     countNumberOfElements(codeName);
     // act
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    timeOut(1000);
     scrollToElement(localLocator,0,-300);
     checkingVisibilityOfBtnAndClickingIt(localLocator);
     //assert
@@ -419,12 +419,12 @@ public class MainPage extends Methods{
   public void checkingInSection_StillLookingForBrokerYouCanTrust_BtnTryNow() throws IOException {
     // arrange
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    timeOut(1000);
     // act
     scrollToElement(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus, 0, -200);
     checkingVisibilityOfBtnAndClickingIt(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus);
-    timeOut(1);
+    timeOut(1000);
     // assert
     checkingAppearanceSingUpForm();
 
@@ -436,8 +436,8 @@ public class MainPage extends Methods{
   public void checkingInSection_WidgetPromoMarket_BtnTradeNow() throws IOException {
     // arrange
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    timeOut(1000);
     // act
     checkingModuleWidgetPromoMarket();
     takeScreenshot("data/screenshots/mainPage/checkingInSection_WidgetPromoMarket_BtnTradeNow.png");
@@ -449,12 +449,12 @@ public class MainPage extends Methods{
   public void checkingInSection_ExploreOurPlatform_BtnTryNow() throws IOException {
     // arrange
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    timeOut(1000);
     // act
     scrollToElement(locatorExploreOurPlatformBtnTryNow, 0, 0);
     checkingVisibilityOfBtnAndClickingIt(locatorExploreOurPlatformBtnTryNow);
-    timeOut(1);
+    timeOut(1000);
     // assert
     checkingAppearanceSingUpForm();
 
@@ -483,12 +483,12 @@ public class MainPage extends Methods{
   public void checkingInSection_TradingCalculator_BtnStartTrading() throws IOException {
     // arrange
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    timeOut(1000);
     // act
     scrollToElement(locatorExploreOurPlatformBtnTryNow, 0, 0);
     checkingVisibilityOfBtnAndClickingIt(Locators.moduleTradingCalculatorBtnStartTrading);
-    timeOut(1);
+    timeOut(1000);
     // assert
     checkingAppearanceSingUpForm();
 
@@ -501,14 +501,14 @@ public class MainPage extends Methods{
   public void checkingInSection_TradersDashboard_BtnsTrade() throws IOException {
     // arrange
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    timeOut(1000);
     // act
     scrollToElement(locatorTradersDashboard, 0, -200);
     int numberOfElements = driver.findElements(locatorTradersDashboard).size();
     for (int i = 1; i <= numberOfElements; i++) {
       checkingVisibilityOfBtnAndClickingIt(By.cssSelector(locatorTradersDashboardBtnTrad1 + i + locatorTradersDashboardBtnTrad2));
-      timeOut(1);
+      timeOut(1000);
       // assert
       checkingAppearanceSingUpForm();
 
@@ -522,12 +522,12 @@ public class MainPage extends Methods{
   public void checkingInSection_WhyChooseCapitalCom_BtnTryNow() throws IOException {
     // arrange
     goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseBtnMenu, Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+    timeOut(1000);
     // act
     scrollToElement(Locators.moduleWhyChooseCapitalComBtnTryNow, 0, 0);
     checkingVisibilityOfBtnAndClickingIt(Locators.moduleWhyChooseCapitalComBtnTryNow);
-    timeOut(1);
+    timeOut(1000);
     // assert
     checkingAppearanceSingUpForm();
 

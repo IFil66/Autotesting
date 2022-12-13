@@ -46,10 +46,5 @@ public class Locators {
   static final By moduleStillLookingForBrokerYouCanTrustIconUserPlus = By.cssSelector("i[data-type = 'banner_with_steps']");
 
   // Module "Why choose Capital.com? Our numbers speak for themselves."
-  static final By moduleWhyChooseCapitalComBtnTryNow = By.cssSelector("a[data-type = 'banner_with_counter_hor_counter_hor_newBlack_764']");
-
-
-
-
-
+  static final By moduleWhyChooseCapitalComBtnTryNow = By.cssSelector("a[data-type *= 'banner_with_counter_hor_counter_hor']");
 }
