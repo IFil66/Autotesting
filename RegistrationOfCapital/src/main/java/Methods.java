@@ -54,7 +54,7 @@ public class Methods {
   static ArrayList<String> listUrl = new ArrayList<>();
   static HashSet<String> hashUrlDone = new HashSet<>();
   private int numberOfURL = 1;
-  private int i = 0;
+  private int i;
   int amount = 1;
 
   static String fileAddressWithUrls = "data/urlList.txt";
@@ -117,12 +117,6 @@ public class Methods {
   // Method to check the visibility of a button and click on it
   public void checkingVisibilityOfBtnAndClickingIt(By locatorBtn) {
     WebElement btn = driver.findElement(locatorBtn);
-//     Checking visibility of the cookie notice
-//    if (driver.findElement(By.cssSelector("#onetrust-accept-btn-handler")).isDisplayed()) {
-//      timeOut(1000);
-//      driver.findElement(By.cssSelector("#onetrust-accept-btn-handler")).click();
-//      timeOut(1000);
-//    }
     Assertions.assertTrue(btn.isDisplayed(), "The button not showing");
     btn.click();
   }
@@ -296,7 +290,8 @@ public class Methods {
       int totalTabs = driver.findElements(Locators.moduleWidgetPromoMarketTab).size();
       System.out.println("Starts - Total elements - " + totalTabs + "\n");
       while(tabNamesHashSet.size() < totalTabs) {
-        System.out.println("Element - " + driver.findElement(Locators.moduleWidgetPromoMarketTabName).getText() + " " + tabNamesHashSet.size() + " из " + totalTabs);
+        System.out.println("Element - " + driver.findElement(Locators.moduleWidgetPromoMarketTabName).getText()
+                + " " + tabNamesHashSet.size() + " из " + totalTabs);
         String tabName = driver.findElement(Locators.moduleWidgetPromoMarketTabName).getText();
         if(!tabNamesHashSet.contains(tabName)) {
           tabNamesHashSet.add(tabName);
@@ -319,7 +314,8 @@ public class Methods {
   public void waitingOfElement(By locatorOfElement) {
     for (int time = 0;; time = time + 250) {
       if (time >= waitingTime) {
-        System.out.println("Method 'waitingOfElement': Element waiting is over. Element (" + locatorOfElement + ") don't visibility.");
+        System.out.println("Method 'waitingOfElement': Element waiting is over. Element ("
+                + locatorOfElement + ") don't visibility.");
         break;
       }
       try {
@@ -337,7 +333,8 @@ public class Methods {
     boolean isVisibility = false;
     for (int time = 0;; time = time + 250) {
       if (time >= waitingTime) {
-        System.out.println("Method 'waitAndCheckingVisibilityOfElement': Element waiting is over. Element (" + locatorOfElement + ") don't visibility.");
+        System.out.println("Method 'waitAndCheckingVisibilityOfElement': Element waiting is over. Element ("
+                + locatorOfElement + ") don't visibility.");
         break;
       }
       try {
@@ -356,7 +353,8 @@ public class Methods {
   public void waitAndClickElement(By locatorOfElement) {
     for (int time = 0;; time = time + 250) {
       if (time >= waitingTime) {
-        System.out.println("Method 'waitAndClickElement': Element waiting is over. Element (" + locatorOfElement + ") don't visibility.");
+        System.out.println("Method 'waitAndClickElement': Element waiting is over. Element ("
+                + locatorOfElement + ") don't visibility.");
         break;
       }
       try {
@@ -370,6 +368,44 @@ public class Methods {
       }
     }
   }
+
+  public void cookiesAcceptConsent() {
+    for (int time = 0;; time = time + 250) {
+      if (time >= 15000) {
+        System.out.println("notification with cookies don't showed up");
+        break;
+      }
+      try {
+        if (driver.findElement(locatorOfCookies).isDisplayed()) {
+          driver.findElement(locatorOfCookies).click();
+          break;
+        }
+      } catch (Exception e) {
+        timeOut(250);
+        continue;
+      }
+    }
+  }
+
+  public void writingToFile(String addressOfFileWhereToWrite, String whatToWrite) {
+    PrintWriter writer = null;
+    try {
+      writer = new PrintWriter(addressOfFileWhereToWrite);
+    } catch (FileNotFoundException e) {
+      throw new RuntimeException(e);
+    }
+    writer.write(whatToWrite);
+    writer.flush();
+    writer.close();
+  }
+
+
+
+
+
+
+
+
 // Methods with exceptions - END
   // Trading instrument cards Methods - END
 

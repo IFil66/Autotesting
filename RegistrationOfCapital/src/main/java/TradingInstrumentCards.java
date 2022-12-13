@@ -13,8 +13,8 @@ public class TradingInstrumentCards extends Methods{
   String addressOfUrlFileFromSectionForex = "data/TradingInstrumentCards/Url of trading instrument pages/Done page URL/forexPagesURL.txt";
   String addressOfUrlFileFromSectionIndices = "data/TradingInstrumentCards/Url of trading instrument pages/Done page URL/indicesPagesURL.txt";
   String addressOfUrlFileFromSectionCommodities = "data/TradingInstrumentCards/Url of trading instrument pages/Done page URL/commoditiesPagesURL.txt";
-  String addressOfUrlFileFromSectionCryptocurrencies = "data/TradingInstrumentCards/Url of trading instrument pages/Done page URL/cryptocurrenciesPagesURL1.txt";
-  String addressOfUrlFileFromSectionShares = "data/TradingInstrumentCards/Url of trading instrument pages/Done page URL/sharesPagesURL1.txt";
+  String addressOfUrlFileFromSectionCryptocurrencies = "data/TradingInstrumentCards/Url of trading instrument pages/Done page URL/cryptocurrenciesPagesURL.txt";
+  String addressOfUrlFileFromSectionShares = "data/TradingInstrumentCards/Url of trading instrument pages/Done page URL/sharesPagesURL.txt";
 
   // Files with report about checking trading instrument card
   String addressOfReportFileSectionForex = "data/TradingInstrumentCards/Url of trading instrument pages/Result reports/Report (Forex).txt";
@@ -53,16 +53,16 @@ public class TradingInstrumentCards extends Methods{
 
   @Test
   public void checkingRegistrationBtnInSectionForex() {
-    driver.navigate().to("https://capital.com/eur-usd-rate");
-    timeOut(40000);
+    ArrayList<String> urlList = new ArrayList<>();
+    transferDataFromFileToList(urlList,addressOfUrlFileFromSectionForex);
+    goToPageAndCheckUrl(urlList.get(0));
+    cookiesAcceptConsent();
     PrintWriter writer = null;
     try {
       writer = new PrintWriter(addressOfReportFileSectionForex);
     } catch (FileNotFoundException e) {
       throw new RuntimeException(e);
     }
-    ArrayList<String> urlList = new ArrayList<>();
-    transferDataFromFileToList(urlList,addressOfUrlFileFromSectionForex);
     for(String urlPage : urlList) {
       goToPageAndCheckUrl(urlPage);
       checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
@@ -75,17 +75,17 @@ public class TradingInstrumentCards extends Methods{
   }
 
   @Test
-  public void checkingRegistrationBtnInSectionCryptocurrencies() {
-    driver.navigate().to("https://capital.com/btc-usd-chart");
-    timeOut(40000);
+  public void checkingRegistrationBtnInSectionIndices() {
+    ArrayList<String> urlList = new ArrayList<>();
+    transferDataFromFileToList(urlList,addressOfUrlFileFromSectionIndices);
+    goToPageAndCheckUrl(urlList.get(0));
+    cookiesAcceptConsent();
     PrintWriter writer = null;
     try {
-      writer = new PrintWriter(addressOfReportFileSectionCryptocurrencies);
+      writer = new PrintWriter(addressOfReportFileSectionIndices);
     } catch (FileNotFoundException e) {
       throw new RuntimeException(e);
     }
-    ArrayList<String> urlList = new ArrayList<>();
-    transferDataFromFileToList(urlList,addressOfUrlFileFromSectionCryptocurrencies);
     for(String urlPage : urlList) {
       goToPageAndCheckUrl(urlPage);
       checkLicense(Locators.licenseNameCYSEC, Locators.licenseBtnCYSEC);
@@ -98,9 +98,72 @@ public class TradingInstrumentCards extends Methods{
   }
 
 
+  @Test
+  public void checkingRegistrationBtnInSectionCommodities() {
+    ArrayList<String> urlList = new ArrayList<>();
+    transferDataFromFileToList(urlList,addressOfUrlFileFromSectionCommodities);
+    goToPageAndCheckUrl(urlList.get(0));
+    cookiesAcceptConsent();
+    PrintWriter writer = null;
+    try {
+      writer = new PrintWriter(addressOfReportFileSectionCommodities);
+    } catch (FileNotFoundException e) {
+      throw new RuntimeException(e);
+    }
+    for(String urlPage : urlList) {
+      goToPageAndCheckUrl(urlPage);
+      checkLicense(Locators.licenseNameCYSEC, Locators.licenseBtnCYSEC);
+      reportFile = reportFile + checkingAllRegistrationBtnOnPage() + "\n";
+    }
+    writer.write(reportFile);
+    writer.flush();
+    writer.close();
+    System.out.println(reportFile);
+  }
 
+  @Test
+  public void checkingRegistrationBtnInSectionCryptocurrencies() {
+    ArrayList<String> urlList = new ArrayList<>();
+    transferDataFromFileToList(urlList,addressOfUrlFileFromSectionCommodities);
+    goToPageAndCheckUrl(urlList.get(0));
+    cookiesAcceptConsent();
+    PrintWriter writer = null;
+    try {
+      writer = new PrintWriter(addressOfReportFileSectionCryptocurrencies);
+    } catch (FileNotFoundException e) {
+      throw new RuntimeException(e);
+    }
+    for(String urlPage : urlList) {
+      goToPageAndCheckUrl(urlPage);
+      checkLicense(Locators.licenseNameCYSEC, Locators.licenseBtnCYSEC);
+      reportFile = reportFile + checkingAllRegistrationBtnOnPage() + "\n";
+    }
+    writer.write(reportFile);
+    writer.flush();
+    writer.close();
+    System.out.println(reportFile);
+  }
 
-
-
-
+  @Test
+  public void checkingRegistrationBtnInSectionShares() {
+    ArrayList<String> urlList = new ArrayList<>();
+    transferDataFromFileToList(urlList,addressOfUrlFileFromSectionShares);
+    goToPageAndCheckUrl(urlList.get(0));
+    cookiesAcceptConsent();
+    PrintWriter writer = null;
+    try {
+      writer = new PrintWriter(addressOfReportFileSectionShares);
+    } catch (FileNotFoundException e) {
+      throw new RuntimeException(e);
+    }
+    for(String urlPage : urlList) {
+      goToPageAndCheckUrl(urlPage);
+      checkLicense(Locators.licenseNameCYSEC, Locators.licenseBtnCYSEC);
+      reportFile = reportFile + checkingAllRegistrationBtnOnPage() + "\n";
+    }
+    writer.write(reportFile);
+    writer.flush();
+    writer.close();
+    System.out.println(reportFile);
+  }
 }
