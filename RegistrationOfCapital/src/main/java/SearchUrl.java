@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import java.util.Iterator;
 
 
-public class SearchUrl extends Methods {
+public class SearchUrl extends SearchUrlMethods {
 
   // Variables
   // Search unique URL of capital.com pages - START (arrange)
@@ -37,6 +37,9 @@ public class SearchUrl extends Methods {
   static String locatorOfTableRow1 = "tr:nth-child(";
   static String locatorOfTableRow2 = ") a[data-type = 'wdg_markets_deep']";
 
+  private int amount;
+
+
   // Search unique URL of Trade instrument pages - END
 
 
@@ -44,15 +47,15 @@ public class SearchUrl extends Methods {
   @Test
   public void searchUniqueUrl() {
     driver.navigate().to(urlMainPage);
-    if (urlMainPage != getCurrentUrl()) {
+    if (urlMainPage != Methods.getCurrentUrl()) {
       driver.navigate().to(urlMainPage);
     }
     parsingElementsAndCreateUniqueElementsInList2(hashUniqueLinksFromWebElements, baseLinksLocator2, shortLinksLocator2);
     updateUrlList(listUrl,hashUniqueLinksFromWebElements);
-    System.out.println("На главной странице найдено уникальных ссылок: " + listUrl.size());
+    System.out.println("РќР° РіР»Р°РІРЅРѕР№ СЃС‚СЂР°РЅРёС†Рµ РЅР°Р№РґРµРЅРѕ СѓРЅРёРєР°Р»СЊРЅС‹С… СЃСЃС‹Р»РѕРє: " + listUrl.size());
 
 
-    // Открытие редактора файла
+    // РћС‚РєСЂС‹С‚РёРµ СЂРµРґР°РєС‚РѕСЂР° С„Р°Р№Р»Р°
     PrintWriter writer = null;
     try {
       writer = new PrintWriter(fileWithFinalUrls);
@@ -60,17 +63,17 @@ public class SearchUrl extends Methods {
       throw new RuntimeException(e);
     }
 
-    // Для снижения количества итерациий основным циклом
+    // Р”Р»СЏ СЃРЅРёР¶РµРЅРёСЏ РєРѕР»РёС‡РµСЃС‚РІР° РёС‚РµСЂР°С†РёР№ РѕСЃРЅРѕРІРЅС‹Рј С†РёРєР»РѕРј
     for (int n = 0; n <= 1; n++) {
-      // Основной цикл
+      // РћСЃРЅРѕРІРЅРѕР№ С†РёРєР»
       for (int i = 0; i < listUrl.size(); i++) {
 
           if (!hashUrlDone.contains(listUrl.get(i))) {
             driver.navigate().to(listUrl.get(i));
-            timeOut(3);
+            Methods.timeOut(3);
             parsingElementsAndCreateUniqueElementsInList2(hashUniqueLinksFromWebElements, baseLinksLocator2, shortLinksLocator2);
 
-            // Для снижения количества итераций основного цикла
+            // Р”Р»СЏ СЃРЅРёР¶РµРЅРёСЏ РєРѕР»РёС‡РµСЃС‚РІР° РёС‚РµСЂР°С†РёР№ РѕСЃРЅРѕРІРЅРѕРіРѕ С†РёРєР»Р°
             if (n >= 1) {
             updateUrlList(listUrl,hashUniqueLinksFromWebElements);
             }
@@ -78,13 +81,13 @@ public class SearchUrl extends Methods {
             amount = amount + 1;
             hashUrlDone.add(listUrl.get(i));
           }
-          System.out.println("Всего найдено уникальных ссылок: " + hashUniqueLinksFromWebElements.size() + "\n" + "Количество итераций: " + amount);
+          System.out.println("Р’СЃРµРіРѕ РЅР°Р№РґРµРЅРѕ СѓРЅРёРєР°Р»СЊРЅС‹С… СЃСЃС‹Р»РѕРє: " + hashUniqueLinksFromWebElements.size() + "\n" + "РљРѕР»РёС‡РµСЃС‚РІРѕ РёС‚РµСЂР°С†РёР№: " + amount);
           continue;
         }
       }
     updateUrlList(listUrl,hashUniqueLinksFromWebElements);
 
-    // Записть URL в файл
+    // Р—Р°РїРёСЃС‚СЊ URL РІ С„Р°Р№Р»
     Iterator itr = hashUniqueLinksFromWebElements.iterator();
     while (itr.hasNext()) {
       writer.write(itr.next() + "\n");
@@ -92,7 +95,7 @@ public class SearchUrl extends Methods {
     writer.flush();
     writer.close();
 
-    System.out.println("Всего найдено уникальных ссылок: " + hashUniqueLinksFromWebElements.size());
+    System.out.println("Р’СЃРµРіРѕ РЅР°Р№РґРµРЅРѕ СѓРЅРёРєР°Р»СЊРЅС‹С… СЃСЃС‹Р»РѕРє: " + hashUniqueLinksFromWebElements.size());
   }
   // Search unique URL of capital.com pages - END
 

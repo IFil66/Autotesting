@@ -13,14 +13,14 @@ public class TradingInstrumentCards extends Methods{
   String addressOfUrlFileFromSectionForex = "data/TradingInstrumentCards/Url of trading instrument pages/Done page URL/forexPagesURL.txt";
   String addressOfUrlFileFromSectionIndices = "data/TradingInstrumentCards/Url of trading instrument pages/Done page URL/indicesPagesURL.txt";
   String addressOfUrlFileFromSectionCommodities = "data/TradingInstrumentCards/Url of trading instrument pages/Done page URL/commoditiesPagesURL.txt";
-  String addressOfUrlFileFromSectionCryptocurrencies = "data/TradingInstrumentCards/Url of trading instrument pages/Done page URL/cryptocurrenciesPagesURL.txt";
+  String addressOfUrlFileFromSectionCryptocurrencies = "data/TradingInstrumentCards/Url of trading instrument pages/Done page URL/cryptocurrenciesPagesURL-1.txt";
   String addressOfUrlFileFromSectionShares = "data/TradingInstrumentCards/Url of trading instrument pages/Done page URL/sharesPagesURL.txt";
 
   // Files with report about checking trading instrument card
   String addressOfReportFileSectionForex = "data/TradingInstrumentCards/Url of trading instrument pages/Result reports/Report (Forex).txt";
   String addressOfReportFileSectionIndices = "data/TradingInstrumentCards/Url of trading instrument pages/Result reports/Report (Indices).txt";
   String addressOfReportFileSectionCommodities = "data/TradingInstrumentCards/Url of trading instrument pages/Result reports/Report (Commodities).txt";
-  String addressOfReportFileSectionCryptocurrencies = "data/TradingInstrumentCards/Url of trading instrument pages/Result reports/Report (Cryptocurrencies).txt";
+  String addressOfReportFileSectionCryptocurrencies = "data/TradingInstrumentCards/Url of trading instrument pages/Result reports/Report (Cryptocurrencies)-1.txt";
   String addressOfReportFileSectionShares = "data/TradingInstrumentCards/Url of trading instrument pages/Result reports/Report (Shares).txt";
 
   // --arrange
@@ -43,7 +43,7 @@ public class TradingInstrumentCards extends Methods{
   // Section "Trading calculator"
   // here used locator of button "Start trading" from class "Locators"
 
-  // Section Widget ìPromo Marketî
+  // Section Widget ‚ÄúPromo Market‚Äù
   // here used locators of buttons "Trade Now" from class "Locators". Total buttons - 4 item.
 
   // Section "Still looking for a broker you can trust?"
@@ -124,7 +124,7 @@ public class TradingInstrumentCards extends Methods{
   @Test
   public void checkingRegistrationBtnInSectionCryptocurrencies() {
     ArrayList<String> urlList = new ArrayList<>();
-    transferDataFromFileToList(urlList,addressOfUrlFileFromSectionCommodities);
+    transferDataFromFileToList(urlList,addressOfUrlFileFromSectionCryptocurrencies);
     goToPageAndCheckUrl(urlList.get(0));
     cookiesAcceptConsent();
     PrintWriter writer = null;

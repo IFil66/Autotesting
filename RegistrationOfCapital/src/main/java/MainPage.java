@@ -1,45 +1,61 @@
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import io.qameta.allure.Description;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.DisabledIf;
+import org.junit.jupiter.api.condition.EnabledIf;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 import java.io.IOException;
-import java.util.HashSet;
+import java.time.LocalDateTime;
 
-public class MainPage extends Methods{
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class MainPage extends NewMethods{
 
   // Checking Registration / Authorization form
   // URL
-  String urlMainPage = "https://capital.com";
+  final static String url = "https://capital.com/?license=FCA";
 
   // Header
   // here used locators of buttons "Log in" and "Trade now" from class "Locators"
+  final String addressOfScreenshotFile_HeaderBtnLogIn = "data/screenshots/mainPage/checkingIn_PageHeader_BtnLogIn.png";
+  final String addressOfScreenshotFile_HeaderBtnTradeNow =
+          "data/screenshots/mainPage/checkingIn_PageHeader_BtnTradeNow.png";
+
 
   // Section "Main banner" - START
   // Slide number 1
-  By locatorMainBannerBtnOne = By.cssSelector("button[type = 'button'][data-slick-index = '0']");
-  By locatorMainBannerSlideOneBtnToSignUp = By.cssSelector("div[class*='slick-slide'][data-slick-index = '0'] a[href = '/trading/signup']");
+  final private By locatorMainBannerBtnOne = By.cssSelector("button[type = 'button'][data-slick-index = '0']");
+  final private By locatorMainBannerSlideOneBtnLeft =
+          By.cssSelector("div[class*='slick-slide'][data-slick-index = '0'] a[href = '/trading/signup']");
   // Transfer to Start Trading page (capital.com/trading/signup?go=demo) - UK Limited doesn't have this button
-  By locatorMainBannerSlideOneBtnTransferToStartTrading = By.cssSelector("div[class*='slick-slide'][data-slick-index = '0'] a[href = '/trading/signup?go=demo']");
+  final private By locatorMainBannerSlideOneBtnTransferToStartTrading =
+          By.cssSelector("div[class*='slick-slide'][data-slick-index = '0'] a[href = '/trading/signup?go=demo']");
+
+  final String addressOfScreenshotFile_MainBannerSlideOneBtnLeft =
+          "data/screenshots/mainPage/checkingInSection_MainBannerTabOne_BtnOpenAccount.png";
 
   // Slide number 2
-  By locatorMainBannerBtnTwo = By.cssSelector("button[type = 'button'][data-slick-index = '1']");
+  final private By locatorMainBannerBtnTwo = By.cssSelector("button[type = 'button'][data-slick-index = '1']");
 
   // Slide number 3
-  By locatorMainBannerBtnThree = By.cssSelector("button[type = 'button'][data-slick-index = '2']");
-  By locatorMainBannersSlideThreeBtnStartTrading = By.cssSelector("div[class*='slick-slide'][data-slick-index = '2'] a[href = '/trading/signup']");
+  final private By locatorMainBannerBtnThree = By.cssSelector("button[type = 'button'][data-slick-index = '2']");
+  final private By locatorMainBannerSlideThreeBtnLeft =
+          By.cssSelector("div[class*='slick-slide'][data-slick-index = '2'] a[href = '/trading/signup']");
   // Transfer to Start Trading page (capital.com/trading/signup?go=demo) - UK Limited doesn't have this button
-  By locatorMainBannerSlideThreeBtnTransferToStartTrading = By.cssSelector("div[class*='slick-slide'][data-slick-index = '2'] a[href = '/trading/signup?go=demo']");
+  final private By locatorMainBannerSlideThreeBtnRight =
+          By.cssSelector("div[class*='slick-slide'][data-slick-index = '2'] a[href = '/trading/signup?go=demo']");
+
+  final String addressOfScreenshotFile_MainBannerSlideThreeBtnLeft =
+          "data/screenshots/mainPage/checkingInSection_MainBannerTabThree_BtnStartTrading.png";
+  final String addressOfScreenshotFile_MainBannerSlideThreeBtnRight =
+          "data/screenshots/mainPage/checkingInSection_MainBannerTabThree_BtnStartTrading.png";
 
   // Slide number 4
-  By locatorMainBannerBtnFour = By.cssSelector("button[type = 'button'][data-slick-index = '3']");
+  final private By locatorMainBannerBtnFour = By.cssSelector("button[type = 'button'][data-slick-index = '3']");
   // Section "Main banner" - END
 
 
   // Section Widget "Trading instrument" - START
-  // Locators first option
+  // Locators option A
   // Tab Most traded (codeName - mtr, number 7)
   // Tab Commodities (codeName - com, number 7)
   // Tab Indices (codeName - ind, number 7)
@@ -47,490 +63,542 @@ public class MainPage extends Methods{
   // Tab Forex (codeName - fx, number 7)
   // Tab ETFs (codeName - etf, number 7)
 
-  By locatorTradingInstrumentWidgetTabMostTraded1 = By.cssSelector("li[data-tab-control = 'mtr']");
-  By locatorTradingInstrumentWidgetTabCommodities1 = By.cssSelector("li[data-tab-control = 'com']");
-  By locatorTradingInstrumentWidgetTabIndices1 = By.cssSelector("li[data-tab-control = 'ind']");
-  By locatorTradingInstrumentWidgetTabShares1 = By.cssSelector("li[data-tab-control = 'shar']");
-  By locatorTradingInstrumentWidgetTabForex1 = By.cssSelector("li[data-tab-control = 'fx']");
-  By locatorTradingInstrumentWidgetTabETFs1 = By.cssSelector("li[data-tab-control = 'etf']");
-  String locatorXPathWidgetMarketBtnTrade1_1 = "tbody[data-tab-content = '";
-  String locatorXPathWidgetMarketBtnTrade1_2 = "'] tr:nth-child(";
-  String locatorXPathWidgetMarketBtnTrade1_3 = ") a[data-type='wdg_markets']";
+  final static By locatorTradingInstrumentWidgetTabMostTraded1 = By.cssSelector("li[data-tab-control = 'mtr']");
+  final static By locatorTradingInstrumentWidgetTabCommodities1 = By.cssSelector("li[data-tab-control = 'com']");
+  final static By locatorTradingInstrumentWidgetTabIndices1 = By.cssSelector("li[data-tab-control = 'ind']");
+  final static By locatorTradingInstrumentWidgetTabShares1 = By.cssSelector("li[data-tab-control = 'shar']");
+  final static By locatorTradingInstrumentWidgetTabForex1 = By.cssSelector("li[data-tab-control = 'fx']");
+  final static By locatorTradingInstrumentWidgetTabETFs1 = By.cssSelector("li[data-tab-control = 'etf']");
 
-  public void checkingAllItemOnTabOption1 (String codeName) {
-    int numberOfElements = driver.findElements(By.cssSelector("tbody[data-tab-content = '" + codeName + "'] tr")).size();
-    for (int number = 1; number <= numberOfElements; number++) {
-      checkingVisibilityOfBtnAndClickingIt(By.cssSelector(
-              locatorXPathWidgetMarketBtnTrade1_1 + codeName
-                      + locatorXPathWidgetMarketBtnTrade1_2 + number + locatorXPathWidgetMarketBtnTrade1_3));
-      scrollToElement(By.cssSelector(locatorXPathWidgetMarketBtnTrade1_1 + codeName
-              + locatorXPathWidgetMarketBtnTrade1_2 + number + locatorXPathWidgetMarketBtnTrade1_3), 0, -100);
-      checkingAppearanceSingUpForm();
-    }
-  }
+  final static String locatorAllButtonsOnWidgetTradingInstrument_A_1 = "tbody[data-tab-content = '";
+  final static String locatorAllButtonsOnWidgetTradingInstrument_A_2 = "'] tr";
 
-  // Locators second option
-  String codeName = "";
-  String locatorNumberOfElements1 = "div.ihome-";
-  String locatorNumberOfElements2 = " div.tools__item";
-  String locatorTradingInstrumentWidgetTabs2_1 = "a.tab-list__item[data-type = '";
-  String locatorTradingInstrumentWidgetTabs2_2 = "']";
-  String locatorTradingInstrumentWidgetBtnTrade2_1 = "div.ihome-";
-  String locatorTradingInstrumentWidgetBtnTrade2_2 = " div.tools__item:nth-child(";
-  String locatorTradingInstrumentWidgetBtnTrade2_3 = ") a.tools__btn";
+  final static String locatorCssWidgetMarketBtnTrade_A_1 = "tbody[data-tab-content = '";
+  final static String locatorCssWidgetMarketBtnTrade_A_2 = "'] tr:nth-child(";
+  final static String locatorCssWidgetMarketBtnTrade_A_3 = ") a[data-type='wdg_markets']";
 
-  String expectedURLResultWidgetMarketBtnTrade = "https://capitalcom.onelink.me/700515151?af_dp=https%3A%2F%2Fcapital.com%2Finstrument%3Fid%3D427748677997764&&cp_device_id=";
-  String expectedLinkForWindowSingUp = "capitalcom.onelink";
+  final private String addressOfScreenshotFile_TradingInstrumentWidgetTabMostTraded1 =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabMostTraded_BtnsTrade1.png";
+  final private String addressOfScreenshotFile_TradingInstrumentWidgetTabCommodities1 =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabCommodities_BtnsTrade1.png";
+  final private String addressOfScreenshotFile_TradingInstrumentWidgetTabIndices1 =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabIndices_BtnsTrade1.png";
+  final private String addressOfScreenshotFile_TradingInstrumentWidgetTabShares1 =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabShares_BtnsTrade1.png";
+  final private String addressOfScreenshotFile_TradingInstrumentWidgetTabForex1 =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabForex_BtnsTrade1.png";
+  final private String addressOfScreenshotFile_TradingInstrumentWidgetTabETFs1 =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabETFs_BtnsTrade1.png";
 
-  public void checkingAllItemOnTab2 (String codeName) {
-    for (int number = 1; number <= countNumberOfElements(codeName); number++) {
-      By currentLocator = By.cssSelector(
-              locatorTradingInstrumentWidgetBtnTrade2_1 + codeName
-                      + locatorTradingInstrumentWidgetBtnTrade2_2 + number
-                      + locatorTradingInstrumentWidgetBtnTrade2_3);
-      scrollToElement(currentLocator,0,0);
 
-      String link = driver.findElement(currentLocator).getAttribute("href");
+  // Locators option B
+  final static By locatorTradingInstrumentWidgetTabMostTraded2 = By.cssSelector("a.tab-list__item[data-type = 'Most']");
+  final static By locatorTradingInstrumentWidgetTabCommodities2 = By.cssSelector("a.tab-list__item[data-type = 'Commodities']");
+  final static By locatorTradingInstrumentWidgetTabIndices2 = By.cssSelector("a.tab-list__item[data-type = 'Indices']");
+  final static By locatorTradingInstrumentWidgetTabShares2 = By.cssSelector("a.tab-list__item[data-type = 'Shares']");
+  final static By locatorTradingInstrumentWidgetTabForex2 = By.cssSelector("a.tab-list__item[data-type = 'Forex']");
+  final static By locatorTradingInstrumentWidgetTabETFs2 = By.cssSelector("a.tab-list__item[data-type = 'ETFs']");
 
-      if (link.toLowerCase().indexOf(expectedLinkForWindowSingUp.toLowerCase()) != -1) {
-        Assertions.assertEquals(expectedURLResultWidgetMarketBtnTrade,
-                getUrlOfLink(currentLocator),
-                "URL doesn't match expected result");
-      }
-      else {
-        checkingVisibilityOfBtnAndClickingIt(currentLocator);
-        timeOut(2000);
-        checkingAppearanceSingUpForm();
-      }
-    }
-  }
 
-  public int countNumberOfElements(String codeName) {
-    return driver.findElements(By.cssSelector(locatorNumberOfElements1
-            + codeName + locatorNumberOfElements2)).size();
-  }
+
+  final static String locatorAllButtonsOnWidgetTradingInstrument_B_1 = "div.ihome-";
+  final static String locatorAllButtonsOnWidgetTradingInstrument_B_2 = " div.tools__item";
+
+  final static String locatorTradingInstrumentWidgetBtnTrade_B_1 = "div.ihome-";
+  final static String locatorTradingInstrumentWidgetBtnTrade_B_2 = " div.tools__item:nth-child(";
+  final static String locatorTradingInstrumentWidgetBtnTrade_B_3 = ") a.tools__btn";
+
+  final private String expectedURLResultWidgetMarketBtnTrade =
+          "https://capitalcom.onelink.me/700515151?af_dp=https%3A%2F%2Fcapital.com%2Finstrument%3Fid%3D427748677997764&&cp_device_id=";
+  final private String expectedLinkForWindowSingUp = "capitalcom.onelink";
+
+  final private String addressOfScreenshotFile_TradingInstrumentWidgetTabMostTraded2 =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabMostTraded_BtnsTrade2.png";
+  final private String addressOfScreenshotFile_TradingInstrumentWidgetTabCommodities2 =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabCommodities_BtnsTrade2.png";
+  final private String addressOfScreenshotFile_TradingInstrumentWidgetTabIndices2 =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabIndices_BtnsTrade2.png";
+  final private String addressOfScreenshotFile_TradingInstrumentWidgetTabShares2 =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabShares_BtnsTrade2.png";
+  final private String addressOfScreenshotFile_TradingInstrumentWidgetTabForex2 =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabForex_BtnsTrade2.png";
+  final private String addressOfScreenshotFile_TradingInstrumentWidgetTabETFs2 =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabETFs_BtnsTrade2.png";
   // Section Widget "Trading instrument" - END
 
   // Section "Still looking for a broker you can trust?"
   // here used locator of button "user plus" from class "Locators"
+  final private String addressOfScreenshotFile_ModuleStillLookingForBrokerYouCanTrustBtnUserPlus =
+          "data/screenshots/mainPage/checkingInSection_StillLookingForBrokerYouCanTrust_BtnTryNow.png";
 
-  // Section Widget “Promo Market”
+  // Section Widget â€œPromo Marketâ€
   // here used locator of button "Trade Now" from class "Locators"
+  final private String addressOfScreenshotFile_ModuleWidgetPromoMarket =
+          "data/screenshots/mainPage/checkingInSection_WidgetPromoMarket_BtnTradeNow.png";
 
   //Section "Explore our platform" - START
-  String expectedURLResultExploreOrPlatform = "";
-  By locatorExploreOurPlatformBtnTryNow = By.cssSelector("div[data-type = 'btn_nearby_video'] a:nth-child(2)");
+  final private String expectedURLResultExploreOrPlatform = "";
+  final private By locatorExploreOurPlatformBtnTryNow = By.cssSelector("div[data-type = 'btn_nearby_video'] a:nth-child(2)");
   //Section "Explore our platform" - END
 
   //Section "New to trading" - START
-  By locatorNewToTradingBtnPractiseForFree = By.cssSelector("a[data-type = 'btn_new_to_trading']");
-  String expectedUrlResultNewToTradingBtnPractiseForFree = "https://capital.com/trading/signup";
+  final private By locatorNewToTradingBtnPractiseForFree = By.cssSelector("a[data-type = 'btn_new_to_trading']");
+  final private String expectedUrlResultNewToTradingBtnPractiseForFree = "https://capital.com/trading/signup";
  //Section "New to trading" - END
 
   // Section "Trading calculator"
   // here used locator of button "Start trading" from class "Locators"
 
   // Section "Trader's Dashboard" - START
-  By locatorTradersDashboard = By.cssSelector("div.tradersDashboard__item");
-  String locatorTradersDashboardBtnTrad1 = "div.tradersDashboard__item:nth-child(";
-  String locatorTradersDashboardBtnTrad2 = ") button";
+  final private By locatorTradersDashboard = By.cssSelector("div.tradersDashboard__item");
+  final private String locatorTradersDashboardBtnTrad1 = "div.tradersDashboard__item:nth-child(";
+  final private String locatorTradersDashboardBtnTrad2 = ") button";
   // Section "Trader's Dashboard" - END
 
   // Section "Why choose Capital.com? Our numbers speak for themselves"
   // here used locator of button "Try now" from class "Locators"
 
+
+
   // assert
   // Tests registration elements in Header
   @Order(1)
   @Test
-  public void checkingIn_PageHeader_BtnLogIn() throws IOException {
+  @Description("Checking Login button on page header")
+  public void mainPageHeader_ClickOnBtnLogIn_LoginFormWasAppear() throws IOException {
     // arrange
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(Locators.headerBtnLogIn,0,0);
-    checkingVisibilityOfBtnAndClickingIt(Locators.headerBtnLogIn);
-    timeOut(1000);
+    waitForElement(Locators.headerBtnLogIn);
+    clickOnElement(Locators.headerBtnLogIn);
     // assert
-    checkingAppearanceLoginForm();
+    checkShowingUpLoginForm();
 
-    takeScreenshot("data/screenshots/mainPage/checkingIn_PageHeader_BtnLogIn.png");
+    takeScreenshot(addressOfScreenshotFile_HeaderBtnLogIn);
   }
 
   @Order(2)
   @Test
-  public void checkingIn_PageHeader_BtnTradeNow() throws IOException {
+  @Description("Checking Sing up button on page header")
+  public void  mainPageHeader_ClickOnBtnTradeNow_SingUpFormWasAppear() throws IOException {
     // arrange
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
     // act
     scrollToElement(Locators.headerBtnTradeNow,0,0);
-    checkingVisibilityOfBtnAndClickingIt(Locators.headerBtnTradeNow);
-    timeOut(1000);
+    waitForElement(Locators.headerBtnTradeNow);
+    clickOnElement(Locators.headerBtnTradeNow);
     // assert
-    checkingAppearanceSingUpForm();
+    checkShowingUpSignUpForm();
 
-    takeScreenshot("data/screenshots/mainPage/checkingIn_PageHeader_BtnTradeNow.png");
+    takeScreenshot(addressOfScreenshotFile_HeaderBtnTradeNow);
   }
 
   //Tests registration elements in section Main banner
   @Order(3)
   @Test
-  public void checkingInSection_MainBannerTabOne_BtnOpenAccount() throws IOException {
+  @Description("Checking Sing up button on Main banner")
+  public void mainPageMainBanner_clickOnTabOneAndClickOnLeftBtn_SingUpFormWasAppear() throws IOException {
     // arrange
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    // act
-    scrollToElement(locatorMainBannerBtnOne,0,-200);
-    driver.findElement(locatorMainBannerBtnOne).click();
-    scrollToElement(locatorMainBannerSlideOneBtnToSignUp,0,-200);
-    checkingVisibilityOfBtnAndClickingIt(locatorMainBannerSlideOneBtnToSignUp);
-    timeOut(1000);
-    // assert
-    checkingAppearanceSingUpForm();
 
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_MainBannerTabOne_BtnOpenAccount.png");
+    // act
+    scrollToElement(locatorMainBannerBtnOne,0,-400);
+    waitForElement(locatorMainBannerBtnOne);
+    clickOnElement(locatorMainBannerBtnOne);
+    waitForElement(locatorMainBannerSlideOneBtnLeft);
+    clickOnElement(locatorMainBannerSlideOneBtnLeft);
+
+    // assert
+    checkShowingUpSignUpForm();
+
+    takeScreenshot(addressOfScreenshotFile_MainBannerSlideOneBtnLeft);
   }
 
   @Order(4)
   @Test
-  public void checkingInSection_MainBannerTabThree_BtnStartTrading() throws IOException {
+  @Description("Checking Sing up button on Main banner")
+  public void mainPageMainBanner_clickOnTabThreeAndClickOnLeftBtn_SingUpFormWasAppear() throws IOException {
     // arrange
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    // act
-    scrollToElement(locatorMainBannerBtnThree,0,-300);
-    timeOut(5);
-    driver.findElement(locatorMainBannerBtnThree).click();
-    timeOut(1000);
-//    scrollToElement(locatorMainBannersSlideThreeBtnStartTrading,0,-200);
-    checkingVisibilityOfBtnAndClickingIt(locatorMainBannersSlideThreeBtnStartTrading);
-    timeOut(1000);
-    // assert
-    checkingAppearanceSingUpForm();
 
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_MainBannerTabThree_BtnStartTrading.png");
+    // act
+    scrollToElement(locatorMainBannerBtnThree,0,-400);
+    waitForElement(locatorMainBannerBtnThree);
+    clickOnElement(locatorMainBannerBtnThree);
+    waitForElement(locatorMainBannerSlideThreeBtnLeft);
+    clickOnElement(locatorMainBannerSlideThreeBtnLeft);
+
+    // assert
+    checkShowingUpSignUpForm();
+
+    takeScreenshot(addressOfScreenshotFile_MainBannerSlideThreeBtnLeft);
+  }
+
+  @Order(5)
+  @Test
+  @Description("Checking Sing up button on Main banner")
+  public void mainPageMainBanner_clickOnTabThreeAndClickOnRightBtn_SingUpFormWasAppear() throws IOException {
+    // arrange
+    goToPageAndCheckUrl(MainPage.url);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+
+    // act
+    scrollToElement(locatorMainBannerBtnThree,0,-400);
+    waitForElement(locatorMainBannerBtnThree);
+    clickOnElement(locatorMainBannerBtnThree);
+    waitForElement(locatorMainBannerSlideThreeBtnRight);
+    clickOnElement(locatorMainBannerSlideThreeBtnRight);
+
+    // assert
+    checkShowingUpSignUpForm();
+
+    takeScreenshot(addressOfScreenshotFile_MainBannerSlideThreeBtnRight);
   }
 
   //Tests registration elements in section "Trading instrument widget"
-  // Tests first option
-  @Order(5)
-  @Test
-  public void checkingInSection_TradingInstrumentWidgetTabMostTraded_BtnsTrade1() throws IOException {
-    // arrange
-    goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    // act
-    scrollToElement(locatorTradingInstrumentWidgetTabMostTraded1,0,-300);
-    checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabMostTraded1);
-    // assert
-    checkingAllItemOnTabOption1("mtr");
-
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabMostTraded_BtnsTrade1.png");
-  }
+  // Tests option A
   @Order(6)
   @Test
-  public void checkingInSection_TradingInstrumentWidgetTabCommodities_BtnsTrade1() throws IOException {
+  @Description("Checking Sing up button on Trading instrument widget (option A)")
+  @EnabledIf("NewMethods#checkingConditionToRunTestGroup_AorB")
+  public void mainPageTradingInstrumentWidget_clickOnTabMostTradedAndClickAllBtnTrade_SingUpFormWasAppear_A() throws IOException {
     // arrange
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    // act
-    scrollToElement(locatorTradingInstrumentWidgetTabCommodities1,0,-300);
-    checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabCommodities1);
-    // assert
-    checkingAllItemOnTabOption1("com");
 
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabCommodities_BtnsTrade1.png");  }
+    //act
+    waitForElement(locatorTradingInstrumentWidgetTabMostTraded1);
+    clickOnElement(locatorTradingInstrumentWidgetTabMostTraded1);
+
+    //assert
+    checkingAllItemOnTabOption_A("mtr");
+
+    takeScreenshot(addressOfScreenshotFile_TradingInstrumentWidgetTabMostTraded1);
+  }
   @Order(7)
   @Test
-  public void checkingInSection_TradingInstrumentWidgetTabIndices_BtnsTrade1() throws IOException {
+  @Description("Checking Sing up button on Trading instrument widget (option A)")
+  @EnabledIf("NewMethods#checkingConditionToRunTestGroup_AorB")
+  public void mainPageTradingInstrumentWidget_clickOnTabCommoditiesAndClickAllBtnTrade_SingUpFormWasAppear_A() throws IOException {
     // arrange
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    // act
-    scrollToElement(locatorTradingInstrumentWidgetTabIndices1,0,-300);
-    checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabIndices1);
-    // assert
-    checkingAllItemOnTabOption1("ind");
 
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabIndices_BtnsTrade1.png");
-  }
+    //act
+    waitForElement(locatorTradingInstrumentWidgetTabCommodities1);
+    clickOnElement(locatorTradingInstrumentWidgetTabCommodities1);
+
+    //assert
+    checkingAllItemOnTabOption_A("com");
+
+    takeScreenshot(addressOfScreenshotFile_TradingInstrumentWidgetTabCommodities1);  }
   @Order(8)
   @Test
-  public void checkingInSection_TradingInstrumentWidgetTabShares_BtnsTrade1() throws IOException {
+  @Description("Checking Sing up button on Trading instrument widget (option A)")
+  @EnabledIf("NewMethods#checkingConditionToRunTestGroup_AorB")
+  public void mainPageTradingInstrumentWidget_clickOnTabIndicesAndClickAllBtnTrade_SingUpFormWasAppear_A() throws IOException {
     // arrange
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    // act
-    scrollToElement(locatorTradingInstrumentWidgetTabShares1,0,-300);
-    checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabShares1);
-    // assert
-    checkingAllItemOnTabOption1("shar");
 
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabShares_BtnsTrade1.png");
+    //act
+    waitForElement(locatorTradingInstrumentWidgetTabIndices1);
+    clickOnElement(locatorTradingInstrumentWidgetTabIndices1);
+
+    //assert
+    checkingAllItemOnTabOption_A("ind");
+
+    takeScreenshot(addressOfScreenshotFile_TradingInstrumentWidgetTabIndices1);
   }
   @Order(9)
   @Test
-  public void checkingInSection_TradingInstrumentWidgetTabForex_BtnsTrade1() throws IOException {
+  @Description("Checking Sing up button on Trading instrument widget (option A)")
+  @EnabledIf("NewMethods#checkingConditionToRunTestGroup_AorB")
+  public void mainPageTradingInstrumentWidget_clickOnTabSharesAndClickAllBtnTrade_SingUpFormWasAppear_A() throws IOException {
     // arrange
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    // act
-    scrollToElement(locatorTradingInstrumentWidgetTabForex1,0,-300);
-    checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabForex1);
-    // assert
-    checkingAllItemOnTabOption1("fx");
 
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabForex_BtnsTrade1.png");
+    //act
+    waitForElement(locatorTradingInstrumentWidgetTabShares1);
+    clickOnElement(locatorTradingInstrumentWidgetTabShares1);
+
+    //assert
+    checkingAllItemOnTabOption_A("shar");
+
+    takeScreenshot(addressOfScreenshotFile_TradingInstrumentWidgetTabShares1);
   }
   @Order(10)
   @Test
-  public void checkingInSection_TradingInstrumentWidgetTabETFs_BtnsTrade1() throws IOException {
+  @Description("Checking Sing up button on Trading instrument widget (option A)")
+  @EnabledIf("NewMethods#checkingConditionToRunTestGroup_AorB")
+  public void mainPageTradingInstrumentWidget_clickOnTabForexAndClickAllBtnTrade_SingUpFormWasAppear_A() throws IOException {
     // arrange
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    // act
-    scrollToElement(locatorTradingInstrumentWidgetTabETFs1,0,-300);
-    checkingVisibilityOfBtnAndClickingIt(locatorTradingInstrumentWidgetTabETFs1);
-    // assert
-    checkingAllItemOnTabOption1("etf");
 
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabETFs_BtnsTrade1.png");
+    //act
+    waitForElement(locatorTradingInstrumentWidgetTabForex1);
+    clickOnElement(locatorTradingInstrumentWidgetTabForex1);
+
+    //assert
+    checkingAllItemOnTabOption_A("fx");
+
+    takeScreenshot(addressOfScreenshotFile_TradingInstrumentWidgetTabForex1);
+  }
+  @Order(11)
+  @Test
+  @Description("Checking Sing up button on Trading instrument widget (option A)")
+  @EnabledIf("NewMethods#checkingConditionToRunTestGroup_AorB")
+  public void mainPageTradingInstrumentWidget_clickOnTabETFsAndClickAllBtnTrade_SingUpFormWasAppear_A() throws IOException {
+    // arrange
+    goToPageAndCheckUrl(MainPage.url);
+    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+
+    //act
+    waitForElement(locatorTradingInstrumentWidgetTabETFs1);
+    clickOnElement(locatorTradingInstrumentWidgetTabETFs1);
+
+    //assert
+    checkingAllItemOnTabOption_A("etf");
+
+    takeScreenshot(addressOfScreenshotFile_TradingInstrumentWidgetTabETFs1);
   }
 
   // Tests second option
-  @Order(11)
-  @Test
-  public void checkingInSection_TradingInstrumentWidgetTabMostTraded_BtnsTrade2() throws IOException {
-    // arrange
-    codeName = "Most";
-    By localLocator = By.cssSelector(locatorTradingInstrumentWidgetTabs2_1 + codeName
-            + locatorTradingInstrumentWidgetTabs2_2);
-    countNumberOfElements(codeName);
-    // act
-    goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1000);
-    scrollToElement(localLocator,0,-300);
-    checkingVisibilityOfBtnAndClickingIt(localLocator);
-    //assert
-    checkingAllItemOnTab2(codeName);
-
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabMostTraded_BtnsTrade2.png");
-  }
   @Order(12)
   @Test
-  public void checkingInSection_TradingInstrumentWidgetTabCommodities_BtnsTrade2() throws IOException {
+  @Description("Checking Sing up button on Trading instrument widget (option B)")
+  @DisabledIf("NewMethods#checkingConditionToRunTestGroup_AorB")
+  public void mainPageTradingInstrumentWidget_clickOnTabMostTradedAndClickAllBtnTrade_SingUpFormWasAppear_B() throws IOException {
     // arrange
-    codeName = "Commodities";
-    By localLocator = By.cssSelector(locatorTradingInstrumentWidgetTabs2_1 + codeName
-            + locatorTradingInstrumentWidgetTabs2_2);
-    countNumberOfElements(codeName);
-    // act
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1000);
-    scrollToElement(localLocator,0,-300);
-    checkingVisibilityOfBtnAndClickingIt(localLocator);
-    //assert
-    checkingAllItemOnTab2(codeName);
 
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabCommodities_BtnsTrade2.png");
+    // act
+    waitForElement(locatorTradingInstrumentWidgetTabMostTraded2);
+    clickOnElement(locatorTradingInstrumentWidgetTabMostTraded2);
+
+    // assert
+    checkingAllItemOnTabOption_B("Most");
+
+    takeScreenshot(addressOfScreenshotFile_TradingInstrumentWidgetTabMostTraded2);
   }
   @Order(13)
   @Test
-  public void checkingInSection_TradingInstrumentWidgetTabIndices_BtnsTrade2() throws IOException {
+  @Description("Checking Sing up button on Trading instrument widget (option B)")
+  @DisabledIf("NewMethods#checkingConditionToRunTestGroup_AorB")
+  public void mainPageTradingInstrumentWidget_clickOnTabCommoditiesAndClickAllBtnTrade_SingUpFormWasAppear_B() throws IOException {
     // arrange
-    codeName = "Indices";
-    By localLocator = By.cssSelector(locatorTradingInstrumentWidgetTabs2_1 + codeName
-            + locatorTradingInstrumentWidgetTabs2_2);
-    countNumberOfElements(codeName);
-    // act
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1000);
-    scrollToElement(localLocator,0,-300);
-    checkingVisibilityOfBtnAndClickingIt(localLocator);
-    //assert
-    checkingAllItemOnTab2(codeName);
 
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabIndices_BtnsTrade2.png");
+    // act
+    waitForElement(locatorTradingInstrumentWidgetTabCommodities2);
+    clickOnElement(locatorTradingInstrumentWidgetTabCommodities2);
+    // assert
+    checkingAllItemOnTabOption_B("Commodities");
+
+    takeScreenshot(addressOfScreenshotFile_TradingInstrumentWidgetTabCommodities2);
   }
   @Order(14)
   @Test
-  public void checkingInSection_TradingInstrumentWidgetTabShares_BtnsTrade2() throws IOException {
+  @Description("Checking Sing up button on Trading instrument widget (option B)")
+  @DisabledIf("NewMethods#checkingConditionToRunTestGroup_AorB")
+  public void mainPageTradingInstrumentWidget_clickOnTabIndicesAndClickAllBtnTrade_SingUpFormWasAppear_B() throws IOException {
     // arrange
-    codeName = "Shares";
-    By localLocator = By.cssSelector(locatorTradingInstrumentWidgetTabs2_1 + codeName
-            + locatorTradingInstrumentWidgetTabs2_2);
-    countNumberOfElements(codeName);
-    // act
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1000);
-    scrollToElement(localLocator,0,-300);
-    checkingVisibilityOfBtnAndClickingIt(localLocator);
-    //assert
-    checkingAllItemOnTab2(codeName);
 
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabShares_BtnsTrade2.png");
+    // act
+    waitForElement(locatorTradingInstrumentWidgetTabIndices2);
+    clickOnElement(locatorTradingInstrumentWidgetTabIndices2);
+
+    // assert
+    checkingAllItemOnTabOption_B("Indices");
+
+    takeScreenshot(addressOfScreenshotFile_TradingInstrumentWidgetTabIndices2);
   }
   @Order(15)
   @Test
-  public void checkingInSection_TradingInstrumentWidgetTabForex_BtnsTrade2() throws IOException {
+  @Description("Checking Sing up button on Trading instrument widget (option B)")
+  @DisabledIf("NewMethods#checkingConditionToRunTestGroup_AorB")
+  public void mainPageTradingInstrumentWidget_clickOnTabSharesAndClickAllBtnTrade_SingUpFormWasAppear_B() throws IOException {
     // arrange
-    codeName = "Forex";
-    By localLocator = By.cssSelector(locatorTradingInstrumentWidgetTabs2_1 + codeName
-            + locatorTradingInstrumentWidgetTabs2_2);
-    countNumberOfElements(codeName);
-    // act
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1000);
-    scrollToElement(localLocator,0,-300);
-    checkingVisibilityOfBtnAndClickingIt(localLocator);
-    //assert
-    checkingAllItemOnTab2(codeName);
 
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabForex_BtnsTrade2.png");
+    // act
+    waitForElement(locatorTradingInstrumentWidgetTabShares2);
+    clickOnElement(locatorTradingInstrumentWidgetTabShares2);
+
+    // assert
+    checkingAllItemOnTabOption_B("Shares");
+
+    takeScreenshot(addressOfScreenshotFile_TradingInstrumentWidgetTabShares2);
+
   }
   @Order(16)
   @Test
-  public void checkingInSection_TradingInstrumentWidgetTabETFs_BtnsTrade2() throws IOException {
+  @Description("Checking Sing up button on Trading instrument widget (option B)")
+  @DisabledIf("NewMethods#checkingConditionToRunTestGroup_AorB")
+  public void mainPageTradingInstrumentWidget_clickOnTabForexAndClickAllBtnTrade_SingUpFormWasAppear_B() throws IOException {
     // arrange
-    codeName = "ETFs";
-    By localLocator = By.cssSelector(locatorTradingInstrumentWidgetTabs2_1 + codeName
-            + locatorTradingInstrumentWidgetTabs2_2);
-    countNumberOfElements(codeName);
-    // act
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1000);
-    scrollToElement(localLocator,0,-300);
-    checkingVisibilityOfBtnAndClickingIt(localLocator);
-    //assert
-    checkingAllItemOnTab2(codeName);
 
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabETFs_BtnsTrade2.png");
+    // act
+    waitForElement(locatorTradingInstrumentWidgetTabForex2);
+    clickOnElement(locatorTradingInstrumentWidgetTabForex2);
+
+    // assert
+    checkingAllItemOnTabOption_B("Forex");
+
+    takeScreenshot(addressOfScreenshotFile_TradingInstrumentWidgetTabForex2);
   }
-
   @Order(17)
   @Test
-  public void checkingInSection_StillLookingForBrokerYouCanTrust_BtnTryNow() throws IOException {
+  @Description("Checking Sing up button on Trading instrument widget (option B)")
+  @DisabledIf("NewMethods#checkingConditionToRunTestGroup_AorB")
+  public void mainPageTradingInstrumentWidget_clickOnTabETFsAndClickAllBtnTrade_SingUpFormWasAppear_B() throws IOException {
     // arrange
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1000);
-    // act
-    scrollToElement(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus, 0, -200);
-    checkingVisibilityOfBtnAndClickingIt(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus);
-    timeOut(1000);
-    // assert
-    checkingAppearanceSingUpForm();
 
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_StillLookingForBrokerYouCanTrust_BtnTryNow.png");
+    // act
+    waitForElement(locatorTradingInstrumentWidgetTabETFs2);
+    clickOnElement(locatorTradingInstrumentWidgetTabETFs2);
+
+    // assert
+    checkingAllItemOnTabOption_B("ETFs");
+
+    takeScreenshot(addressOfScreenshotFile_TradingInstrumentWidgetTabETFs1);
   }
 
   @Order(18)
   @Test
-  public void checkingInSection_WidgetPromoMarket_BtnTradeNow() throws IOException {
+  public void mainPageModuleStillLookingForBrokerYouCanTrust_clickOnBtnUserPlus_SingUpFormWasAppear() throws IOException {
     // arrange
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1000);
+
     // act
-    checkingModuleWidgetPromoMarket();
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_WidgetPromoMarket_BtnTradeNow.png");
+    scrollToElement(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus, 0, -400);
+    waitForElement(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus);
+    clickOnElement(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus);
+
+    // assert
+    checkShowingUpSignUpForm();
+
+    takeScreenshot(addressOfScreenshotFile_ModuleStillLookingForBrokerYouCanTrustBtnUserPlus);
   }
 
-  //Tests registration elements in section "Explore our platform"
   @Order(19)
   @Test
-  public void checkingInSection_ExploreOurPlatform_BtnTryNow() throws IOException {
+  public void mainPageModuleWidgetPromoMarket_clickOnBtnTradeNow_SingUpFormWasAppear() throws IOException {
     // arrange
-    goToPageAndCheckUrl(urlMainPage);
+    goToPageAndCheckUrl(MainPage.url);
     checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1000);
-    // act
-    scrollToElement(locatorExploreOurPlatformBtnTryNow, 0, 0);
-    checkingVisibilityOfBtnAndClickingIt(locatorExploreOurPlatformBtnTryNow);
-    timeOut(1000);
-    // assert
-    checkingAppearanceSingUpForm();
 
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_ExploreOurPlatform_BtnTryNow.png");
+    // act and assert
+    checkingModuleWidgetPromoMarketForMainPage();
+
+    takeScreenshot(addressOfScreenshotFile_ModuleWidgetPromoMarket);
   }
 
-  //Tests registration elements in section "New to trading?"
-  @Order(20)
-  @Test
-  public void checkingInSection_NewToTrading_BtnPractiseForFree() throws IOException {
-    // arrange
-    goToPageAndCheckUrl(urlMainPage);
-    // act
-    scrollToElement(locatorNewToTradingBtnPractiseForFree,0,0);
-    //assert
-    Assertions.assertEquals(expectedUrlResultNewToTradingBtnPractiseForFree,
-            getUrlOfLink(locatorNewToTradingBtnPractiseForFree), "URL doesn't match expected result");
-
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_NewToTrading_BtnPractiseForFree.png");
-
-  }
-
-  //Tests registration elements in section "Trading calculator"
-  @Order(21)
-  @Test
-  public void checkingInSection_TradingCalculator_BtnStartTrading() throws IOException {
-    // arrange
-    goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1000);
-    // act
-    scrollToElement(locatorExploreOurPlatformBtnTryNow, 0, 0);
-    checkingVisibilityOfBtnAndClickingIt(Locators.moduleTradingCalculatorBtnStartTrading);
-    timeOut(1000);
-    // assert
-    checkingAppearanceSingUpForm();
-
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_TradingCalculator_BtnStartTrading.png");
-  }
-
-  //Tests registration elements in section "Trader's Dashboard"
-  @Order(22)
-  @Test
-  public void checkingInSection_TradersDashboard_BtnsTrade() throws IOException {
-    // arrange
-    goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1000);
-    // act
-    scrollToElement(locatorTradersDashboard, 0, -200);
-    int numberOfElements = driver.findElements(locatorTradersDashboard).size();
-    for (int i = 1; i <= numberOfElements; i++) {
-      checkingVisibilityOfBtnAndClickingIt(By.cssSelector(locatorTradersDashboardBtnTrad1 + i + locatorTradersDashboardBtnTrad2));
-      timeOut(1000);
-      // assert
-      checkingAppearanceSingUpForm();
-
-      takeScreenshot("data/screenshots/mainPage/checkingInSection_TradersDashboard_BtnsTrade.png");
-    }
-  }
-
-  //Tests registration elements in section "Why choose Capital.com? Our numbers speak for themselves"
-  @Order(23)
-  @Test
-  public void checkingInSection_WhyChooseCapitalCom_BtnTryNow() throws IOException {
-    // arrange
-    goToPageAndCheckUrl(urlMainPage);
-    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
-    timeOut(1000);
-    // act
-    scrollToElement(Locators.moduleWhyChooseCapitalComBtnTryNow, 0, 0);
-    checkingVisibilityOfBtnAndClickingIt(Locators.moduleWhyChooseCapitalComBtnTryNow);
-    timeOut(1000);
-    // assert
-    checkingAppearanceSingUpForm();
-
-    takeScreenshot("data/screenshots/mainPage/checkingInSection_WhyChooseCapitalCom_BtnTryNow.png");
-  }
+//  //Tests registration elements in section "Explore our platform"
+//  @Order(20)
+//  @Test
+//  public void checkingInSection_ExploreOurPlatform_BtnTryNow() throws IOException {
+//    // arrange
+//    goToPageAndCheckUrl(MainPage.url);
+//    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+//    Methods.timeOut(1000);
+//    // act
+//    scrollToElement(locatorExploreOurPlatformBtnTryNow, 0, 0);
+//    checkingVisibilityOfBtnAndClickingIt(locatorExploreOurPlatformBtnTryNow);
+//    Methods.timeOut(1000);
+//    // assert
+//    checkingAppearanceSingUpForm();
+//
+//    takeScreenshot("data/screenshots/mainPage/checkingInSection_ExploreOurPlatform_BtnTryNow.png");
+//  }
+//
+//  //Tests registration elements in section "New to trading?"
+//  @Order(21)
+//  @Test
+//  public void checkingInSection_NewToTrading_BtnPractiseForFree() throws IOException {
+//    // arrange
+//    goToPageAndCheckUrl(MainPage.url);
+//    // act
+//    scrollToElement(locatorNewToTradingBtnPractiseForFree,0,0);
+//    //assert
+//    Assertions.assertEquals(expectedUrlResultNewToTradingBtnPractiseForFree,
+//            getUrlOfLink(locatorNewToTradingBtnPractiseForFree), "URL doesn't match expected result");
+//
+//    takeScreenshot("data/screenshots/mainPage/checkingInSection_NewToTrading_BtnPractiseForFree.png");
+//
+//  }
+//
+//  //Tests registration elements in section "Trading calculator"
+//  @Order(22)
+//  @Test
+//  public void checkingInSection_TradingCalculator_BtnStartTrading() throws IOException {
+//    // arrange
+//    goToPageAndCheckUrl(MainPage.url);
+//    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+//    Methods.timeOut(1000);
+//    // act
+//    scrollToElement(locatorExploreOurPlatformBtnTryNow, 0, 0);
+//    checkingVisibilityOfBtnAndClickingIt(Locators.moduleTradingCalculatorBtnStartTrading);
+//    Methods.timeOut(1000);
+//    // assert
+//    checkingAppearanceSingUpForm();
+//
+//    takeScreenshot("data/screenshots/mainPage/checkingInSection_TradingCalculator_BtnStartTrading.png");
+//  }
+//
+//  //Tests registration elements in section "Trader's Dashboard"
+//  @Order(23)
+//  @Test
+//  public void checkingInSection_TradersDashboard_BtnsTrade() throws IOException {
+//    // arrange
+//    goToPageAndCheckUrl(MainPage.url);
+//    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+//    Methods.timeOut(1000);
+//    // act
+//    scrollToElement(locatorTradersDashboard, 0, -200);
+//    int numberOfElements = Methods.driver.findElements(locatorTradersDashboard).size();
+//    for (int i = 1; i <= numberOfElements; i++) {
+//      checkingVisibilityOfBtnAndClickingIt(By.cssSelector(locatorTradersDashboardBtnTrad1 + i + locatorTradersDashboardBtnTrad2));
+//      Methods.timeOut(1000);
+//      // assert
+//      checkingAppearanceSingUpForm();
+//
+//      takeScreenshot("data/screenshots/mainPage/checkingInSection_TradersDashboard_BtnsTrade.png");
+//    }
+//  }
+//
+//  //Tests registration elements in section "Why choose Capital.com? Our numbers speak for themselves"
+//  @Order(24)
+//  @Test
+//  public void checkingInSection_WhyChooseCapitalCom_BtnTryNow() throws IOException {
+//    // arrange
+//    goToPageAndCheckUrl(MainPage.url);
+//    checkLicense(Locators.licenseNameFCA, Locators.licenseBtnFCA);
+//    Methods.timeOut(1000);
+//    // act
+//    scrollToElement(Locators.moduleWhyChooseCapitalComBtnTryNow, 0, 0);
+//    checkingVisibilityOfBtnAndClickingIt(Locators.moduleWhyChooseCapitalComBtnTryNow);
+//    Methods.timeOut(1000);
+//    // assert
+//    checkingAppearanceSingUpForm();
+//
+//    takeScreenshot("data/screenshots/mainPage/checkingInSection_WhyChooseCapitalCom_BtnTryNow.png");
+//  }
 }

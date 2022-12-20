@@ -14,6 +14,11 @@ public class Locators {
   static final By signUpFormFieldPassword = By.cssSelector("#s_overlay input[type = 'password']");
   static final By signUpFormBtnCancel = By.cssSelector("#s_overlay button.button-cleared");
 
+  // Sing up form on new page
+  static final By signUpFormH1_onNewPage = By.cssSelector("#testwrap div.h1");
+  static final By signUpFormFieldEmail_onNewPage = By.cssSelector("#testwrap input[type = 'email']");
+  static final By signUpFormFieldPassword_onNewPage = By.cssSelector("#testwrap input[type = 'password']");
+
 
   // Header of all pages
   static final By headerBtnLogIn = By.cssSelector("#wg_loginBtn");
@@ -34,7 +39,7 @@ public class Locators {
   static final By licenseBtnFSA = By.xpath("//a[contains(@href, 'license')] [contains(., 'FSA')]");
   static final String licenseNameFSA = "Capital Com Stock and CFD Investing Ltd";
 
-  // Module Widget ìPromo Marketî
+  // Module Widget ‚ÄúPromo Market‚Äù
   static final By moduleWidgetPromoMarketTab = By.cssSelector("div.cc-sliderFade__item");
   static final By moduleWidgetPromoMarketTabName = By.cssSelector("div.cc-sliderFade__item.active strong");
   static final By moduleWidgetPromoMarketBtnTradeNow = By.cssSelector("div.cc-sliderFade__item.active div.hideXs.btn");
