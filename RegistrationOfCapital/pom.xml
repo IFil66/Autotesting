@@ -63,20 +63,6 @@
         <version>4.7.2</version>
     </dependency>
 
-<!--    <dependency>-->
-<!--        <groupId>com.codeborne</groupId>-->
-<!--        <artifactId>selenide</artifactId>-->
-<!--        <version>6.6.4</version>-->
-<!--        <scope>compile</scope>-->
-<!--    </dependency>-->
-
-<!--    <dependency>-->
-<!--        <groupId>io.qameta.allure</groupId>-->
-<!--        <artifactId>allure-selenide</artifactId>-->
-<!--        <version>2.14.0</version>-->
-<!--        <scope>test</scope>-->
-<!--    </dependency>-->
-
     <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>jul-to-slf4j</artifactId>
@@ -87,6 +73,11 @@
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
         <version>2.11.0</version>
+    </dependency>
+    <dependency>
+        <groupId>ru.yandex.qatools.allure</groupId>
+        <artifactId>allure-report-builder</artifactId>
+        <version>2.3</version>
     </dependency>
 
 
@@ -100,7 +91,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M1</version>
                 <configuration>
-                    <testFailureIgnore>false</testFailureIgnore>
+                    <testFailureIgnore>true</testFailureIgnore>
                     <argLine>
                         -Dfile.encoding=UTF-8
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"

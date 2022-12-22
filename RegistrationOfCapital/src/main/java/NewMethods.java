@@ -2,7 +2,9 @@ import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -17,8 +19,8 @@ public class NewMethods {
 
   // Settings of WebDriver - START
   static WebDriver driver;
-  @BeforeAll
-  static void setUp() {
+  @BeforeEach
+  public void setUp() {
     FirefoxOptions options = new FirefoxOptions();
     driver = new FirefoxDriver(options);
 
@@ -26,8 +28,8 @@ public class NewMethods {
     driver.manage().deleteAllCookies();
   }
 
-  @AfterAll
-  static void tearDown() {
+  @AfterEach
+  public void tearDown() {
     driver.quit();
   }
   // Settings WebDriver - END
@@ -45,6 +47,7 @@ public class NewMethods {
   @Step("Waiting for an element when it's visibility")
   public void waitForElement(By locatorOfElement) {
     for (int time = 0;; time = time + 250) {
+      timeOut(500);
       if (time >= waitingTime) {
         System.out.println("Method 'waitForElement': Element waiting is over. Element ("
                 + locatorOfElement + ") don't visibility.");
@@ -149,7 +152,7 @@ public class NewMethods {
   @Step("Sign up form was appears")
   public void checkShowingUpSignUpForm() {
     String localReport = "";
-    timeOut(5);
+    timeOut(500);
     if(waitAndCheckingVisibilityOfElement(Locators.signUpFormH1)) {
       localReport = waitAndCheckingVisibilityOfElement(Locators.signUpFormH1) &&
               waitAndCheckingVisibilityOfElement(Locators.signUpFormFieldEmail) &&
@@ -226,7 +229,7 @@ public class NewMethods {
   }
 
   // Method of get URL the current page
-  static public String getCurrentUrl() {
+  static String getCurrentUrl() {
     return driver.getCurrentUrl();
   }
 
@@ -256,7 +259,7 @@ public class NewMethods {
   // Utility methods ---------- END
 
 
-  // Section Widget "Trading instrument" - START
+  // Module Widget "Trading instrument" - START
   @Step("Checking all buttons on a tab (option A)")
   public void checkingAllItemOnTabOption_A (String codeName) {
     By locatorOfBtns = By.cssSelector(MainPage.locatorAllButtonsOnWidgetTradingInstrument_A_1
@@ -290,11 +293,12 @@ public class NewMethods {
   }
 
   // Checking condition to run test group A or B (for annotation JUnit)
+  @Step("Checking the visibility of option A or B the Trading instruments widget module")
   static boolean checkingConditionToRunTestGroup_AorB() {
     return driver.findElement(MainPage.locatorTradingInstrumentWidgetTabMostTraded1).isDisplayed();
   }
 
-  // Section Widget "Trading instrument" - END
+  // Module Widget "Trading instrument" - END
 
   // Module Widget “Promo Market” - START
   @Step("Checking all buttons on tabs (4 items)")
@@ -326,7 +330,19 @@ public class NewMethods {
     }
     System.out.println("Finished checking the block" + "\n" + "Result - " + localReport);
   }
-  // Trading instrument cards Methods - END
+  // Module Widget “Promo Market” - END
+
+  @Step("Checking all buttons on tabs (5 items)")
+  public void checkingAllBtnOnTradersDashboard() {
+    int numberOfElements = driver.findElements(MainPage.locatorTradersDashboard).size();
+    for (int i = 1; i <= numberOfElements; i++) {
+      By locator = By.cssSelector(MainPage.locatorTradersDashboardBtnTrad1 + i
+              + MainPage.locatorTradersDashboardBtnTrad2);
+      waitForElement(locator);
+      System.out.println("Circle is running. Step - " + i + " out of " + numberOfElements);
+      clickOnElement(locator);
+    }
+  }
 
 
   // Special methods - START
