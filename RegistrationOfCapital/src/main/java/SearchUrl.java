@@ -7,6 +7,7 @@ import java.util.Iterator;
 
 
 public class SearchUrl extends SearchUrlMethods {
+  SearchUrl searchUrlTests = new SearchUrl();
 
   // Variables
   // Search unique URL of capital.com pages - START (arrange)
@@ -21,11 +22,11 @@ public class SearchUrl extends SearchUrlMethods {
 
 
   // Search unique URL of Trade instrument pages - START (arrange)
-  String fileAddressUrlForexSectionPages = "data/TradingInstrumentCards/Url of trading instrument pages/urlForexSectionPages.txt";
-  String fileAddressUrlIndicesSectionPages = "data/TradingInstrumentCards/Url of trading instrument pages/urlIndicesSectionPages.txt";
-  String fileAddressUrlCommoditiesSectionPages = "data/TradingInstrumentCards/Url of trading instrument pages/urlCommoditiesSectionPages.txt";
-  String fileAddressUrlCryptocurrenciesSectionPages = "data/TradingInstrumentCards/Url of trading instrument pages/urlCryptocurrenciesSectionPages.txt";
-  String fileAddressUrlSharesSectionPages = "data/TradingInstrumentCards/Url of trading instrument pages/urlSharesSectionPages.txt";
+  String fileAddressUrlForexSectionPages = "data/com.capital_tests.testsWithCustomReport.tradingInstrumentCards_tests.registrationButtons_tests.TradingInstrumentCards/Url of trading instrument pages/urlForexSectionPages.txt";
+  String fileAddressUrlIndicesSectionPages = "data/com.capital_tests.testsWithCustomReport.tradingInstrumentCards_tests.registrationButtons_tests.TradingInstrumentCards/Url of trading instrument pages/urlIndicesSectionPages.txt";
+  String fileAddressUrlCommoditiesSectionPages = "data/com.capital_tests.testsWithCustomReport.tradingInstrumentCards_tests.registrationButtons_tests.TradingInstrumentCards/Url of trading instrument pages/urlCommoditiesSectionPages.txt";
+  String fileAddressUrlCryptocurrenciesSectionPages = "data/com.capital_tests.testsWithCustomReport.tradingInstrumentCards_tests.registrationButtons_tests.TradingInstrumentCards/Url of trading instrument pages/urlCryptocurrenciesSectionPages.txt";
+  String fileAddressUrlSharesSectionPages = "data/com.capital_tests.testsWithCustomReport.tradingInstrumentCards_tests.registrationButtons_tests.TradingInstrumentCards/Url of trading instrument pages/urlSharesSectionPages.txt";
 
   String urlSectionForex = "https://capital.com/live-currency-prices";
   String urlSectionIndices = "https://capital.com/major-world-indices";
@@ -47,11 +48,11 @@ public class SearchUrl extends SearchUrlMethods {
   @Test
   public void searchUniqueUrl() {
     driver.navigate().to(urlMainPage);
-    if (urlMainPage != Methods.getCurrentUrl()) {
+    if (urlMainPage != getCurrentUrl()) {
       driver.navigate().to(urlMainPage);
     }
     parsingElementsAndCreateUniqueElementsInList2(hashUniqueLinksFromWebElements, baseLinksLocator2, shortLinksLocator2);
-    updateUrlList(listUrl,hashUniqueLinksFromWebElements);
+    updateUrlList(listUrl, hashUniqueLinksFromWebElements);
     System.out.println("На главной странице найдено уникальных ссылок: " + listUrl.size());
 
 
@@ -70,12 +71,12 @@ public class SearchUrl extends SearchUrlMethods {
 
           if (!hashUrlDone.contains(listUrl.get(i))) {
             driver.navigate().to(listUrl.get(i));
-            Methods.timeOut(3);
+            timeOut(3000);
             parsingElementsAndCreateUniqueElementsInList2(hashUniqueLinksFromWebElements, baseLinksLocator2, shortLinksLocator2);
 
             // Для снижения количества итераций основного цикла
             if (n >= 1) {
-            updateUrlList(listUrl,hashUniqueLinksFromWebElements);
+            updateUrlList(listUrl, hashUniqueLinksFromWebElements);
             }
 
             amount = amount + 1;
@@ -85,7 +86,7 @@ public class SearchUrl extends SearchUrlMethods {
           continue;
         }
       }
-    updateUrlList(listUrl,hashUniqueLinksFromWebElements);
+    updateUrlList(listUrl, hashUniqueLinksFromWebElements);
 
     // Записть URL в файл
     Iterator itr = hashUniqueLinksFromWebElements.iterator();

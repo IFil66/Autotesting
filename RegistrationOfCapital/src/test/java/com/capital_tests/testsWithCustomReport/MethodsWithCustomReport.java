@@ -1,9 +1,11 @@
+package com.capital_tests.testsWithCustomReport;
+
+import com.capital_tests.Locators;
 import io.qameta.allure.Step;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.condition.DisabledIfSystemProperties;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -12,7 +14,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class Methods {
+public class MethodsWithCustomReport {
 
   // Settings of WebDriver - START
   static WebDriver driver;
@@ -194,9 +196,9 @@ public class Methods {
   }
 
   //  Method of checking if the SignUp form appears
-  public void checkingAppearanceSingUpForm() {
+  public void checkingAppearanceSignUpForm() {
     WebElement LoginFormH1 = driver.findElement(Locators.signUpFormH1);
-    Assertions.assertTrue(LoginFormH1.isDisplayed(), "'Sing up' form not showing");
+    Assertions.assertTrue(LoginFormH1.isDisplayed(), "'Sign up' form not showing");
     driver.findElement(Locators.signUpFormBtnCancel).click();
   }
 
@@ -210,7 +212,7 @@ public class Methods {
 
 
 
-  // Trading instrument cards Methods - START
+  // Trading instrument cards com.capital_tests.testsWithCustomReport.Methods - START
   // Main method
   public String checkingAllRegistrationBtnOnPage() {
     String localReport = getCurrentUrl() + "\t";
@@ -218,12 +220,12 @@ public class Methods {
     return localReport
             + checkingTheBtnToGoToLoginFormAndCreateReport(Locators.headerBtnLogIn) + "\t"
             + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.headerBtnTradeNow) + "\t"
-            + checkingTheBtnToGoToSignUpFormAndCreateReport(TradingInstrumentCards.locatorTradingInstrumentNamePanelBtnAddToFavourite) + "\t"
-            + checkingTheBtnToGoToSignUpFormAndCreateReport(TradingInstrumentCards.locatorWidgetBtnBell) + "\t"
-            + checkingTheBtnToGoToSignUpFormAndCreateReport(TradingInstrumentCards.locatorWidgetBtnViewDetailedChart) + "\t"
-            + checkingTheBtnToGoToSignUpFormAndCreateReport(TradingInstrumentCards.locatorWidgetBtnSell) + "\t"
-            + checkingTheBtnToGoToSignUpFormAndCreateReport(TradingInstrumentCards.locatorWidgetBtnBuy) + "\t"
-            + checkingTheBtnToGoToSignUpFormAndCreateReport(TradingInstrumentCards.locatorWidgetBtnCreateAccount) + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.locatorTradingInstrumentNamePanelBtnAddToFavourite) + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.locatorWidgetBtnBell) + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.locatorWidgetBtnViewDetailedChart) + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.locatorWidgetBtnSell) + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.locatorWidgetBtnBuy) + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.locatorWidgetBtnCreateAccount) + "\t"
             + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.moduleWhyChooseCapitalComBtnTryNow) + "\t"
             + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.moduleTradingCalculatorBtnStartTrading) + "\t"
             + checkingModuleWidgetPromoMarketForTradingInstrumentCard() + "\t"
@@ -311,7 +313,7 @@ public class Methods {
     System.out.println("Finished checking the block");
     return localReport;
   }
-  // Trading instrument cards Methods - END
+  // Trading instrument cards com.capital_tests.testsWithCustomReport.Methods - END
 
 
   // Special methods - START
@@ -388,7 +390,7 @@ public class Methods {
         checkingVisibilityOfBtnAndClickingIt(Locators.moduleWidgetPromoMarketBtnTradeNow);
         timeOut(2000);
         // assert
-        checkingAppearanceSingUpForm();
+        checkingAppearanceSignUpForm();
       }
       cursorMovementFromElementAndClick(Locators.moduleWidgetPromoMarketBtnTradeNow);
       timeOut(1000);

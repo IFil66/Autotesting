@@ -1,9 +1,10 @@
+package com.capital_tests.testsWithAllure;
+
+import com.capital_tests.Locators;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import org.apache.commons.io.FileUtils;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -15,7 +16,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class NewMethods {
+public class MethodsWithAllure {
 
   // Settings of WebDriver - START
   static WebDriver driver;
@@ -24,7 +25,8 @@ public class NewMethods {
     FirefoxOptions options = new FirefoxOptions();
     driver = new FirefoxDriver(options);
 
-    driver.manage().window().fullscreen();
+    Dimension dimension = new Dimension(1600, 900);
+    driver.manage().window().setSize(dimension);
     driver.manage().deleteAllCookies();
   }
 
@@ -36,9 +38,9 @@ public class NewMethods {
 
 
   // Variables - START
-  private int numberOfURL = 1;
   static By locatorOfCookies = By.cssSelector("#onetrust-accept-btn-handler");
-  private int waitingTime = 10000;
+  public static final int waitingTime = 10000;
+
   // Variables - END
 
 
@@ -63,6 +65,7 @@ public class NewMethods {
       }
     }
   }
+
   // Method of flexible wait for element to appear (with return and exception)
   public boolean waitForElementAndReturnOfVisibilityResult(By locatorOfElement) {
     for (int time = 0;; time = time + 250) {
@@ -84,7 +87,17 @@ public class NewMethods {
 
   @Step("Clicking on the Element")
   public void clickOnElement(By locatorOfElement) {
-    driver.findElement(locatorOfElement).click();
+    for(int i = 1; i <= 5; i++) {
+      try {
+        driver.findElement(locatorOfElement).click();
+        break;
+      }
+      catch (Exception e) {
+        System.out.println("Waiting for an element to appear. Timeout is - " + (i * 250) + " milliSec");
+        timeOut(250);
+        continue;
+      }
+    }
   }
 
   @Step("Getting number of elements ")
@@ -118,9 +131,9 @@ public class NewMethods {
   // Method to go to the page and check the current URL
   @Step("Go to the page")
   public void goToPageAndCheckUrl(String url) {
-    driver.navigate().to(MainPage.url);
+    driver.navigate().to(Locators.url);
     if (url != getCurrentUrl()) {
-      driver.navigate().to(MainPage.url);
+      driver.navigate().to(Locators.url);
     }
   }
 
@@ -262,14 +275,14 @@ public class NewMethods {
   // Module Widget "Trading instrument" - START
   @Step("Checking all buttons on a tab (option A)")
   public void checkingAllItemOnTabOption_A (String codeName) {
-    By locatorOfBtns = By.cssSelector(MainPage.locatorAllButtonsOnWidgetTradingInstrument_A_1
-            + codeName + MainPage.locatorAllButtonsOnWidgetTradingInstrument_A_2);
+    By locatorOfBtns = By.cssSelector(Locators.locatorAllButtonsOnWidgetTradingInstrument_A_1
+            + codeName + Locators.locatorAllButtonsOnWidgetTradingInstrument_A_2);
     int numberOfBtn = getNumberOfElements(locatorOfBtns);
     scrollToElement(locatorOfBtns, 0, -400);
     for (int number = 1; number <= numberOfBtn; number++) {
-      By locatorOfCurrentBtn = By.cssSelector(MainPage.locatorCssWidgetMarketBtnTrade_A_1 + codeName
-              + MainPage.locatorCssWidgetMarketBtnTrade_A_2 + number
-              + MainPage.locatorCssWidgetMarketBtnTrade_A_3);
+      By locatorOfCurrentBtn = By.cssSelector(Locators.locatorCssWidgetMarketBtnTrade_A_1 + codeName
+              + Locators.locatorCssWidgetMarketBtnTrade_A_2 + number
+              + Locators.locatorCssWidgetMarketBtnTrade_A_3);
       waitForElement(locatorOfCurrentBtn);
       clickOnElement(locatorOfCurrentBtn);
       checkShowingUpSignUpForm();
@@ -278,14 +291,14 @@ public class NewMethods {
 
   @Step("Checking all buttons on a tab (option B)")
   public void checkingAllItemOnTabOption_B (String codeName) {
-    By locatorOfBtns = By.cssSelector(MainPage.locatorAllButtonsOnWidgetTradingInstrument_B_1
-            + codeName + MainPage.locatorAllButtonsOnWidgetTradingInstrument_B_2);
+    By locatorOfBtns = By.cssSelector(Locators.locatorAllButtonsOnWidgetTradingInstrument_B_1
+            + codeName + Locators.locatorAllButtonsOnWidgetTradingInstrument_B_2);
     int numberOfBtn = getNumberOfElements(locatorOfBtns);
     scrollToElement(locatorOfBtns,0,-400);
     for (int number = 1; number <= numberOfBtn; number++) {
-      By locatorOfCurrentBtn = By.cssSelector(MainPage.locatorTradingInstrumentWidgetBtnTrade_B_1
-              + codeName + MainPage.locatorTradingInstrumentWidgetBtnTrade_B_2
-              + number + MainPage.locatorTradingInstrumentWidgetBtnTrade_B_3);
+      By locatorOfCurrentBtn = By.cssSelector(Locators.locatorTradingInstrumentWidgetBtnTrade_B_1
+              + codeName + Locators.locatorTradingInstrumentWidgetBtnTrade_B_2
+              + number + Locators.locatorTradingInstrumentWidgetBtnTrade_B_3);
       waitForElement(locatorOfCurrentBtn);
       clickOnElement(locatorOfCurrentBtn);
       checkShowingUpSignUpForm();
@@ -295,7 +308,7 @@ public class NewMethods {
   // Checking condition to run test group A or B (for annotation JUnit)
   @Step("Checking the visibility of option A or B the Trading instruments widget module")
   static boolean checkingConditionToRunTestGroup_AorB() {
-    return driver.findElement(MainPage.locatorTradingInstrumentWidgetTabMostTraded1).isDisplayed();
+    return driver.findElement(Locators.locatorTradingInstrumentWidgetTabMostTraded1).isDisplayed();
   }
 
   // Module Widget "Trading instrument" - END
@@ -334,13 +347,14 @@ public class NewMethods {
 
   @Step("Checking all buttons on tabs (5 items)")
   public void checkingAllBtnOnTradersDashboard() {
-    int numberOfElements = driver.findElements(MainPage.locatorTradersDashboard).size();
+    int numberOfElements = driver.findElements(Locators.locatorTradersDashboard).size();
     for (int i = 1; i <= numberOfElements; i++) {
-      By locator = By.cssSelector(MainPage.locatorTradersDashboardBtnTrad1 + i
-              + MainPage.locatorTradersDashboardBtnTrad2);
+      By locator = By.cssSelector(Locators.locatorTradersDashboardBtnTrad1 + i
+              + Locators.locatorTradersDashboardBtnTrad2);
       waitForElement(locator);
       System.out.println("Circle is running. Step - " + i + " out of " + numberOfElements);
       clickOnElement(locator);
+      checkShowingUpSignUpForm();
     }
   }
 

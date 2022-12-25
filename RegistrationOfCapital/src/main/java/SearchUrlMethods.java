@@ -1,4 +1,3 @@
-import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.*;
@@ -151,7 +150,7 @@ public class SearchUrlMethods {
     writer.close();
   }
 
-  // Methods to search all Trading instrument card pages and writing their URL to file - START
+  // com.capital_tests.testsWithCustomReport.Methods to search all Trading instrument card pages and writing their URL to file - START
   public int getNumberOfTradingInstrumentsOnPage() {
     return driver.findElements(By.cssSelector("tr a[data-type = 'wdg_markets_deep']")).size();
   }
@@ -159,4 +158,25 @@ public class SearchUrlMethods {
   public int getNumberOfLastPage(By locatorOfElement) {
     return Integer.parseInt(driver.findElement(locatorOfElement).getText());
   }
+
+  // Utility methods ---------- START
+  // Method of strict wait
+  public static void timeOut(int milliSec){
+    for(int i = 0; i < milliSec; i = i + 250 ){
+      try {
+        Thread.sleep(250);
+      } catch (InterruptedException e) {
+        throw new RuntimeException(e);
+      }
+    }
+  }
+
+  // Method of get URL the current page
+  public static String getCurrentUrl() {
+    return driver.getCurrentUrl();
+  }
+
+
+
+// Utility methods ---------- END
 }
