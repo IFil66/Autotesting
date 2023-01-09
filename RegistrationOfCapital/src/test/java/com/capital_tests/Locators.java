@@ -89,10 +89,11 @@ public class Locators {
   public static final By locatorMainBannerBtnOne = By.cssSelector("button[type = 'button'][data-slick-index = '0']");
   public static final By locatorMainBannerSlideOneBtnLeft =
           By.cssSelector("div[class*='slick-slide'][data-slick-index = '0'] a[href = '/trading/signup']");
+  public static final By locatorMainBannerSlideOneBtnRight =
+          By.cssSelector("div[class*='slick-slide'][data-slick-index = '0'] a[href = '/trading/signup?go=demo']");
   // Transfer to Start Trading page (capital.com/trading/signup?go=demo) - UK Limited doesn't have this button
   public static final By locatorMainBannerSlideOneBtnTransferToStartTrading =
           By.cssSelector("div[class*='slick-slide'][data-slick-index = '0'] a[href = '/trading/signup?go=demo']");
-
   public static final String addressOfScreenshotFile_MainBannerSlideOneBtnLeft =
           "data/screenshots/mainPage/checkingInSection_MainBannerTabOne_BtnOpenAccount.png";
 
@@ -141,26 +142,10 @@ public class Locators {
   public static final String locatorCssWidgetMarketBtnTrade_A_2 = "'] tr:nth-child(";
   public static final String locatorCssWidgetMarketBtnTrade_A_3 = ") a[data-type='wdg_markets']";
 
-  public static final String addressOfScreenshotFile_TradingInstrumentWidgetTabMostTraded1 =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabMostTraded_BtnsTrade1.png";
-  public static final String addressOfScreenshotFile_TradingInstrumentWidgetTabCommodities1 =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabCommodities_BtnsTrade1.png";
-  public static final String addressOfScreenshotFile_TradingInstrumentWidgetTabIndices1 =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabIndices_BtnsTrade1.png";
-  public static final String addressOfScreenshotFile_TradingInstrumentWidgetTabCryptocurrencies1 =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabCryptocurrencies_BtnsTrade1.png";
-
-  public static final String addressOfScreenshotFile_TradingInstrumentWidgetTabShares1 =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabShares_BtnsTrade1.png";
-  public static final String addressOfScreenshotFile_TradingInstrumentWidgetTabForex1 =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabForex_BtnsTrade1.png";
-  public static final String addressOfScreenshotFile_TradingInstrumentWidgetTabETFs1 =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabETFs_BtnsTrade1.png";
-
 
   // Option B
-  public static final String locatorTradingInstrumentWidgetTabMostTraded_B1 = "a.tab-list__item[data-type = '";
-  public static final String locatorTradingInstrumentWidgetTabMostTraded_B2 = "']";
+  public static final String locatorTradingInstrumentWidgetTab_B1 = "a.tab-list__item[data-type = '";
+  public static final String locatorTradingInstrumentWidgetTab_B2 = "']";
 
 
   public static final String locatorAllButtonsOnWidgetTradingInstrument_B_1 = "div.ihome-";
@@ -174,20 +159,22 @@ public class Locators {
           "https://capitalcom.onelink.me/700515151?af_dp=https%3A%2F%2Fcapital.com%2Finstrument%3Fid%3D427748677997764&&cp_device_id=";
   public static final String expectedLinkForWindowSignUp = "capitalcom.onelink";
 
-  public static final String addressOfScreenshotFile_TradingInstrumentWidgetTabMostTraded2 =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabMostTraded_BtnsTrade2.png";
-  public static final String addressOfScreenshotFile_TradingInstrumentWidgetTabCommodities2 =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabCommodities_BtnsTrade2.png";
-  public static final String addressOfScreenshotFile_TradingInstrumentWidgetTabIndices2 =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabIndices_BtnsTrade2.png";
-  public static final String addressOfScreenshotFile_TradingInstrumentWidgetTabCryptocurrencies2 =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabCryptocurrencies_BtnsTrade2.png";
-  public static final String addressOfScreenshotFile_TradingInstrumentWidgetTabShares2 =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabShares_BtnsTrade2.png";
-  public static final String addressOfScreenshotFile_TradingInstrumentWidgetTabForex2 =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabForex_BtnsTrade2.png";
-  public static final String addressOfScreenshotFile_TradingInstrumentWidgetTabETFs2 =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabETFs_BtnsTrade2.png";
+
+  // Screenshots
+  public static final String addressOfScreenshotFile_ModuleTradingInstrumentWidget_MostTraded =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabMostTraded.png";
+  public static final String addressOfScreenshotFile_ModuleTradingInstrumentWidget_Commodities =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabCommodities.png";
+  public static final String addressOfScreenshotFile_ModuleTradingInstrumentWidget_Indices =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabIndices.png";
+  public static final String addressOfScreenshotFile_ModuleTradingInstrumentWidget_Crypto =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabCrypto.png";
+  public static final String addressOfScreenshotFile_ModuleTradingInstrumentWidget_Shares =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabShares.png";
+  public static final String addressOfScreenshotFile_ModuleTradingInstrumentWidget_Forex =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabForex.png";
+  public static final String addressOfScreenshotFile_ModuleTradingInstrumentWidget_ETFs =
+          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabETFs.png";
   // Section Widget "Trading instrument" - END
 
 

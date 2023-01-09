@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 
 import java.io.FileNotFoundException;
@@ -45,7 +44,7 @@ public class SearchUrl extends SearchUrlMethods {
 
 
   // Search unique URL of capital.com pages - START (act)
-  @Test
+
   public void searchUniqueUrl() {
     driver.navigate().to(urlMainPage);
     if (urlMainPage != getCurrentUrl()) {
@@ -101,7 +100,7 @@ public class SearchUrl extends SearchUrlMethods {
   // Search unique URL of capital.com pages - END
 
   // Search unique URL of Trade instrument pages - START (act)
-  @Test
+
   public void searchAllUrlTradingInstrumentCardsOfSection() {
     getUrlOfTradingInstrumentCardsAndWriteItToFile(fileAddressUrlForexSectionPages, urlSectionForex);
     getUrlOfTradingInstrumentCardsAndWriteItToFile(fileAddressUrlIndicesSectionPages, urlSectionIndices);

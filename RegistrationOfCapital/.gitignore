@@ -1,0 +1,12 @@
+*.iml
+.idea
+*.class
+target/
+local.properties
+debug.log
+.settings
+/shelf/
+/workspace.xml
+/data/
+/.allure/
+.png

@@ -23,13 +23,7 @@ public class ConditionForOptionAorBTest implements ExecutionCondition {
                       + Locators.locatorTradingInstrumentWidgetTab_A2));
       Set<String> accessConditions = getConditionsForRunningTests(context);
 
-      System.out.println("Результат проверки видимости имеет значение -------" + isVisibilityOfOption_A);
-
-      if(isVisibilityOfOption_A == true) {
-        System.out.println("Есть ли элемент Option_A в массиве -------" + accessConditions.contains("Option_A"));
-        for(String a : accessConditions) {
-          System.out.println("!!! Element in Set A - " + a);
-        }
+    if(isVisibilityOfOption_A == true) {
         return accessConditions.contains("Option_A")
                   ? ConditionEvaluationResult.enabled("Test option A is enabled")
                   : ConditionEvaluationResult.disabled("Test option B isn't enabled because the widget option B don't visibility");
@@ -48,12 +42,9 @@ public class ConditionForOptionAorBTest implements ExecutionCondition {
             AnnotationSupport.findAnnotation(element, UserCondition.class)
                     .map(UserCondition::enabledFor)
                     .ifPresent(array -> conditionsForRunningTests.addAll(Arrays.asList(array))));
+    for (String s:conditionsForRunningTests) {
+      System.out.println(s);
+    }
     return conditionsForRunningTests;
   }
 }
-
-
-
-
-
-

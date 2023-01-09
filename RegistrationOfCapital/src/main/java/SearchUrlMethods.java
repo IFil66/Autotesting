@@ -1,7 +1,4 @@
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import java.io.*;
 import java.util.ArrayList;
@@ -11,27 +8,26 @@ public class SearchUrlMethods {
   // Settings of WebDriver - START
   static WebDriver driver;
 
-  @BeforeAll
-  static void setUp() {
+//  @BeforeAll
+//  static void setUp() {
 //    System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
 //    driver = new ChromeDriver();
 
     FirefoxOptions options = new FirefoxOptions();
-    driver = new FirefoxDriver(options);
 
     // Timeout settings
 //    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 //    driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(0));
 //    driver.manage().timeouts().setScriptTimeout(Duration.ofSeconds(1));
 
-    driver.manage().window().fullscreen();
-    driver.manage().deleteAllCookies();
-  }
+//    driver.manage().window().fullscreen();
+//    driver.manage().deleteAllCookies();
+//  }
 
-  @AfterAll
-  static void tearDown() {
-    driver.quit();
-  }
+//  @AfterAll
+//  static void tearDown() {
+//    driver.quit();
+//  }
   // Settings WebDriver - END
 
 
