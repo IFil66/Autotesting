@@ -73,9 +73,8 @@ public class Locators {
   // Main page ---------- START
   // Checking Registration / Authorization form
   // URL
-  public static final  String url = "https://capital.com/?license=NBRB";
-  public static final String licenseName = Locators.licenseNameNBRB;
-  public static final By licenseLocator = Locators.licenseBtnNBRB;
+  public static final  String url = "https://capital.com";
+
 
   // Header
   // here used locators of buttons "Log in" and "Trade now" from class "com.capital_tests.Locators"

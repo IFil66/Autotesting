@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="windows-1251">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/Main.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/SearchUrl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/SearchUrlMethods.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/Locators.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/Methods.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/java/Main.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/java/TradingInstrumentCards.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/MethodsWithAllure.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/mainPage_tests/registrationButtons_tests/EN/Tests_RegBtn_EnVers.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/mainPage_tests/registrationButtons_tests/Tests_RegistrationButtons.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/mainPage_tests/registrationButtons_tests/specific_tests/MethodsOfSpecificTests.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/mainPage_tests/registrationButtons_tests/specific_tests/Tests_TradingInstrumentsWidget.java" charset="UTF-8" />
