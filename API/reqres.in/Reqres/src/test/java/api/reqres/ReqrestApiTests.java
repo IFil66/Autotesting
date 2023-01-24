@@ -138,8 +138,8 @@ public class ReqrestApiTests {
             .then().statusCode(201)
             .extract().as(Create.Response.class);
     // Assert
-    assertThat(actualResult.name).isNotNull();
-    assertThat(actualResult.job).isNotNull();
+    assertThat(actualResult.name).isEqualTo(rq.name);
+    assertThat(actualResult.job).isEqualTo(rq.job);
     assertThat(actualResult.id).isNotNull();
     assertThat(Create.Methods.dateAndTimeFormat(actualResult.createdAt))
             .isEqualTo(Create.Methods.timeOk());
