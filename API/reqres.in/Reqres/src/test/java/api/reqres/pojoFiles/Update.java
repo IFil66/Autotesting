@@ -1,12 +1,11 @@
-package api.reqres.pojos;
+package api.reqres.pojoFiles;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Create {
+public class Update {
 
   @Data
   public class Request {
@@ -26,11 +25,8 @@ public class Create {
     @JsonProperty("job")
     public String job;
 
-    @JsonProperty("id")
-    public String id;
-
-    @JsonProperty("createdAt")
-    public String createdAt;
+    @JsonProperty("updatedAt")
+    public String updatedAt;
   }
 
   // ----------------------------------------------Methods----------------------------------------------------------
@@ -84,6 +80,5 @@ public class Create {
       return newDateAndTime;
     }
   }
-
 
 }

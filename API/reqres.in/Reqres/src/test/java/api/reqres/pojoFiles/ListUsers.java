@@ -1,4 +1,4 @@
-package api.reqres.pojos;
+package api.reqres.pojoFiles;
 
 import java.util.HashSet;
 import java.util.List;

@@ -2,7 +2,7 @@ package api.reqres;
 
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
-import api.reqres.pojos.*;
+import api.reqres.pojoFiles.*;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 
