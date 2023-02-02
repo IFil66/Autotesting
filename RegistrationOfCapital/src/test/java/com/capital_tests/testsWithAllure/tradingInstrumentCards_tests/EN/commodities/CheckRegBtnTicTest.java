@@ -1,8 +1,8 @@
-package com.capital_tests.testsWithAllure.tradingInstrumentCards_tests.EN.forex;
+package com.capital_tests.testsWithAllure.tradingInstrumentCards_tests.EN.commodities;
 
 import com.capital_tests.Locators;
 import com.capital_tests.testsWithAllure.MethodsWithAllure;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -13,7 +13,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClick
 public class CheckRegBtnTicTest extends MethodsWithAllure {
 
   @ParameterizedTest
-  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/forexTicName.csv", numLinesToSkip = 1)
+  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv", numLinesToSkip = 1)
   @DisplayName("Check 'Log In' button on page header")
   public void ticPageHeader_ClickOnBtnLogIn_LoginFormWasAppear(
          String language,  String licence, String nameTradingInstrument) throws IOException {
@@ -32,7 +32,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
   }
 
   @ParameterizedTest
-  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/forexTicName.csv", numLinesToSkip = 1)
+  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv", numLinesToSkip = 1)
   @DisplayName("Check 'Trade Now' button on page header")
   public void ticPageHeader_ClickOnBtnTradeNow_SignUpFormWasAppear(
           String language, String licence, String nameTradingInstrument) throws IOException {
@@ -50,7 +50,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
   }
 
   @ParameterizedTest
-  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/forexTicName.csv", numLinesToSkip = 1)
+  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv", numLinesToSkip = 1)
   @DisplayName("Check 'Add to favourite' button on title block")
   public void ticPage_ClickOnBtnAddToFavourite_SignUpFormWasAppear(
           String language, String licence, String nameTradingInstrument) throws IOException {
@@ -68,7 +68,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
   }
 
   @ParameterizedTest
-  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/forexTicName.csv", numLinesToSkip = 1)
+  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv", numLinesToSkip = 1)
   @DisplayName("Check Bell on trading instrument widget")
   public void ticWidget_ClickOnBtnBell_SignUpFormWasAppear(
           String language, String licence, String nameTradingInstrument) throws IOException {
@@ -87,7 +87,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
   }
 
   @ParameterizedTest
-  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/forexTicName.csv", numLinesToSkip = 1)
+  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv", numLinesToSkip = 1)
   @DisplayName("Check 'View detailed chart' button on trading instrument widget")
   public void ticWidget_ClickOnViewDetailedChart_SignUpFormWasAppear(
           String language, String licence, String nameTradingInstrument) throws IOException {
@@ -106,7 +106,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
   }
 
   @ParameterizedTest
-  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/forexTicName.csv", numLinesToSkip = 1)
+  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv", numLinesToSkip = 1)
   @DisplayName("Check 'Sell' button on trading instrument widget")
   public void ticWidget_ClickOnBtnSell_SignUpFormWasAppear(
           String language, String licence, String nameTradingInstrument) throws IOException {
@@ -125,7 +125,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
   }
 
   @ParameterizedTest
-  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/forexTicName.csv", numLinesToSkip = 1)
+  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv", numLinesToSkip = 1)
   @DisplayName("Check 'Buy' button on trading instrument widget")
   public void ticWidget_ClickOnBtnBuy_SignUpFormWasAppear(
           String language, String licence, String nameTradingInstrument) throws IOException {
@@ -144,7 +144,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
   }
 
   @ParameterizedTest
-  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/forexTicName.csv", numLinesToSkip = 1)
+  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv", numLinesToSkip = 1)
   @DisplayName("Check button on Long position overnight fee")
   public void ticLongPosition_ClickOnGoToPlatform_SignUpFormWasAppear(
           String language, String licence, String nameTradingInstrument) throws IOException {
@@ -165,7 +165,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
   }
 
   @ParameterizedTest
-  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/forexTicName.csv", numLinesToSkip = 1)
+  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv", numLinesToSkip = 1)
   @DisplayName("Check button on Short position overnight fee")
   public void ticShotPosition_ClickOnGoToPlatform_SignUpFormWasAppear(
           String language, String licence, String nameTradingInstrument) throws IOException {
@@ -186,7 +186,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
   }
 
   @ParameterizedTest
-  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/forexTicName.csv", numLinesToSkip = 1)
+  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv", numLinesToSkip = 1)
   @DisplayName("Checking button 'Try Now' on module 'Why choose Capital.com? Our numbers speak for themselves.'")
   public void ticModuleWhyChooseCapitalCom_clickOnBtnTryNow_SignUpFormWasAppear(
           String language, String licence, String nameTradingInstrument) throws IOException {
@@ -206,7 +206,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
   }
 
   @ParameterizedTest
-  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/forexTicName.csv", numLinesToSkip = 1)
+  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv", numLinesToSkip = 1)
   @DisplayName("Checking button 'Start trading' on module 'Trading calculator'")
   public void ticModuleTradingCalculator_clickOnBtnStartTrading_SignUpFormWasAppear(
           String language, String licence, String nameTradingInstrument) throws IOException {
@@ -226,7 +226,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
   }
 
   @ParameterizedTest
-  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/forexTicName.csv", numLinesToSkip = 1)
+  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv", numLinesToSkip = 1)
   @DisplayName("Checking buttons 'Trade Now' (4 items) on module widget promo market")
   public void ticModuleWidgetPromoMarket_clickOnBtnTradeNow_SignUpFormWasAppear(
           String language, String licence, String nameTradingInstrument) throws IOException {
@@ -241,7 +241,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
   }
 
   @ParameterizedTest
-  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/forexTicName.csv", numLinesToSkip = 1)
+  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv", numLinesToSkip = 1)
   @DisplayName("Checking user plus button on module 'Still looking for a broker you can trust?'")
   public void ticModuleStillLookingForBrokerYouCanTrust_clickOnBtnUserPlus_SignUpFormWasAppear(
           String language, String licence, String nameTradingInstrument) throws IOException {

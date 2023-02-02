@@ -184,7 +184,6 @@ public class MethodsWithAllure {
   @Step("Sign up form was appears")
   public void checkShowingUpSignUpForm() {
     String localReport = "";
-    Allure.addAttachment("Screenshot", new ByteArrayInputStream(saveScreenshot()));
     if(waitAndCheckingVisibilityOfElement(Locators.signUpFormH1)) {
       localReport = waitAndCheckingVisibilityOfElement(Locators.signUpFormH1) &&
               waitAndCheckingVisibilityOfElement(Locators.signUpFormFieldEmail) &&
@@ -199,7 +198,6 @@ public class MethodsWithAllure {
       clickOnElement(Locators.signUpFormBtnCancel);
     }
     else {
-      Allure.addAttachment("Screenshot", new ByteArrayInputStream(saveScreenshot()));
       localReport = waitAndCheckingVisibilityOfElement(Locators.signUpFormH1_onNewPage) &&
               waitAndCheckingVisibilityOfElement(Locators.signUpFormFieldEmail_onNewPage) &&
               waitAndCheckingVisibilityOfElement(Locators.signUpFormFieldPassword_onNewPage) ?
@@ -216,7 +214,6 @@ public class MethodsWithAllure {
   @Step("Sign up form was appears")
   public void checkShowingUpSignUpFormOnPlatform() {
     String localReport = "Sign up form was appears on platform ==> Fail";
-    Allure.addAttachment("Screenshot", new ByteArrayInputStream(saveScreenshot()));
     if(waitAndCheckingVisibilityOfElement(Locators.SIGN_UP_FORM_TITLE_ON_PLATFORM)) {
       localReport = waitAndCheckingVisibilityOfElement(Locators.SIGN_UP_FORM_PASSWORD_ON_PLATFORM) &&
               waitAndCheckingVisibilityOfElement(Locators.SIGN_UP_FORM_PASSWORD_ON_PLATFORM) ?
