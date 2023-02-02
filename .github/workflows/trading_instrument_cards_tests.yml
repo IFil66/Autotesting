@@ -1,0 +1,29 @@
+name: Testing capital.com
+
+on: workflow_dispatch
+  
+jobs:
+  test:
+  
+    name: Bild enviroment
+    runs-on: macos-latest
+    steps:
+    - name: 1. Get repository code
+      uses: actions/checkout@v3
+             
+    - name: 2. Instal JDK
+      if: always()
+      uses: actions/setup-java@v1
+      with:
+        java-version: '1.11'
+#         distribution: 'temurin'
+#         cache: maven
+      
+#     - name: 3. GitHub Action for Maven
+#       uses: xlui/action-maven-cli@jdk11
+
+#     - name: Tests Run
+#       run: mvn test -Dtest="CheckRegBtnTicTest"
+
+
+         
