@@ -7,5 +7,6 @@ public enum Licenses {
   NBRB,
   CCSTV,
   FSA,
+  SCB
 
 }

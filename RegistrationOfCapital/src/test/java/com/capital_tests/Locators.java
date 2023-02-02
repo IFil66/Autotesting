@@ -39,8 +39,14 @@ public class Locators {
   public static final By signUpFormFieldEmail_onNewPage = By.cssSelector("#testwrap input[type = 'email']");
   public static final By signUpFormFieldPassword_onNewPage = By.cssSelector("#testwrap input[type = 'password']");
 
+  // Sign up form on trading platform
+  public static final By SIGN_UP_FORM_TITLE_ON_PLATFORM = By.cssSelector("div.modal__header-title");
+  public static final By SIGN_UP_FORM_EMAIL_ON_PLATFORM = By.cssSelector("input[name = 'username']");
+  public static final By SIGN_UP_FORM_PASSWORD_ON_PLATFORM = By.cssSelector("input[name = 'password']");
+  public static final By SIGN_UP_FORM_CONTINUE_BTN_ON_PLATFORM = By.cssSelector("button.button-main");
 
-  // Modules ---------- START
+
+  // Modules ------------------------------------------- START
 
   // Header of all pages
   public static final By headerBtnLogIn = By.cssSelector("#wg_loginBtn");
@@ -50,11 +56,11 @@ public class Locators {
   // Module Widget “Promo Market”
   public static final By moduleWidgetPromoMarketTab = By.cssSelector("div.cc-sliderFade__item");
   public static final By moduleWidgetPromoMarketTabName = By.cssSelector("div.cc-sliderFade__item.active strong");
-  public static final By moduleWidgetPromoMarketBtnTradeNow = By.cssSelector("div.cc-sliderFade__item.active div.hideXs.btn");
+  public static final By moduleWidgetPromoMarketBtnTradeNow = By.cssSelector("div.cc-sliderFade__item.active a[class^='promoMarket__col btn']");
 
 
   // Module "Trading calculator"
-  public static final By moduleTradingCalculatorBtnStartTrading = By.cssSelector("div[data-type = 'btn_calculator']");
+  public static final By moduleTradingCalculatorBtnStartTrading = By.cssSelector("*[data-type = 'btn_calculator']");
 
 
   // Module "Still looking for a broker you can trust?" - START
@@ -63,14 +69,13 @@ public class Locators {
 
   // Module "Why choose Capital.com? Our numbers speak for themselves."
   public static final By moduleWhyChooseCapitalComBtnTryNow = By.cssSelector("a[data-type *= 'banner_with_counter_hor_counter_hor']");
-
-  // Modules ---------- END
+  // Modules --------------------------------------------- END
 
 
 // --------------------------------------------------------------------------------------------------------------------
 
 
-  // Main page ---------- START
+  // Main page ------------------------------------------- START
   // Checking Registration / Authorization form
   // URL
   public static final  String url = "https://capital.com";
@@ -83,7 +88,7 @@ public class Locators {
           "data/screenshots/mainPage/checkingIn_PageHeader_BtnTradeNow.png";
 
 
-  // Section "Main banner" - START
+  // Section "Main banner" -------------------------------- START
   // Slide number 1
   public static final By locatorMainBannerBtnOne = By.cssSelector("button[type = 'button'][data-slick-index = '0']");
   public static final By locatorMainBannerSlideOneBtnLeft =
@@ -117,7 +122,7 @@ public class Locators {
   // Section "Main banner" - END
 
 
-  // Section Widget "Trading instrument" - START
+  // Section Widget "Trading instrument" ----------------------------- START
 
   // Option A
   // Tab Most traded (codeName - mtr, number 7)
@@ -174,7 +179,7 @@ public class Locators {
           "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabForex.png";
   public static final String addressOfScreenshotFile_ModuleTradingInstrumentWidget_ETFs =
           "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabETFs.png";
-  // Section Widget "Trading instrument" - END
+  // Section Widget "Trading instrument" ---------------------------END
 
 
   // Section "Still looking for a broker you can trust?"
@@ -187,18 +192,19 @@ public class Locators {
   public static final String addressOfScreenshotFile_ModuleWidgetPromoMarket =
           "data/screenshots/mainPage/checkingInSection_WidgetPromoMarket_BtnTradeNow.png";
 
-  //Section "Explore our platform" - START
+  //Section "Explore our platform" ------------------------------- START
   public static final String expectedURLResultExploreOrPlatform = "";
   public static final By locatorExploreOurPlatformBtnTryNow = By.cssSelector("div[data-type = 'btn_nearby_video'] a:nth-child(2)");
   public static final String addressOfScreenshotFile_ModuleExploreOurPlatform =
           "data/screenshots/mainPage/checkingInSection_ExploreOurPlatform_BtnTryNow.png";
-  //Section "Explore our platform" - END
+  //Section "Explore our platform" ------------------------------- END
 
-  //Section "New to trading" - START
+
+  //Section "New to trading" ------------------------------------- START
   public static final By locatorNewToTradingBtnPractiseForFree = By.cssSelector("a[data-type = 'btn_new_to_trading']");
   public static final String addressOfScreenshotFile_ModuleNewToTrading =
           "data/screenshots/mainPage/checkingInSection_NewToTrading_BtnPractiseForFree.png";
-  //Section "New to trading" - END
+  //Section "New to trading" ------------------------------------- END
 
 
   // Section "Trading calculator"
@@ -206,31 +212,46 @@ public class Locators {
   public static final String addressOfScreenshotFile_ModuleTradingCalculator =
           "data/screenshots/mainPage/checkingInSection_TradingCalculator_BtnStartTrading.png";
 
-  // Section "Trader's Dashboard" - START
+
+  // Section "Trader's Dashboard" -------------------------------- START
   public static final By locatorTradersDashboard = By.cssSelector("div.tradersDashboard__item");
   public static final String locatorTradersDashboardBtnTrad1 = "div.tradersDashboard__item:nth-child(";
   public static final String locatorTradersDashboardBtnTrad2 = ") button";
 
   public static final String addressOfScreenshotFile_ModuleTradersDashboard =
           "data/screenshots/mainPage/checkingInSection_TradersDashboard_BtnsTrade.png";
-  // Section "Trader's Dashboard" - END
+  // Section "Trader's Dashboard" -------------------------------- END
 
   // Section "Why choose Capital.com? Our numbers speak for themselves"
   // here used locator of button "Try now" from class "com.capital_tests.Locators"
   public static final String addressOfScreenshotFile_ModuleWhyChooseCapitalCom =
           "data/screenshots/mainPage/checkingInSection_WhyChooseCapitalCom_BtnTryNow.png";
 
-  // Main page ---------- END
+  // Main page --------------------------------------------------- END
 
 // --------------------------------------------------------------------------------------------------------------------
 
-  // Trading instrument cards ---------- START
+  // Trading instrument cards ------------------------------------ START
+  // Files with trading instrument cards name
+  public static final String ADDRESS_TIC_NAME_FOREX = "data/tradingInstrumentCards/url/tradingInstrumentCardsName/forexTicName.txt";
+  public static final String ADDRESS_TIC_NAME_INDICES = "data/tradingInstrumentCards/url/tradingInstrumentCardsName/indicesTicName.txt";
+  public static final String ADDRESS_TIC_NAME_COMMODITIES = "data/tradingInstrumentCards/url/tradingInstrumentCardsName/commoditiesTicName.txt";
+  public static final String ADDRESS_TIC_NAME_CRYPTOCURRENCIES = "data/tradingInstrumentCards/url/tradingInstrumentCardsName/cryptocurrenciesTicName.txt";
+  public static final String ADDRESS_TIC_NAME_SHARES = "data/tradingInstrumentCards/url/tradingInstrumentCardsName/sharesTicName.txt";
+
+  // CSV files
+  public static final String ADDRESS_CSV_FILE_FOREX = "data/tradingInstrumentCards/csvFiles/forexTicName.csv";
+  public static final String ADDRESS_CSV_FILE_INDICES = "data/tradingInstrumentCards/csvFiles/indicesTicName.csv";
+  public static final String ADDRESS_CSV_FILE_COMMODITIES = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv";
+  public static final String ADDRESS_CSV_FILE_CRYPTOCURRENCIES = "data/tradingInstrumentCards/csvFiles/cryptocurrenciesTicName.csv";
+  public static final String ADDRESS_CSV_FILE_SHARES = "data/tradingInstrumentCards/csvFiles/sharesTicName.csv";
+
   // Files with URL lists
-  public static final String addressOfUrlFileFromSectionForex = "data/com.capital_tests.testsWithCustomReport.tradingInstrumentCards_tests.registrationButtons_tests.TradingInstrumentCards/Url of trading instrument pages/Done page URL/forexPagesURL.txt";
-  public static final String addressOfUrlFileFromSectionIndices = "data/com.capital_tests.testsWithCustomReport.tradingInstrumentCards_tests.registrationButtons_tests.TradingInstrumentCards/Url of trading instrument pages/Done page URL/indicesPagesURL.txt";
-  public static final String addressOfUrlFileFromSectionCommodities = "data/com.capital_tests.testsWithCustomReport.tradingInstrumentCards_tests.registrationButtons_tests.TradingInstrumentCards/Url of trading instrument pages/Done page URL/commoditiesPagesURL.txt";
-  public static final String addressOfUrlFileFromSectionCryptocurrencies = "data/com.capital_tests.testsWithCustomReport.tradingInstrumentCards_tests.registrationButtons_tests.TradingInstrumentCards/Url of trading instrument pages/Done page URL/cryptocurrenciesPagesURL-1.txt";
-  public static final String addressOfUrlFileFromSectionShares = "data/com.capital_tests.testsWithCustomReport.tradingInstrumentCards_tests.registrationButtons_tests.TradingInstrumentCards/Url of trading instrument pages/Done page URL/sharesPagesURL.txt";
+  public static final String addressOfUrlFileFromSectionForex = "data/tradingInstrumentCards/url/donePageURL/forexTicName.txt";
+  public static final String addressOfUrlFileFromSectionIndices = "data/tradingInstrumentCards/url/donePageURL/indicesPagesURL.txt";
+  public static final String addressOfUrlFileFromSectionCommodities = "data/tradingInstrumentCards/url/donePageURL/commoditiesPagesURL.txt";
+  public static final String addressOfUrlFileFromSectionCryptocurrencies = "data/tradingInstrumentCards/url/donePageURL/cryptocurrenciesPagesURL.txt";
+  public static final String addressOfUrlFileFromSectionShares = "data/tradingInstrumentCards/url/donePageURL/sharesPagesURL.txt";
 
   // Files with report about checking trading instrument card
   public static final String addressOfReportFileSectionForex = "data/com.capital_tests.testsWithCustomReport.tradingInstrumentCards_tests.registrationButtons_tests.TradingInstrumentCards/Url of trading instrument pages/Result reports/Report (Forex).txt";
@@ -239,9 +260,30 @@ public class Locators {
   public static final String addressOfReportFileSectionCryptocurrencies = "data/com.capital_tests.testsWithCustomReport.tradingInstrumentCards_tests.registrationButtons_tests.TradingInstrumentCards/Url of trading instrument pages/Result reports/Report (Cryptocurrencies)-1.txt";
   public static final String addressOfReportFileSectionShares = "data/com.capital_tests.testsWithCustomReport.tradingInstrumentCards_tests.registrationButtons_tests.TradingInstrumentCards/Url of trading instrument pages/Result reports/Report (Shares).txt";
 
-  // --arrange
+  // Special data for search the trading instrument card pages ---- START
+
+  public static final String URL_FOREX = "https://capital.com/live-currency-prices";
+  public static final String URL_INDICES = "https://capital.com/major-world-indices";
+  public static final String URL_CRYPTOCURRENCIES = "https://capital.com/live-cryptocurrency-prices";
+  public static final String URL_COMMODITIES = "https://capital.com/live-commodity-prices";
+  public static final String URL_SHARES = "https://capital.com/live-share-prices";
+
+  public static final By LAST_NUMBER_IN_LIST_PAGES = By.cssSelector("ul.pagination li:nth-last-child(2) a");
+  public static final By TRADING_INSTRUMENT_CARD_LIST = By.cssSelector("tr.trlink");
+  public static final By TRADING_INSTRUMENT_CARD_LINK = By.cssSelector("tr.trlink a[data-type = 'wdg_markets_deep']");
+  public static final By TRADING_INSTRUMENT_CARD_URL = By.cssSelector("tr.trlink:nth-child(%s) a[data-type = 'wdg_markets_deep']");
+
+
+
+
+
+
+
+
+
+  // --Arrange
   // Header
-  // here used locators of buttons "Log in" and "Trade now" from class "com.capital_tests.testsWithAllure.Locators"
+  // locators "Log in" and "Trade now" buttons placed above
 
   // Section "Trading instrument name pane"
   public static final By locatorTradingInstrumentNamePanelBtnAddToFavourite = By.cssSelector("a[data-type = 'add_fav']");
@@ -252,19 +294,26 @@ public class Locators {
   public static final By locatorWidgetBtnSell = By.cssSelector("a[data-type = 'market_sell']");
   public static final By locatorWidgetBtnBuy = By.cssSelector("a[data-type = 'market_buy']");
   public static final By locatorWidgetBtnCreateAccount = By.cssSelector("div.sharesName__notTrading a");
+  // Section "Trading Conditions"
+  // "Long position overnight fee" - "Go to platform" button
+  public static final By LONG_POSITION = By.cssSelector("table.table--num tr:nth-child(2) div.toolInfo");
+  public static final By LONG_POSITION_BTN = By.cssSelector("tr:nth-child(2) div.cc-tooltip a");
+
+  // "Short position overnight fee" - "Go to platform" button
+  public static final By SHORT_POSITION = By.cssSelector("table.table--num tr:nth-child(3) div.toolInfo");
+  public static final By SHORT_POSITION_BTN = By.cssSelector("tr:nth-child(3) div.cc-tooltip a");
 
   // Section "Why choose Capital.com? Our numbers speak for themselves"
-  // here used locator of button "Try now" from class "com.capital_tests.testsWithAllure.Locators"
+  // locator "Try now" button placed above
 
   // Section "Trading calculator"
-  // here used locator of button "Start trading" from class "com.capital_tests.testsWithAllure.Locators"
+  // locator "Start trading" button placed above
 
   // Section Widget “Promo Market”
-  // here used locators of buttons "Trade Now" from class "com.capital_tests.testsWithAllure.Locators". Total buttons - 4 item.
+  // locator "Trade Now" button placed above. Total buttons - 4 item.
 
   // Section "Still looking for a broker you can trust?"
-  // here used locator of button "user plus" from class "com.capital_tests.testsWithAllure.Locators"
+  // locator "user plus" button placed above
 
-
-  // Trading instrument cards ---------- END
+  // Trading instrument cards -------------------------------------- END
 }

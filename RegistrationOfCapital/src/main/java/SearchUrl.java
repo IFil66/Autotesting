@@ -55,7 +55,7 @@ public class SearchUrl extends SearchUrlMethods {
     System.out.println("На главной странице найдено уникальных ссылок: " + listUrl.size());
 
 
-    // Открытие редактора файла
+    // Open the file editor
     PrintWriter writer = null;
     try {
       writer = new PrintWriter(fileWithFinalUrls);
@@ -63,7 +63,7 @@ public class SearchUrl extends SearchUrlMethods {
       throw new RuntimeException(e);
     }
 
-    // Для снижения количества итераций основным циклом
+    // To reduce the number of iterations by the main cycle
     for (int n = 0; n <= 1; n++) {
       // Основной цикл
       for (int i = 0; i < listUrl.size(); i++) {
@@ -73,7 +73,7 @@ public class SearchUrl extends SearchUrlMethods {
             timeOut(3000);
             parsingElementsAndCreateUniqueElementsInList2(hashUniqueLinksFromWebElements, baseLinksLocator2, shortLinksLocator2);
 
-            // Для снижения количества итераций основного цикла
+            // To reduce the number of iterations by the main cycle
             if (n >= 1) {
             updateUrlList(listUrl, hashUniqueLinksFromWebElements);
             }

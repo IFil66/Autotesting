@@ -1,12 +1,11 @@
 package com.capital_tests.testsWithAllure;
 
 import com.capital_tests.Locators;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import org.apache.commons.io.FileUtils;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -16,27 +15,29 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 public class MethodsWithAllure {
 
   // Settings of WebDriver - START
   public static WebDriver driver;
-  @BeforeEach
-  public void setUp() {
+
+  @BeforeAll
+  public static void setUp() {
     FirefoxOptions options = new FirefoxOptions();
-    driver = new FirefoxDriver();
+    options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+    options.addArguments("-headless");
+    driver = new FirefoxDriver(options);
 
-//    driver = new FirefoxDriver(options.setHeadless(true));
 
-
-    Dimension dimension = new Dimension(1600, 1000);
-    driver.manage().window().setSize(dimension);
+//    Dimension dimension = new Dimension(1600, 1000);
+//    driver.manage().window().setSize(dimension);
     driver.manage().deleteAllCookies();
     driver.navigate().to("https://www.capital.com");
   }
 
-  @AfterEach
-  public void tearDown() {
+  @AfterAll
+  public static void tearDown() {
     driver.quit();
   }
   // Settings WebDriver - END
@@ -48,7 +49,7 @@ public class MethodsWithAllure {
   // Variables - END
 
 
-  // Basic methods ---------- START
+  // Basic methods ----------------------------------------------- START
   // Method of flexible wait for element to appear (with exception)
   @Step("Waiting for an element when it's visibility")
   public void waitForElement(By locatorOfElement) {
@@ -129,7 +130,18 @@ public class MethodsWithAllure {
   }
 
 
-  // Verification methods ---- START
+  // Verification methods -------------------------------------------- START
+  // URL collect
+  public String constructMainPagesUrl(String language, Enum license) {
+    return String.format("https://capital.com/%s?license=%s",language, license);
+  }
+
+  public String constructTradingInstrumentCardsUrl (String language, String name, String license) {
+    System.out.println(String.format("https://capital.com/%s%s?license=%s",language, name, license));
+    return String.format("https://capital.com/%s%s?license=%s",language, name, license);
+  }
+
+
   // Method to go to the page and check the current URL
   @Step("Go to the page")
   public void goToPageAndCheckUrl(String url) {
@@ -161,8 +173,10 @@ public class MethodsWithAllure {
             "Login form was appears ==> Pass" : "Login form was appears ==> Fail";
 
     System.out.println("\n" + "Method 'checkShowingUpLoginForm' is reporting: " + localReport + "\n");
+
     Assertions.assertEquals("Login form was appears ==> Pass", localReport,"Login form was appears ==> Fail");
 
+    saveScreenshot();
     clickOnElement(Locators.loginFormBtnCancel);
   }
 
@@ -170,7 +184,7 @@ public class MethodsWithAllure {
   @Step("Sign up form was appears")
   public void checkShowingUpSignUpForm() {
     String localReport = "";
-//    timeOut(500);
+    Allure.addAttachment("Screenshot", new ByteArrayInputStream(saveScreenshot()));
     if(waitAndCheckingVisibilityOfElement(Locators.signUpFormH1)) {
       localReport = waitAndCheckingVisibilityOfElement(Locators.signUpFormH1) &&
               waitAndCheckingVisibilityOfElement(Locators.signUpFormFieldEmail) &&
@@ -181,25 +195,45 @@ public class MethodsWithAllure {
       System.out.println("\n" + "Method 'checkShowingUpSignUpForm' is reporting: " + localReport + "\n");
       Assertions.assertEquals("Sign up form was appears ==> Pass", localReport,"Sign up form was appears ==> Fail");
 
+      saveScreenshot();
       clickOnElement(Locators.signUpFormBtnCancel);
     }
     else {
+      Allure.addAttachment("Screenshot", new ByteArrayInputStream(saveScreenshot()));
       localReport = waitAndCheckingVisibilityOfElement(Locators.signUpFormH1_onNewPage) &&
               waitAndCheckingVisibilityOfElement(Locators.signUpFormFieldEmail_onNewPage) &&
               waitAndCheckingVisibilityOfElement(Locators.signUpFormFieldPassword_onNewPage) ?
-              "Sign up form was appears ==> Pass" : "Sign up form was appears ==> Fail";
+              "Sign up form was appears on new page ==> Pass" : "Sign up form was appears on new page ==> Fail";
 
+      saveScreenshot();
       System.out.println("\n" + "Method 'checkShowingUpSignUpForm' is reporting: " + localReport + "\n");
-      Assertions.assertEquals("Sign up form was appears ==> Pass", localReport,"Sign up form was appears ==> Fail");
+      Assertions.assertEquals("Sign up form was appears on new page ==> Pass", localReport,"Sign up form was appears on new page ==> Fail");
 
       driver.navigate().back();
     }
   }
-  // Verification methods ---- END
+
+  @Step("Sign up form was appears")
+  public void checkShowingUpSignUpFormOnPlatform() {
+    String localReport = "Sign up form was appears on platform ==> Fail";
+    Allure.addAttachment("Screenshot", new ByteArrayInputStream(saveScreenshot()));
+    if(waitAndCheckingVisibilityOfElement(Locators.SIGN_UP_FORM_TITLE_ON_PLATFORM)) {
+      localReport = waitAndCheckingVisibilityOfElement(Locators.SIGN_UP_FORM_PASSWORD_ON_PLATFORM) &&
+              waitAndCheckingVisibilityOfElement(Locators.SIGN_UP_FORM_PASSWORD_ON_PLATFORM) ?
+              "Sign up form was appears on platform ==> Pass" : "Sign up form was appears on platform ==> Fail";
+
+      saveScreenshot();
+      System.out.println("\n" + "Method 'checkShowingUpSignUpForm' is reporting: " + localReport + "\n");
+      Assertions.assertEquals("Sign up form was appears on platform ==> Pass", localReport,"Sign up form was appears on platform ==> Fail");
+
+//      driver.navigate().back();
+    }
+  }
 
 
+  // Verification methods ------------------------------------------- END
 
-  // Utility methods ---------- START
+  // Utility methods ------------------------------------------------ START
   public static void timeOut(int milliSec){
     for(int i = 0; i < milliSec; i = i + 250 ){
       try {
@@ -275,16 +309,22 @@ public class MethodsWithAllure {
   }
 
   // Method to take a screenshot
-  @Attachment(value = "Page screenshot", type = "png")
-  public byte[] takeScreenshot(String fileAddress) throws IOException {
+  @Attachment(value = "Page screenshot", type = "image/png")
+  public byte[] getScreenshot(String fileAddress) throws IOException {
     File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
     FileUtils.copyFile(scrFile, new File(fileAddress));
     return Files.readAllBytes(Paths.get(fileAddress));
   }
-  // Utility methods ---------- END
+
+  @Attachment(value = "Screenshot", type = "image/png")
+  public byte[] saveScreenshot() {
+    return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+  }
+
+  // Utility methods ---------------------------------------------------------- END
 
 
-  // Module Widget "Trading instrument" - START
+  // Module Widget "Trading instrument" --------------------------------------- START
   @Step("Checking all buttons on a tab (option A)")
   public void checkingAllItemOnTabOption_A (String codeName) {
     By locatorOfBtns = By.cssSelector(Locators.locatorAllButtonsOnWidgetTradingInstrument_A_1
@@ -337,9 +377,9 @@ public class MethodsWithAllure {
   }
 
 
-  // Module Widget "Trading instrument" - END
+  // Module Widget "Trading instrument" ------------------------------------ END
 
-  // Module Widget “Promo Market” - START
+  // Module Widget “Promo Market” ------------------------------------------ START
   @Step("Checking all buttons on tabs (4 items)")
   public void checkingModuleWidgetPromoMarketForMainPage() {
     String localReport = "";
@@ -385,8 +425,7 @@ public class MethodsWithAllure {
     }
   }
 
-
-  // Special methods - START
+  // Special methods ------------------------------------------------------------- START
   // Method of accepting the terms of use of cookies
   public void cookiesAcceptConsent() {
     for (int time = 0;; time = time + 250) {
@@ -407,6 +446,8 @@ public class MethodsWithAllure {
     }
   }
 
+
+  // Writing and reading files methods --------------------------------------------START
   // Method of write to file
   public void writingToFile(String addressOfFileWhereToWrite, String whatToWrite) {
     PrintWriter writer = null;
@@ -445,5 +486,49 @@ public class MethodsWithAllure {
     writer.flush();
     writer.close();
   }
-  // Special methods - END
+
+  public void parsingUrlAndWriteToFile(String sectionUrl, String fileWriteAddress) {
+    ArrayList<String> tradingInstrumentCardName = new ArrayList<>();
+
+    goToPageAndCheckUrl(sectionUrl);
+
+    waitForElement(Locators.LAST_NUMBER_IN_LIST_PAGES);
+    String numberOFLastPages = driver.findElement(Locators.LAST_NUMBER_IN_LIST_PAGES).getText();
+    int cycleNumber = Integer.parseInt (numberOFLastPages);
+
+    for(int i = 1; i <= cycleNumber; i++) {
+      if(i > 1) {
+        goToPageAndCheckUrl(sectionUrl + "/" + i);
+      }
+      List<WebElement> elements = driver.findElements(Locators.TRADING_INSTRUMENT_CARD_LINK);
+      // Getting trading instrument card names and write it to list
+      for(int n = 0; n < elements.size(); n++) {
+        String url = elements.get(n).getAttribute("href");
+        int lettersNumber = url.length();
+        String name = "";
+        for(int l = 20; l < lettersNumber; l++) {
+          name = name + Character.toString(url.charAt(l));
+        }
+        tradingInstrumentCardName.add(name);
+      }
+    }
+    // Writing to file
+    PrintWriter writer = null;
+    try {
+      writer = new PrintWriter(fileWriteAddress);
+    } catch (FileNotFoundException e) {
+      throw new RuntimeException(e);
+    }
+    int number = 0;
+    for (String s: tradingInstrumentCardName) {
+      number = number + 1;
+      writer.write(s + "\n");
+      System.out.println(number + " - " + s);
+    }
+    writer.flush();
+    writer.close();
+  }
+
+  // Writing and reading files methods --------------------------------------------END
+  // Special methods ------------------------------------------------------------- END
 }

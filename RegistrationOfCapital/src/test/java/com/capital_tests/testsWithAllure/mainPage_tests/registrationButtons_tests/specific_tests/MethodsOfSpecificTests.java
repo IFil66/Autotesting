@@ -279,7 +279,7 @@ public class MethodsOfSpecificTests {
 
 
   public byte[] takeScreenshot(String fileAddress) throws IOException {
-    return methodsWithAllure.takeScreenshot(fileAddress);
+    return methodsWithAllure.getScreenshot(fileAddress);
   }
 
   // Method of write to file

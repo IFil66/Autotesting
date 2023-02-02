@@ -1,22 +1,27 @@
 package com.capital_tests.testsWithAllure.mainPage_tests.registrationButtons_tests;
 
+import com.capital_tests.Licenses;
 import com.capital_tests.Locators;
 import com.capital_tests.testsWithAllure.MethodsWithAllure;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
 import org.openqa.selenium.By;
 import java.io.IOException;
 
-@DisplayName("Tests checking registration and authorization buttons on Main page")
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@DisplayName("Tests checking registration and authorization buttons on Main page in English version")
 public class Tests_RegistrationButtons extends MethodsWithAllure {
 
+  String language = "";
+
   // Tests registration elements in Header
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking Login button on page header")
-  public void mainPageHeader_ClickOnBtnLogIn_LoginFormWasAppear() throws  IOException {
+  public void mainPageHeader_ClickOnBtnLogIn_LoginFormWasAppear(Licenses license) throws  IOException {
 
   // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     // act
     waitForElement(Locators.headerBtnLogIn);
@@ -25,14 +30,16 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
     // assert
     checkShowingUpLoginForm();
 
-    takeScreenshot(Locators.addressOfScreenshotFile_HeaderBtnTradeNow);
+    getScreenshot(Locators.addressOfScreenshotFile_HeaderBtnLogIn);
   }
 
-  @Test
+
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking Sign up button on page header")
-  public void  mainPageHeader_ClickOnBtnTradeNow_SignUpFormWasAppear() throws IOException {
+  public void  mainPageHeader_ClickOnBtnTradeNow_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     // act
     waitForElement(Locators.headerBtnTradeNow);
@@ -41,16 +48,17 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
-    takeScreenshot(Locators.addressOfScreenshotFile_HeaderBtnTradeNow);
+    getScreenshot(Locators.addressOfScreenshotFile_HeaderBtnTradeNow);
   }
 
 
   //Tests registration elements in section Main banner
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking Sign up button on Main banner in first tab (left button)")
-  public void mainPageMainBanner_clickOnTabOneAndClickOnLeftBtn_SignUpFormWasAppear() throws IOException {
+  public void mainPageMainBanner_clickOnTabOneAndClickOnLeftBtn_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     // act
     waitForElement(Locators.locatorMainBannerBtnOne);
@@ -61,14 +69,16 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
-    takeScreenshot(Locators.addressOfScreenshotFile_MainBannerSlideOneBtnLeft);
+    getScreenshot(Locators.addressOfScreenshotFile_MainBannerSlideOneBtnLeft);
   }
 
-  @Test
+
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking Sign up button on Main banner in first tab (right button)")
-  public void mainPageMainBanner_clickOnTabOneAndClickOnRightBtn_SignUpFormWasAppear() throws IOException {
+  public void mainPageMainBanner_clickOnTabOneAndClickOnRightBtn_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     // act
     waitForElement(Locators.locatorMainBannerBtnOne);
@@ -79,16 +89,16 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
-    takeScreenshot(Locators.addressOfScreenshotFile_MainBannerSlideOneBtnLeft);
+    getScreenshot(Locators.addressOfScreenshotFile_MainBannerSlideOneBtnLeft);
   }
 
 
-
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking Sign up button on Main banner in third tab (left button)")
-  public void mainPageMainBanner_clickOnTabThreeAndClickOnLeftBtn_SignUpFormWasAppear() throws IOException {
+  public void mainPageMainBanner_clickOnTabThreeAndClickOnLeftBtn_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     // act
     waitForElement(Locators.locatorMainBannerBtnThree);
@@ -99,15 +109,16 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
-    takeScreenshot(Locators.addressOfScreenshotFile_MainBannerSlideThreeBtnLeft);
+    getScreenshot(Locators.addressOfScreenshotFile_MainBannerSlideThreeBtnLeft);
   }
 
 
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking Sign up button on Main banner in third tab (right button)")
-  public void mainPageMainBanner_clickOnTabThreeAndClickOnRightBtn_SignUpFormWasAppear() throws IOException {
+  public void mainPageMainBanner_clickOnTabThreeAndClickOnRightBtn_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     // act
     waitForElement(Locators.locatorMainBannerBtnThree);
@@ -118,15 +129,16 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
-    takeScreenshot(Locators.addressOfScreenshotFile_MainBannerSlideThreeBtnRight);
+    getScreenshot(Locators.addressOfScreenshotFile_MainBannerSlideThreeBtnRight);
   }
 
 
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking user plus button on module 'Still looking for a broker you can trust?'")
-  public void mainPageModuleStillLookingForBrokerYouCanTrust_clickOnBtnUserPlus_SignUpFormWasAppear() throws IOException {
+  public void mainPageModuleStillLookingForBrokerYouCanTrust_clickOnBtnUserPlus_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     // act
     scrollToElement(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus);
@@ -136,29 +148,31 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
-    takeScreenshot(Locators.addressOfScreenshotFile_ModuleStillLookingForBrokerYouCanTrustBtnUserPlus);
+    getScreenshot(Locators.addressOfScreenshotFile_ModuleStillLookingForBrokerYouCanTrustBtnUserPlus);
   }
 
 
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking buttons 'Trade Now' (4 items) on module widget promo market")
-  public void mainPageModuleWidgetPromoMarket_clickOnBtnTradeNow_SignUpFormWasAppear() throws IOException {
+  public void mainPageModuleWidgetPromoMarket_clickOnBtnTradeNow_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     // act and assert
     checkingModuleWidgetPromoMarketForMainPage();
 
-    takeScreenshot(Locators.addressOfScreenshotFile_ModuleWidgetPromoMarket);
+    getScreenshot(Locators.addressOfScreenshotFile_ModuleWidgetPromoMarket);
   }
 
 
   //Tests registration elements in section "Explore our platform"
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking button 'Trade Now' on module 'Explore our platform'")
-  public void mainPageModuleExploreOurPlatform_clickOnBtnTryNow_SignUpFormWasAppear() throws IOException {
+  public void mainPageModuleExploreOurPlatform_clickOnBtnTryNow_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     // act
     scrollToElement(Locators.locatorExploreOurPlatformBtnTryNow);
@@ -168,16 +182,17 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
-    takeScreenshot(Locators.addressOfScreenshotFile_ModuleExploreOurPlatform);
+    getScreenshot(Locators.addressOfScreenshotFile_ModuleExploreOurPlatform);
   }
 
 
   //Tests registration elements in module "New to trading?"
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking button 'Practice for free' on module 'New to trading?'")
-  public void mainPageModuleNewToTrading_clickOnBtnPractiseForFree_SignUpFormWasAppear() throws IOException{
+  public void mainPageModuleNewToTrading_clickOnBtnPractiseForFree_SignUpFormWasAppear(Licenses license) throws IOException{
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 //    cookiesAcceptConsent();
 
     // act
@@ -188,16 +203,17 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
-    takeScreenshot(Locators.addressOfScreenshotFile_ModuleNewToTrading);
+    getScreenshot(Locators.addressOfScreenshotFile_ModuleNewToTrading);
   }
 
 
   //Tests registration elements in section "Trading calculator"
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking button 'Start trading' on module 'Trading calculator'")
-  public void mainPageModuleTradingCalculator_clickOnBtnStartTrading_SignUpFormWasAppear() throws IOException {
+  public void mainPageModuleTradingCalculator_clickOnBtnStartTrading_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 //    cookiesAcceptConsent();
 
     // act
@@ -208,16 +224,17 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
-    takeScreenshot(Locators.addressOfScreenshotFile_ModuleTradingCalculator);
+    getScreenshot(Locators.addressOfScreenshotFile_ModuleTradingCalculator);
   }
 
 
   //Tests registration elements in section "Trader's Dashboard"
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking buttons 'Trade' (5 items) on module 'Trader's Dashboard'")
-  public void mainPageModuleTradersDashboard_clickOnBtnTrade_SignUpFormWasAppear() throws IOException {
+  public void mainPageModuleTradersDashboard_clickOnBtnTrade_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 //    cookiesAcceptConsent();
 
     // act
@@ -226,16 +243,17 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
     // and assert
     checkingAllBtnOnTradersDashboard();
 
-    takeScreenshot(Locators.addressOfScreenshotFile_ModuleTradersDashboard);
+    getScreenshot(Locators.addressOfScreenshotFile_ModuleTradersDashboard);
  }
 
 
   //Tests registration elements in section "Why choose Capital.com? Our numbers speak for themselves"
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking button 'Try Now' on module 'Why choose Capital.com? Our numbers speak for themselves.'")
-  public void mainPageModuleWhyChooseCapitalCom_clickOnBtnTryNow_SignUpFormWasAppear() throws IOException {
+  public void mainPageModuleWhyChooseCapitalCom_clickOnBtnTryNow_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     // act
 
@@ -247,16 +265,17 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
-    takeScreenshot(Locators.addressOfScreenshotFile_ModuleWhyChooseCapitalCom);
+    getScreenshot(Locators.addressOfScreenshotFile_ModuleWhyChooseCapitalCom);
   }
 
   // Trading instruments widget module --- START
 
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking Trade buttons on Trading instrument widget tab Most Traded")
-  public void mainPageTradingInstrumentWidget_MostTraded_clickOnTabsAndClickAllBtnTrade_SignUpFormWasAppear() throws IOException{
+  public void mainPageTradingInstrumentWidget_MostTraded_clickOnTabsAndClickAllBtnTrade_SignUpFormWasAppear(Licenses license) throws IOException{
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     String codename = "mtr";
     By locatorOptionA = By.cssSelector(Locators.locatorTradingInstrumentWidgetTab_A1
@@ -283,14 +302,15 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
       // assert
       checkingAllItemOnTabOption_B(codename);
     }
-    takeScreenshot(Locators.addressOfScreenshotFile_ModuleTradingInstrumentWidget_MostTraded);
+    getScreenshot(Locators.addressOfScreenshotFile_ModuleTradingInstrumentWidget_MostTraded);
   }
 
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking Trade buttons on Trading instrument widget tab Commodities")
-  public void mainPageTradingInstrumentWidget_Commodities_clickOnTabsAndClickAllBtnTrade_SignUpFormWasAppear() throws IOException {
+  public void mainPageTradingInstrumentWidget_Commodities_clickOnTabsAndClickAllBtnTrade_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     String codename = "com";
     By locatorOptionA = By.cssSelector(Locators.locatorTradingInstrumentWidgetTab_A1
@@ -318,14 +338,15 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
       checkingAllItemOnTabOption_B(codename);
 
     }
-    takeScreenshot(Locators.addressOfScreenshotFile_ModuleTradingInstrumentWidget_Commodities);
+    getScreenshot(Locators.addressOfScreenshotFile_ModuleTradingInstrumentWidget_Commodities);
   }
 
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking Trade buttons on Trading instrument widget tab Indices")
-  public void mainPageTradingInstrumentWidget_Indices_clickOnTabsAndClickAllBtnTrade_SignUpFormWasAppear() throws IOException {
+  public void mainPageTradingInstrumentWidget_Indices_clickOnTabsAndClickAllBtnTrade_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     String codename = "ind";
     By locatorOptionA = By.cssSelector(Locators.locatorTradingInstrumentWidgetTab_A1
@@ -350,14 +371,15 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
       // assert
       checkingAllItemOnTabOption_B(codename);
     }
-    takeScreenshot(Locators.addressOfScreenshotFile_ModuleTradingInstrumentWidget_Indices);
+    getScreenshot(Locators.addressOfScreenshotFile_ModuleTradingInstrumentWidget_Indices);
   }
 
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking Trade buttons on Trading instrument widget tab Crypto")
-  public void mainPageTradingInstrumentWidget_Crypto_clickOnTabsAndClickAllBtnTrade_SignUpFormWasAppear() throws IOException {
+  public void mainPageTradingInstrumentWidget_Crypto_clickOnTabsAndClickAllBtnTrade_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     String codename = "cryp";
     By locatorOptionA = By.cssSelector(Locators.locatorTradingInstrumentWidgetTab_A1
@@ -384,14 +406,15 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
       // assert
       checkingAllItemOnTabOption_B(codename);
     }
-    takeScreenshot(Locators.addressOfScreenshotFile_ModuleTradingInstrumentWidget_Crypto);
+    getScreenshot(Locators.addressOfScreenshotFile_ModuleTradingInstrumentWidget_Crypto);
   }
 
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking Trade buttons on Trading instrument widget tab Shares")
-  public void mainPageTradingInstrumentWidget_Shares_clickOnTabsAndClickAllBtnTrade_SignUpFormWasAppear() throws IOException {
+  public void mainPageTradingInstrumentWidget_Shares_clickOnTabsAndClickAllBtnTrade_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     String codename = "shar";
     By locatorOptionA = By.cssSelector(Locators.locatorTradingInstrumentWidgetTab_A1
@@ -418,14 +441,15 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
       // assert
       checkingAllItemOnTabOption_B(codename);
     }
-    takeScreenshot(Locators.addressOfScreenshotFile_ModuleTradingInstrumentWidget_Shares);
+    getScreenshot(Locators.addressOfScreenshotFile_ModuleTradingInstrumentWidget_Shares);
   }
 
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking Trade buttons on Trading instrument widget tab Forex")
-  public void mainPageTradingInstrumentWidget_Forex_clickOnTabsAndClickAllBtnTrade_SignUpFormWasAppear() throws IOException {
+  public void mainPageTradingInstrumentWidget_Forex_clickOnTabsAndClickAllBtnTrade_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     String codename = "fx";
     By locatorOptionA = By.cssSelector(Locators.locatorTradingInstrumentWidgetTab_A1
@@ -452,14 +476,15 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
       // assert
       checkingAllItemOnTabOption_B(codename);
     }
-    takeScreenshot(Locators.addressOfScreenshotFile_ModuleTradingInstrumentWidget_Forex);
+    getScreenshot(Locators.addressOfScreenshotFile_ModuleTradingInstrumentWidget_Forex);
   }
 
-  @Test
+  @ParameterizedTest
+  @EnumSource(Licenses.class)
   @DisplayName("Checking Trade buttons on Trading instrument widget tab ETFs")
-  public void mainPageTradingInstrumentWidget_ETFs_clickOnTabsAndClickAllBtnTrade_SignUpFormWasAppear() throws IOException {
+  public void mainPageTradingInstrumentWidget_ETFs_clickOnTabsAndClickAllBtnTrade_SignUpFormWasAppear(Licenses license) throws IOException {
     // arrange
-    goToPageAndCheckUrl(Locators.url);
+    goToPageAndCheckUrl(constructMainPagesUrl(language, license));
 
     String codename = "etf";
     By locatorOptionA = By.cssSelector(Locators.locatorTradingInstrumentWidgetTab_A1
@@ -486,7 +511,7 @@ public class Tests_RegistrationButtons extends MethodsWithAllure {
       // assert
       checkingAllItemOnTabOption_B(codename);
     }
-    takeScreenshot(Locators.addressOfScreenshotFile_ModuleTradingInstrumentWidget_ETFs);
+    getScreenshot(Locators.addressOfScreenshotFile_ModuleTradingInstrumentWidget_ETFs);
   }
   // Trading instruments widget module --- END
 }
