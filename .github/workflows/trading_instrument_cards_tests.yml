@@ -11,13 +11,13 @@ jobs:
     - name: 1. Get repository code
       uses: actions/checkout@v3
              
-    - name: 2. Instal JDK
-      if: always()
-      uses: actions/setup-java@v3
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-        cache: maven
+#     - name: 2. Instal JDK
+#       if: always()
+#       uses: actions/setup-java@v3
+#       with:
+#         java-version: '11'
+#         distribution: 'temurin'
+#         cache: maven
       
     - name: 3. GitHub Action for Maven
       uses: xlui/action-maven-cli@jdk11
