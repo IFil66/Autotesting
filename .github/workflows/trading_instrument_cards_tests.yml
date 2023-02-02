@@ -23,7 +23,7 @@ jobs:
 #       uses: xlui/action-maven-cli@jdk11
 
     - name: Tests Run
-      run: mvn -f /Users/runner/work/Autotesting/RegistrationOfCapital/pom.xml test -Dtest="CheckRegBtnTicTest"
+      run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml test -Dtest="CheckRegBtnTicTest"
 
 
          
