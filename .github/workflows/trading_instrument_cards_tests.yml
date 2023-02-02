@@ -1,23 +1,23 @@
-
-name: capital.com
+name: Testing capital.com
 
 on: workflow_dispatch
   
 jobs:
   test:
-
+  
+    name: Bild enviroment
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Get repository code
+    - name: 1. Get repository code
       uses: actions/checkout@v3
-    - name: Instal JDK 11
+      
+    - name: 2. Instal JDK
+      if: always()
       uses: actions/setup-java@v3
       with:
-        java-version: '11'
-        distribution: 'abort'
-        
-    - name: GitHub Action for Maven
+        java-version: '11'    
+      
+    - name: 3. GitHub Action for Maven
       uses: xlui/action-maven-cli@jdk11
 
     - name: Tests Run
