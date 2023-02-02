@@ -24,7 +24,7 @@ public class Locators {
   public static final By loginFormH1 = By.cssSelector("#l_overlay div.h1");
   public static final By loginFormFieldEmail = By.cssSelector("#l_overlay input[type = 'email']");
   public static final By loginFormFieldPassword = By.cssSelector("#l_overlay input[type = 'password']");
-  public static final By loginFormBtnCancel = By.cssSelector("#l_overlay button.button-cleared");
+  public static final By loginFormBtnCancel = By.cssSelector("#l_overlay button.button-cleared22");
 
 
   // Sign up form
