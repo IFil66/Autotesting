@@ -9,7 +9,8 @@
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/Locators.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/MethodsWithAllure.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/mainPage_tests/registrationButtons_tests/EN/Tests_RegBtn_EnVers.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/mainPage_tests/MainPage.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/mainPage_tests/registrationButtons_tests/EN/Tests_RegBtn_EnVers.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/mainPage_tests/registrationButtons_tests/Tests_RegistrationButtons.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/mainPage_tests/registrationButtons_tests/specific_tests/MethodsOfSpecificTests.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/mainPage_tests/registrationButtons_tests/specific_tests/Tests_TradingInstrumentsWidget.java" charset="UTF-8" />
