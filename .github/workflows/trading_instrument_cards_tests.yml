@@ -6,16 +6,16 @@ jobs:
   test:
   
     name: Bild enviroment
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
     - name: 1. Get repository code
       uses: actions/checkout@v3
              
-#     - name: 2. Instal JDK
-#       if: always()
-#       uses: actions/setup-java@v3
-#       with:
-#         java-version: '11'
+    - name: 2. Instal JDK
+      if: always()
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
 #         distribution: 'temurin'
 #         cache: maven
       
