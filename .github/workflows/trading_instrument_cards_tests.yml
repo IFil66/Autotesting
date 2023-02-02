@@ -1,0 +1,25 @@
+
+name: capital.com
+
+on: workflow_dispatch
+  
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Get repository code
+      uses: actions/checkout@v3
+    - name: Instal JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'abort'
+        
+    - name: GitHub Action for Maven
+      uses: xlui/action-maven-cli@jdk11
+
+    - name: Tests Run
+      run: mvn test -Dtest="CheckRegBtnTicTest"
+      
