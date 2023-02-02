@@ -1,0 +1,9 @@
+
+На странице: 	https://capital.com/carbon-emissions-futures-ecfz23-commodity	В карточке торгового инструмента: ECFZ23	 не подгружается информация о цене покупки
+На странице: 	https://capital.com/us-natural-gas-futures-ngv22-commodity	В карточке торгового инструмента: NGV22	 не подгружается информация о цене покупки
+На странице: 	https://capital.com/us-natural-gas-futures-ngx22-commodity	В карточке торгового инструмента: NGX22	 не подгружается информация о цене покупки
+На странице: 	https://capital.com/us-natural-gas-futures-ngz22-commodity	В карточке торгового инструмента: NGZ22	 не подгружается информация о цене покупки
+На странице: 	https://capital.com/wheat-spot-commodity	В карточке торгового инструмента: Wheat	 не подгружается информация о цене покупки
+
+Итого карточек:  5
+Как?! Опять писать багрепорты?

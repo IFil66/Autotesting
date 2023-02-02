@@ -1,0 +1,56 @@
+https://capital.com/us-tech-100-index?license=CYSEC	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/us-wall-street-30-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/germany-40-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/sp-500-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/hong-kong-50-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/ftse-100-uk-market-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/india-50-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/us-dollar-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/us-smallcap-2000-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/cboe-volatility-index-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/france-40-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/japan-225-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/ftse-china-a50-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/euro-stoxx50-sx5e-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/swiss-stock-exchange-20-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/australia-200-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/ftse-borsa-italiana-index-40-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/netherlands-exchange-25-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/msci-singapore-index-25-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/spain-35-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/cboe-volatility-index-futures-aug-22-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/cboe-volatility-index-futures-vxn21-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/cboe-volatility-index-futures-jul-22-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/cboe-volatility-index-futures-may-2022-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/cboe-volatility-index-futures-vxv21-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/cboe-volatility-index-futures-oct-22-index	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	Pass	
+
+https://capital.com/cboe-volatility-index-futures-sept-22-index	Pass	Pass	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	
+
+https://capital.com/italy-40-futures-sep-22-index	Pass	Pass	Pass	Pass	Pass	Fail (Button isn't visible)	Fail (Button isn't visible)	Pass	Pass	Pass	Pass	Pass	
+
