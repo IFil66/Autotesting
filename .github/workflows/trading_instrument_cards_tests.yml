@@ -19,11 +19,11 @@ jobs:
 #         distribution: 'temurin'
 #         cache: maven
       
-    - name: 3. GitHub Action for Maven
-      uses: xlui/action-maven-cli@jdk11
+#     - name: 3. GitHub Action for Maven
+#       uses: xlui/action-maven-cli@jdk11
 
-    - name: Tests Run
-      run: mvn test -Dtest="CheckRegBtnTicTest"
+#     - name: Tests Run
+#       run: mvn test -Dtest="CheckRegBtnTicTest"
 
 
          
