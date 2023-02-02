@@ -7,6 +7,6 @@ public class Tests_RegBtn_EnVers {
 
   @Test
   public void print() {
-    System.out.print("Тест прошёл!!!!!!!!");
+    System.out.print("РўРµСЃС‚ РїСЂРѕС€С‘Р»!!!!!!!!");
   }
 }

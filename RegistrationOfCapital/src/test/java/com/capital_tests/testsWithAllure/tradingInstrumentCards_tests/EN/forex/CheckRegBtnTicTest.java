@@ -13,7 +13,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClick
 public class CheckRegBtnTicTest extends MethodsWithAllure {
 
   @ParameterizedTest
-  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/arguments.csv", numLinesToSkip = 1)
+  @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/forexTicName.csv", numLinesToSkip = 1)
   @DisplayName("Check 'Log In' button on page header")
   public void ticPageHeader_ClickOnBtnLogIn_LoginFormWasAppear(
          String language,  String licence, String nameTradingInstrument) throws IOException {
