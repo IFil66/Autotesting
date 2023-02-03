@@ -58,7 +58,7 @@ jobs:
         id: download
         with:
           name: allure-results
-          path: allure-results
+          path: RegistrationOfCapital/target/allure-results
 
       - name: 3. Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
