@@ -21,9 +21,7 @@ jobs:
        
     - name: Tests Run
       if: always()
-      run:
-        ls -la
-        mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicSharesTest"
+      run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicSharesTest"
         
     - name: 8. Upload artifact "allure-results"
       if: always()
