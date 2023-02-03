@@ -27,11 +27,11 @@ jobs:
       run: ls -la
       
     - name: go to folder
-      run: cd RegistrationOfCapital/target
+      run:
+        cd RegistrationOfCapital/target
+        ls -la
       
-    - name: Show me folder-2
-      run: ls -la
-      
+          
     
     - name: 8. Upload artifact "allure-results"
       if: always()
