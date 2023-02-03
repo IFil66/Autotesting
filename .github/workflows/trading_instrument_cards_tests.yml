@@ -86,7 +86,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: allure_report
-          path: RegistrationOfCapital/target/allure-history/allure-report/ 
+          path: RegistrationOfCapital/target/allure-history/allure_report/ 
   
   
   
