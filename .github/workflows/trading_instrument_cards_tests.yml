@@ -28,7 +28,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: allure-results
-        path: RegistrationOfCapital/target/allure-results/
+        path: RegistrationOfCapital/target/allure-results
         retention-days: 10
 
 
@@ -51,7 +51,7 @@ jobs:
         id: download
         with:
           name: allure-results
-          path: RegistrationOfCapital/target/allure-results/
+          path: RegistrationOfCapital/target/allure-results
 
       - name: 3. Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
