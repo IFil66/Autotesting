@@ -30,6 +30,13 @@ jobs:
         name: allure-results
         path: RegistrationOfCapital/target/allure-results
         retention-days: 10
+    
+    - name: 5. Show me folder
+      run:
+        ls -la;
+        cd RegistrationOfCapital/target/allure-results;
+        ls -la;
+      
 
 
   generate_report:
