@@ -21,14 +21,16 @@ jobs:
        
     - name: 3. Tests Run
       if: always()
-      run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicSharesTest"
+      run:
+        mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml;
+        mvn clean test -Dtest="CheckRegBtnTicSharesTest";
        
     - name: 4. Upload artifact "allure-results"
       if: always()
       uses: actions/upload-artifact@v3
       with:
         name: allure-results
-        path: allure-results
+        path: RegistrationOfCapital/target/allure-results
         retention-days: 10
     
     - name: 5. Show me folder
