@@ -23,22 +23,9 @@ jobs:
 #       uses: xlui/action-maven-cli@jdk11
 
     - name: Tests Run
-      run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml test -Dtest="CheckRegBtnTicTest"
+      run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicTest"
       
-    - name: 8. Upload artifact "results"
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: report
-        path: report/
-
-    - name: 9. Upload artifact "allure-results"
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: allure-results
-        path: allure-results/
-        retention-days: 10
+   
         
 #   generate_report:
 #     name: II. Create Allure report
