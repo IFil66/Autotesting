@@ -19,7 +19,7 @@
     <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/tradingInstrumentCards_tests/EN/cryptocurrencies/CheckRegBtnTicTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/tradingInstrumentCards_tests/EN/forex/CheckRegBtnTicTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/tradingInstrumentCards_tests/EN/indices/CheckRegBtnTicTest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/tradingInstrumentCards_tests/EN/shares/CheckRegBtnTicTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/tradingInstrumentCards_tests/EN/shares/CheckRegBtnTicSharesTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithAllure/tradingInstrumentCards_tests/ParsingTicNames.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithCustomReport/MethodsWithCustomReport.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/capital_tests/testsWithCustomReport/tradingInstrumentCards_tests/TradingInstrumentCards.java" charset="UTF-8" />
