@@ -6,7 +6,7 @@ jobs:
   tests:
   
     name: I. Bild enviroment
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
     - name: 1. Get repository code
       uses: actions/checkout@v3
@@ -29,7 +29,7 @@ jobs:
         
   generate_report:
     name: II. Create Allure report
-    runs-on: macos-latest
+    runs-on: ubumtu-latest
     if: always()
     needs: [ tests ]
     steps:
