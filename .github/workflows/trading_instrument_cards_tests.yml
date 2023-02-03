@@ -24,7 +24,7 @@ jobs:
       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicSharesTest"
     
     - name: Show me folder
-      run: ls -la cd RegistrationOfCapital ls -la
+      run: cd RegistrationOfCapital/target ls -la
       
     
     - name: 8. Upload artifact "allure-results"
