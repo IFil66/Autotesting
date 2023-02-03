@@ -19,8 +19,8 @@ jobs:
         distribution: 'temurin'
         cache: maven
       
-#     - name: 3. GitHub Action for Maven
-#       uses: xlui/action-maven-cli@jdk11
+    - name: 3. GitHub Action for Maven
+      uses: xlui/action-maven-cli@jdk11
 
     - name: Tests Run
       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicSharesTest"
