@@ -2,6 +2,7 @@ package com.capital_tests.testsWithAllure.tradingInstrumentCards_tests.EN.shares
 
 import com.capital_tests.Locators;
 import com.capital_tests.testsWithAllure.MethodsWithAllure;
+import io.qameta.allure.Allure;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -28,6 +29,7 @@ public class CheckRegBtnTicSharesTest extends MethodsWithAllure {
     // assert
     checkShowingUpLoginForm();
 
+    Allure.addAttachment("URL", getCurrentUrl());
     saveScreenshot();
   }
 
@@ -46,6 +48,7 @@ public class CheckRegBtnTicSharesTest extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
+    Allure.addAttachment("URL", getCurrentUrl());
     saveScreenshot();
   }
 
@@ -64,6 +67,7 @@ public class CheckRegBtnTicSharesTest extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
+    Allure.addAttachment("URL", getCurrentUrl());
     saveScreenshot();
   }
 
@@ -83,6 +87,7 @@ public class CheckRegBtnTicSharesTest extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
+    Allure.addAttachment("URL", getCurrentUrl());
     saveScreenshot();
   }
 
@@ -102,6 +107,7 @@ public class CheckRegBtnTicSharesTest extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
+    Allure.addAttachment("URL", getCurrentUrl());
     saveScreenshot();
   }
 
@@ -121,6 +127,7 @@ public class CheckRegBtnTicSharesTest extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
+    Allure.addAttachment("URL", getCurrentUrl());
     saveScreenshot();
   }
 
@@ -140,6 +147,7 @@ public class CheckRegBtnTicSharesTest extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
+    Allure.addAttachment("URL", getCurrentUrl());
     saveScreenshot();
   }
 
@@ -161,6 +169,7 @@ public class CheckRegBtnTicSharesTest extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpFormOnPlatform();
 
+    Allure.addAttachment("URL", getCurrentUrl());
     saveScreenshot();
   }
 
@@ -182,6 +191,7 @@ public class CheckRegBtnTicSharesTest extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpFormOnPlatform();
 
+    Allure.addAttachment("URL", getCurrentUrl());
     saveScreenshot();
   }
 
@@ -202,6 +212,7 @@ public class CheckRegBtnTicSharesTest extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
+    Allure.addAttachment("URL", getCurrentUrl());
     saveScreenshot();
   }
 
@@ -222,6 +233,7 @@ public class CheckRegBtnTicSharesTest extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
+    Allure.addAttachment("URL", getCurrentUrl());
     saveScreenshot();
   }
 
@@ -237,6 +249,7 @@ public class CheckRegBtnTicSharesTest extends MethodsWithAllure {
     // act and assert
     checkingModuleWidgetPromoMarketForMainPage();
 
+    Allure.addAttachment("URL", getCurrentUrl());
     saveScreenshot();
   }
 
@@ -257,6 +270,7 @@ public class CheckRegBtnTicSharesTest extends MethodsWithAllure {
     // assert
     checkShowingUpSignUpForm();
 
+    Allure.addAttachment("URL", getCurrentUrl());
     saveScreenshot();
   }
 
