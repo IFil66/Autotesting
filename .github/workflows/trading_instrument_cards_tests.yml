@@ -24,14 +24,11 @@ jobs:
       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicSharesTest"
     
     - name: Show me folder-1
-      run: ls -la
-      
-    - name: go to folder
       run:
-        cd RegistrationOfCapital/target
+        ls -la;
+        cd RegistrationOfCapital/target;
         ls -la
       
-          
     
     - name: 8. Upload artifact "allure-results"
       if: always()
