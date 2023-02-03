@@ -27,7 +27,9 @@ jobs:
       run:
         ls -la;
         cd RegistrationOfCapital/target;
-        ls -la
+        ls -la;
+        cd allure-results;
+        ls -la;
       
     
     - name: 8. Upload artifact "allure-results"
@@ -35,7 +37,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: allure-results
-        path: target/allure-results/
+        path: RegistrationOfCapital/target/allure-results/
         retention-days: 10
 
 
