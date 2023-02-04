@@ -80,8 +80,5 @@ jobs:
         with:
           name: allure_report
           path: allure_report/ 
-          
-      - name: 5. Archive code coverage results
-        run: pwd; ls -la;
   
   
