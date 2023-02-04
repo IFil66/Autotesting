@@ -31,16 +31,15 @@ jobs:
         path: RegistrationOfCapital/target/allure-results
         retention-days: 10
     
-    - name: Show me folder-1
-      run:
-        pwd;
-        ls -la;
-        cd RegistrationOfCapital/target
-        ls -la;
-        cd allure-results;
-        ls -la;
+#     - name: Show me folder-1
+#       run:
+#         pwd;
+#         ls -la;
+#         cd RegistrationOfCapital/target
+#         ls -la;
+#         cd allure-results;
+#         ls -la;
       
-
   generate_report:
     name: II. Generate & Deploy Allure report
     runs-on: ubuntu-latest
@@ -50,10 +49,7 @@ jobs:
     
       - name: Show me folder-1
         run: pwd; ls -la;
-      
-      - name: Show me folder RegistrationOfCapital
-        run: cd RegistrationOfCapital; ls -la;
-                  
+                            
       - name: 1. Get Allure history
         uses: actions/checkout@v3
         if: always()
