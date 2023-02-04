@@ -22,6 +22,7 @@ public class CheckRegBtnTicCommoditiesTest extends MethodsWithAllure {
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
 
     // act
+    scrollToElement(Locators.headerBtnLogIn);
     waitForElement(Locators.headerBtnLogIn);
     clickOnElement(Locators.headerBtnLogIn);
 
@@ -40,6 +41,7 @@ public class CheckRegBtnTicCommoditiesTest extends MethodsWithAllure {
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
 
     // act
+    scrollToElement(Locators.headerBtnTradeNow);
     waitForElement(Locators.headerBtnTradeNow);
     clickOnElement(Locators.headerBtnTradeNow);
 
@@ -58,8 +60,9 @@ public class CheckRegBtnTicCommoditiesTest extends MethodsWithAllure {
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
 
     // act
-    waitForElement(Locators.headerBtnTradeNow);
-    clickOnElement(Locators.headerBtnTradeNow);
+    scrollToElement(Locators.tradingInstrumentNamePanelBtnAddToFavourite);
+    waitForElement(Locators.tradingInstrumentNamePanelBtnAddToFavourite);
+    clickOnElement(Locators.tradingInstrumentNamePanelBtnAddToFavourite);
 
     // assert
     checkShowingUpSignUpForm();
@@ -77,8 +80,9 @@ public class CheckRegBtnTicCommoditiesTest extends MethodsWithAllure {
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
 
     // act
-    waitForElement(Locators.locatorWidgetBtnBell);
-    clickOnElement(Locators.locatorWidgetBtnBell);
+    scrollToElement(Locators.widgetBtnBell);
+    waitForElement(Locators.widgetBtnBell);
+    clickOnElement(Locators.widgetBtnBell);
 
     // assert
     checkShowingUpSignUpForm();
@@ -96,8 +100,9 @@ public class CheckRegBtnTicCommoditiesTest extends MethodsWithAllure {
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
 
     // act
-    waitForElement(Locators.headerBtnTradeNow);
-    clickOnElement(Locators.headerBtnTradeNow);
+    scrollToElement(Locators.widgetBtnViewDetailedChart);
+    waitForElement(Locators.widgetBtnViewDetailedChart);
+    clickOnElement(Locators.widgetBtnViewDetailedChart);
 
     // assert
     checkShowingUpSignUpForm();
@@ -115,8 +120,9 @@ public class CheckRegBtnTicCommoditiesTest extends MethodsWithAllure {
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
 
     // act
-    waitForElement(Locators.headerBtnTradeNow);
-    clickOnElement(Locators.headerBtnTradeNow);
+    scrollToElement(Locators.widgetBtnSell);
+    waitForElement(Locators.widgetBtnSell);
+    clickOnElement(Locators.widgetBtnSell);
 
     // assert
     checkShowingUpSignUpForm();
@@ -134,8 +140,9 @@ public class CheckRegBtnTicCommoditiesTest extends MethodsWithAllure {
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
 
     // act
-    waitForElement(Locators.headerBtnTradeNow);
-    clickOnElement(Locators.headerBtnTradeNow);
+    scrollToElement(Locators.widgetBtnBuy);
+    waitForElement(Locators.widgetBtnBuy);
+    clickOnElement(Locators.widgetBtnBuy);
 
     // assert
     checkShowingUpSignUpForm();
@@ -153,6 +160,7 @@ public class CheckRegBtnTicCommoditiesTest extends MethodsWithAllure {
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
 
     // act
+    scrollToElement(Locators.LONG_POSITION);
     waitForElement(Locators.LONG_POSITION);
     clickOnElement(Locators.LONG_POSITION);
     elementToBeClickable(Locators.LONG_POSITION_BTN);
@@ -174,6 +182,7 @@ public class CheckRegBtnTicCommoditiesTest extends MethodsWithAllure {
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
 
     // act
+    scrollToElement(Locators.SHORT_POSITION);
     waitForElement(Locators.SHORT_POSITION);
     clickOnElement(Locators.SHORT_POSITION);
     elementToBeClickable(Locators.SHORT_POSITION_BTN);

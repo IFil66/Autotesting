@@ -286,13 +286,13 @@ public class Locators {
   // locators "Log in" and "Trade now" buttons placed above
 
   // Section "Trading instrument name pane"
-  public static final By locatorTradingInstrumentNamePanelBtnAddToFavourite = By.cssSelector("a[data-type = 'add_fav']");
+  public static final By tradingInstrumentNamePanelBtnAddToFavourite = By.cssSelector("a[data-type = 'add_fav']");
 
   // Section "Widget"
-  public static final By locatorWidgetBtnBell = By.cssSelector("a[data-type = 'market_alerts']");
-  public static final By locatorWidgetBtnViewDetailedChart = By.cssSelector("a[data-type = 'detailed_chart']");
-  public static final By locatorWidgetBtnSell = By.cssSelector("a[data-type = 'market_sell']");
-  public static final By locatorWidgetBtnBuy = By.cssSelector("a[data-type = 'market_buy']");
+  public static final By widgetBtnBell = By.cssSelector("a[data-type = 'market_alerts']");
+  public static final By widgetBtnViewDetailedChart = By.cssSelector("a[data-type = 'detailed_chart']");
+  public static final By widgetBtnSell = By.cssSelector("a[data-type = 'market_sell']");
+  public static final By widgetBtnBuy = By.cssSelector("a[data-type = 'market_buy']");
   public static final By locatorWidgetBtnCreateAccount = By.cssSelector("div.sharesName__notTrading a");
   // Section "Trading Conditions"
   // "Long position overnight fee" - "Go to platform" button
