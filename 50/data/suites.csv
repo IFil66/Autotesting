@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Feb 04 02:40:53 GMT 2023","Sat Feb 04 02:40:56 GMT 2023","3333","","com.capital_tests.testsWithAllure.tradingInstrumentCards_tests.EN.shares.CheckRegBtnTicSharesTest","","com.capital_tests.testsWithAllure.tradingInstrumentCards_tests.EN.shares.CheckRegBtnTicSharesTest","ticPage_ClickOnBtnAddToFavourite_SignUpFormWasAppear","Check 'Add to favourite' button on title block [1] , ASIC, zomedica-corp-share-price",""
