@@ -46,14 +46,15 @@ jobs:
     if: always()
     needs: [ tests ]
     steps:
-      - uses: actions/checkout@v2
     
-      - name: Show me folder
+      - name: Show me folder-1
         run: ls -la;
-            
       
+      - name: Show me folder RegistrationOfCapital
+        run: cd RegistrationOfCapital; ls -la;
+                  
       - name: 1. Get Allure history
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         if: always()
         continue-on-error: true
         with:
@@ -65,7 +66,7 @@ jobs:
         id: download
         with:
           name: allure-results
-          path: RegistrationOfCapital/target/allure-results
+          path: allure-results
 
       - name: 3. Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
@@ -80,17 +81,20 @@ jobs:
           path: gh-pages
           keep_reports: 10
           
-      - name: Show me folder allure-results
-        run: cd allure-results; ls -la;
+      - name: Show me folder-2
+        run: ls -la;
+          
+#       - name: Show me folder allure-results
+#         run: cd allure-results; ls -la;
         
-      - name: Show me folder allure-report
-        run: cd allure-report; ls -la;
+#       - name: Show me folder allure-report
+#         run: cd allure-report; ls -la;
         
-      - name: Show me folder allure-history
-        run: cd allure-history; ls -la;
+#       - name: Show me folder allure-history
+#         run: cd allure-history; ls -la;
         
-      - name: Show me folder gh-pages
-        run: cd gh-pages; ls -la;
+#       - name: Show me folder gh-pages
+#         run: cd gh-pages; ls -la;
 
       - name: 4. Deploy allure_report to Github Pages
         if: always()      
