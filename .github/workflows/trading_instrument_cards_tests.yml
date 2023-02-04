@@ -19,9 +19,14 @@ jobs:
         distribution: 'temurin'
         cache: maven
        
-    - name: 3. Tests Run
+    - name: 3. Section Commodities tests Run
       if: always()
-      run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicSharesTest";
+      run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicCommoditiesTest";
+    
+#     - name: 3. Section Shares tests Run
+#       if: always()
+#       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicSharesTest";
+    
        
     - name: 4. Upload artifact "allure-results"
       if: always()
