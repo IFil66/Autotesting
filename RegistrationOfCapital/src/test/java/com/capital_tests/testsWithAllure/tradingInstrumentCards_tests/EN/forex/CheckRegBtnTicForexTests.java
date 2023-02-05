@@ -1,8 +1,8 @@
-package com.capital_tests.testsWithAllure.tradingInstrumentCards_tests.EN.commodities;
+package com.capital_tests.testsWithAllure.tradingInstrumentCards_tests.EN.forex;
 
 import com.capital_tests.Locators;
 import com.capital_tests.testsWithAllure.MethodsWithAllure;
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -10,13 +10,13 @@ import java.io.IOException;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
-public class CheckRegBtnTicCommoditiesTest extends MethodsWithAllure {
+public class CheckRegBtnTicForexTests extends MethodsWithAllure {
 
   @ParameterizedTest
   @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv", numLinesToSkip = 1)
   @DisplayName("Check 'Log In' button on page header")
   public void ticPageHeader_ClickOnBtnLogIn_LoginFormWasAppear(
-         String language,  String licence, String nameTradingInstrument) throws IOException {
+          String language,  String licence, String nameTradingInstrument) throws IOException {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));

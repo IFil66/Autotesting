@@ -2,7 +2,6 @@ package com.capital_tests.testsWithAllure.tradingInstrumentCards_tests.EN.shares
 
 import com.capital_tests.Locators;
 import com.capital_tests.testsWithAllure.MethodsWithAllure;
-import io.qameta.allure.Allure;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -11,7 +10,7 @@ import java.io.IOException;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
-public class CheckRegBtnTicSharesTest extends MethodsWithAllure {
+public class CheckRegBtnTicSharesTests extends MethodsWithAllure {
 
   @ParameterizedTest
   @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv", numLinesToSkip = 1)

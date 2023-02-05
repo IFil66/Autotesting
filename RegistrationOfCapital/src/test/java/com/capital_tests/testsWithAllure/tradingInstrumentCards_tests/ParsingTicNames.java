@@ -72,13 +72,13 @@ public class ParsingTicNames extends MethodsWithAllure {
 
 
     ArrayList<String> licenses = new ArrayList<>();
-    licenses.add("ASIC");    // Capital Com Australia Pty Ltd
+//    licenses.add("ASIC");    // Capital Com Australia Pty Ltd
     licenses.add("FCA");     // Capital Com UK Limited
-    licenses.add("CYSEC");   // Capital Com SV Investments Limited
-    licenses.add("NBRB");    // Сlosed Joint Stock Company «FinTech Solutions»
-    licenses.add("CCSTV");   // Smart Forex Broker LLC
-    licenses.add("FSA");     // Capital Com Stock and CFD Investing Ltd
-    licenses.add("SCB");     // Capital Com Online Investments Ltd
+//    licenses.add("CYSEC");   // Capital Com SV Investments Limited
+//    licenses.add("NBRB");    // Сlosed Joint Stock Company «FinTech Solutions»
+//    licenses.add("CCSTV");   // Smart Forex Broker LLC
+//    licenses.add("FSA");     // Capital Com Stock and CFD Investing Ltd
+//    licenses.add("SCB");     // Capital Com Online Investments Ltd
 
     CreateUrlForTests.createUrl(Locators.ADDRESS_CSV_FILE_FOREX, languages, Locators.ADDRESS_TIC_NAME_FOREX, licenses);
     CreateUrlForTests.createUrl(Locators.ADDRESS_CSV_FILE_INDICES, languages, Locators.ADDRESS_TIC_NAME_INDICES, licenses);

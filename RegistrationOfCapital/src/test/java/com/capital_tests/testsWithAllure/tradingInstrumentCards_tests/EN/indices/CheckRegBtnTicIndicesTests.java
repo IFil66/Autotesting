@@ -10,7 +10,7 @@ import java.io.IOException;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
-public class CheckRegBtnTicTest extends MethodsWithAllure {
+public class CheckRegBtnTicIndicesTests extends MethodsWithAllure {
 
   @ParameterizedTest
   @CsvFileSource(files = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv", numLinesToSkip = 1)
@@ -20,6 +20,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
+    saveScreenshot();
 
     // act
     scrollToElement(Locators.headerBtnLogIn);
@@ -39,6 +40,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
           String language, String licence, String nameTradingInstrument) throws IOException {
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
+    saveScreenshot();
 
     // act
     scrollToElement(Locators.headerBtnTradeNow);
@@ -58,6 +60,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
           String language, String licence, String nameTradingInstrument) throws IOException {
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
+    saveScreenshot();
 
     // act
     scrollToElement(Locators.tradingInstrumentNamePanelBtnAddToFavourite);
@@ -78,6 +81,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
+    saveScreenshot();
 
     // act
     scrollToElement(Locators.widgetBtnBell);
@@ -98,6 +102,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
+    saveScreenshot();
 
     // act
     scrollToElement(Locators.widgetBtnViewDetailedChart);
@@ -118,6 +123,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
+    saveScreenshot();
 
     // act
     scrollToElement(Locators.widgetBtnSell);
@@ -138,6 +144,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
+    saveScreenshot();
 
     // act
     scrollToElement(Locators.widgetBtnBuy);
@@ -158,6 +165,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
+    saveScreenshot();
 
     // act
     scrollToElement(Locators.LONG_POSITION);
@@ -180,6 +188,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
+    saveScreenshot();
 
     // act
     scrollToElement(Locators.SHORT_POSITION);
@@ -202,6 +211,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
+    saveScreenshot();
 
     // act
     scrollToElement(Locators.moduleWhyChooseCapitalComBtnTryNow);
@@ -222,6 +232,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
+    saveScreenshot();
 
     // act
     scrollToElement(Locators.moduleTradingCalculatorBtnStartTrading);
@@ -242,6 +253,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
+    saveScreenshot();
 
     // act and assert
     checkingModuleWidgetPromoMarketForMainPage();
@@ -257,6 +269,7 @@ public class CheckRegBtnTicTest extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
+    saveScreenshot();
 
     // act
     scrollToElement(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus);
