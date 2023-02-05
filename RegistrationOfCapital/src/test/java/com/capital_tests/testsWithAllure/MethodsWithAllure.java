@@ -22,10 +22,10 @@ public class MethodsWithAllure {
   // Settings of WebDriver - START
   public static WebDriver driver;
 
-  @BeforeAll
-  public static void setUp() {
+  @BeforeEach
+  public void setUp() {
     FirefoxOptions options = new FirefoxOptions();
-//    options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+    options.setPageLoadStrategy(PageLoadStrategy.EAGER);
     options.addArguments("-headless");
     driver = new FirefoxDriver(options);
 
@@ -36,8 +36,8 @@ public class MethodsWithAllure {
     driver.navigate().to("https://www.capital.com");
   }
 
-  @AfterAll
-  public static void tearDown() {
+  @AfterEach
+  public void tearDown() {
     driver.quit();
   }
   // Settings WebDriver - END
