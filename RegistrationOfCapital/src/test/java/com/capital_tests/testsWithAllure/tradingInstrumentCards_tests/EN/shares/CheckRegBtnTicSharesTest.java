@@ -21,6 +21,7 @@ public class CheckRegBtnTicSharesTest extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
+    saveScreenshot();
 
     // act
     scrollToElement(Locators.headerBtnLogIn);
