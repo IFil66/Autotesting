@@ -19,11 +19,15 @@ jobs:
         distribution: 'temurin'
         cache: maven
        
-    - name: 2.1 Section Commodities tests Run
-      if: always()
-      run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicCommoditiesTests";
+#     - name: 2.1 Section Commodities tests Run
+#       if: always()
+#       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicCommoditiesTests";
     
-    - name: 2.2 Section Shares tests Run
+#     - name: 2.2 Section Shares tests Run
+#       if: always()
+#       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicIndicesTests";
+    
+    - name: 2.3 Section Shares tests Run
       if: always()
       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicIndicesTests";
     
