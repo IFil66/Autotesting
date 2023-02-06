@@ -18,19 +18,28 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-       
-#     - name: 2.1 Section Commodities tests Run
-#       if: always()
-#       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicCommoditiesTests";
+        
+      
+    - name: 2.1 Section Forex tests Run
+      if: always()
+      run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicForexTests";
     
-#     - name: 2.2 Section Shares tests Run
+#     - name: 2.2 Section Indeces tests Run
 #       if: always()
 #       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicIndicesTests";
     
-    - name: 2.3 Section Shares tests Run
-      if: always()
-      run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicCryptocurrenciesTests";
+#     - name: 2.3 Section Cryptocurrencies tests Run
+#       if: always()
+#       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicCryptocurrenciesTests";
+           
+#     - name: 2.4 Section Commodities tests Run - OK
+#       if: always()
+#       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicCommoditiesTests";
     
+#     - name: 2.5 Section Shares tests Run
+#       if: always()
+#       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicSharesTests";
+ 
        
     - name: 3. Upload artifact "allure-results"
       if: always()
