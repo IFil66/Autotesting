@@ -8,27 +8,40 @@ jobs:
     name: I. Bild enviroment and testing
     runs-on: macos-latest
     steps:
-    - name: 1. Get repository code
+    - name: 1.1 Get repository code
       uses: actions/checkout@v3
              
-    - name: 2. Instal JDK
+    - name: 1.2 Instal JDK
       if: always()
       uses: actions/setup-java@v3
       with:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-       
-    - name: 3. Section Commodities tests Run
+        
+      
+    - name: 2.1 Section Forex tests Run
       if: always()
-      run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicCommoditiesTest";
+      run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicForexTests";
     
-#     - name: 3. Section Shares tests Run
+#     - name: 2.2 Section Indeces tests Run
 #       if: always()
-#       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicSharesTest";
+#       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicIndicesTests";
     
+#     - name: 2.3 Section Cryptocurrencies tests Run
+#       if: always()
+#       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicCryptocurrenciesTests";
+           
+#     - name: 2.4 Section Commodities tests Run - OK
+#       if: always()
+#       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicCommoditiesTests";
+    
+#     - name: 2.5 Section Shares tests Run
+#       if: always()
+#       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicSharesTests";
+ 
        
-    - name: 4. Upload artifact "allure-results"
+    - name: 3. Upload artifact "allure-results"
       if: always()
       uses: actions/upload-artifact@v3
       with:
@@ -38,7 +51,7 @@ jobs:
     
       
   generate_report:
-    name: Generate & Deploy Allure report
+    name: II. Generate & Deploy Allure report
     runs-on: ubuntu-latest
     if: always()
     needs: [ tests ]
