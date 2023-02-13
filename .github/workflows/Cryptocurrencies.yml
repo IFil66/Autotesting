@@ -30,7 +30,7 @@ jobs:
     
     - name: 2.3 Section Cryptocurrencies tests Run
       if: always()
-      run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicCryptocurrenciesTests";
+      run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicCryptocurrenciesTests3";
            
 #     - name: 2.4 Section Commodities tests Run - OK
 #       if: always()
