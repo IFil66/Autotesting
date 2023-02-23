@@ -32,8 +32,8 @@ public class MethodsWithAllure {
     driver = new FirefoxDriver(options);
 
 
-//    Dimension dimension = new Dimension(1600, 1000);
-//    driver.manage().window().setSize(dimension);
+    Dimension dimension = new Dimension(1600, 1000);
+    driver.manage().window().setSize(dimension);
     driver.manage().deleteAllCookies();
     driver.navigate().to("https://www.capital.com");
   }
