@@ -28,14 +28,13 @@ public class MethodsWithAllure {
   public void setUp() {
     FirefoxOptions options = new FirefoxOptions();
     options.setPageLoadStrategy(PageLoadStrategy.EAGER);
-//    options.addArguments("-headless");
+    options.addArguments("-headless");
     driver = new FirefoxDriver(options);
 
 
-    Dimension dimension = new Dimension(1600, 1000);
-    driver.manage().window().setSize(dimension);
+//    Dimension dimension = new Dimension(1600, 1000);
+//    driver.manage().window().setSize(dimension);
     driver.manage().deleteAllCookies();
-    driver.navigate().to("https://www.capital.com");
   }
 
   @AfterEach
@@ -47,7 +46,7 @@ public class MethodsWithAllure {
 
   // Variables - START
   static By locatorOfCookies = By.cssSelector("#onetrust-accept-btn-handler");
-  public static final int waitingTime = 10000;
+  public static final int waitingTime = 15000;
   // Variables - END
 
 
