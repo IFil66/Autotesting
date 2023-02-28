@@ -83,9 +83,9 @@ public class Locators {
 
   // Header
   // here used locators of buttons "Log in" and "Trade now" from class "com.capital_tests.Locators"
-  public static final String addressOfScreenshotFile_HeaderBtnLogIn = "data/screenshots/mainPage/checkingIn_PageHeader_BtnLogIn.png";
+  public static final String addressOfScreenshotFile_HeaderBtnLogIn = "src/test/resources/data/screenshots/mainPage/checkingIn_PageHeader_BtnLogIn.png";
   public static final String addressOfScreenshotFile_HeaderBtnTradeNow =
-          "data/screenshots/mainPage/checkingIn_PageHeader_BtnTradeNow.png";
+          "src/test/resources/data/screenshots/mainPage/checkingIn_PageHeader_BtnTradeNow.png";
 
 
   // Section "Main banner" -------------------------------- START
@@ -99,7 +99,7 @@ public class Locators {
   public static final By locatorMainBannerSlideOneBtnTransferToStartTrading =
           By.cssSelector("div[class*='slick-slide'][data-slick-index = '0'] a[href = '/trading/signup?go=demo']");
   public static final String addressOfScreenshotFile_MainBannerSlideOneBtnLeft =
-          "data/screenshots/mainPage/checkingInSection_MainBannerTabOne_BtnOpenAccount.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_MainBannerTabOne_BtnOpenAccount.png";
 
   // Slide number 2
   public static final By locatorMainBannerBtnTwo = By.cssSelector("button[type = 'button'][data-slick-index = '1']");
@@ -113,9 +113,9 @@ public class Locators {
           By.cssSelector("div[class*='slick-slide'][data-slick-index = '2'] a[href = '/trading/signup?go=demo']");
 
   public static final String addressOfScreenshotFile_MainBannerSlideThreeBtnLeft =
-          "data/screenshots/mainPage/checkingInSection_MainBannerTabThree_BtnStartTrading.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_MainBannerTabThree_BtnStartTrading.png";
   public static final String addressOfScreenshotFile_MainBannerSlideThreeBtnRight =
-          "data/screenshots/mainPage/checkingInSection_MainBannerTabThree_BtnStartTrading.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_MainBannerTabThree_BtnStartTrading.png";
 
   // Slide number 4
   public static final By locatorMainBannerBtnFour = By.cssSelector("button[type = 'button'][data-slick-index = '3']");
@@ -166,51 +166,51 @@ public class Locators {
 
   // Screenshots
   public static final String addressOfScreenshotFile_ModuleTradingInstrumentWidget_MostTraded =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabMostTraded.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabMostTraded.png";
   public static final String addressOfScreenshotFile_ModuleTradingInstrumentWidget_Commodities =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabCommodities.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabCommodities.png";
   public static final String addressOfScreenshotFile_ModuleTradingInstrumentWidget_Indices =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabIndices.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabIndices.png";
   public static final String addressOfScreenshotFile_ModuleTradingInstrumentWidget_Crypto =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabCrypto.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabCrypto.png";
   public static final String addressOfScreenshotFile_ModuleTradingInstrumentWidget_Shares =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabShares.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabShares.png";
   public static final String addressOfScreenshotFile_ModuleTradingInstrumentWidget_Forex =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabForex.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabForex.png";
   public static final String addressOfScreenshotFile_ModuleTradingInstrumentWidget_ETFs =
-          "data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabETFs.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_TradingInstrumentWidgetTabETFs.png";
   // Section Widget "Trading instrument" ---------------------------END
 
 
   // Section "Still looking for a broker you can trust?"
   // here used locator of button "user plus" from class "com.capital_tests.Locators"
   public static final String addressOfScreenshotFile_ModuleStillLookingForBrokerYouCanTrustBtnUserPlus =
-          "data/screenshots/mainPage/checkingInSection_StillLookingForBrokerYouCanTrust_BtnTryNow.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_StillLookingForBrokerYouCanTrust_BtnTryNow.png";
 
   // Section Widget “Promo Market”
   // here used locator of button "Trade Now" from class "com.capital_tests.Locators"
   public static final String addressOfScreenshotFile_ModuleWidgetPromoMarket =
-          "data/screenshots/mainPage/checkingInSection_WidgetPromoMarket_BtnTradeNow.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_WidgetPromoMarket_BtnTradeNow.png";
 
   //Section "Explore our platform" ------------------------------- START
   public static final String expectedURLResultExploreOrPlatform = "";
   public static final By locatorExploreOurPlatformBtnTryNow = By.cssSelector("div[data-type = 'btn_nearby_video'] a:nth-child(2)");
   public static final String addressOfScreenshotFile_ModuleExploreOurPlatform =
-          "data/screenshots/mainPage/checkingInSection_ExploreOurPlatform_BtnTryNow.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_ExploreOurPlatform_BtnTryNow.png";
   //Section "Explore our platform" ------------------------------- END
 
 
   //Section "New to trading" ------------------------------------- START
   public static final By locatorNewToTradingBtnPractiseForFree = By.cssSelector("a[data-type = 'btn_new_to_trading']");
   public static final String addressOfScreenshotFile_ModuleNewToTrading =
-          "data/screenshots/mainPage/checkingInSection_NewToTrading_BtnPractiseForFree.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_NewToTrading_BtnPractiseForFree.png";
   //Section "New to trading" ------------------------------------- END
 
 
   // Section "Trading calculator"
   // here used locator of button "Start trading" from class "com.capital_tests.Locators"
   public static final String addressOfScreenshotFile_ModuleTradingCalculator =
-          "data/screenshots/mainPage/checkingInSection_TradingCalculator_BtnStartTrading.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_TradingCalculator_BtnStartTrading.png";
 
 
   // Section "Trader's Dashboard" -------------------------------- START
@@ -219,13 +219,13 @@ public class Locators {
   public static final String locatorTradersDashboardBtnTrad2 = ") button";
 
   public static final String addressOfScreenshotFile_ModuleTradersDashboard =
-          "data/screenshots/mainPage/checkingInSection_TradersDashboard_BtnsTrade.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_TradersDashboard_BtnsTrade.png";
   // Section "Trader's Dashboard" -------------------------------- END
 
   // Section "Why choose Capital.com? Our numbers speak for themselves"
   // here used locator of button "Try now" from class "com.capital_tests.Locators"
   public static final String addressOfScreenshotFile_ModuleWhyChooseCapitalCom =
-          "data/screenshots/mainPage/checkingInSection_WhyChooseCapitalCom_BtnTryNow.png";
+          "src/test/resources/data/screenshots/mainPage/checkingInSection_WhyChooseCapitalCom_BtnTryNow.png";
 
   // Main page --------------------------------------------------- END
 
