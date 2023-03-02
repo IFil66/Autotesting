@@ -1,4 +1,4 @@
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;

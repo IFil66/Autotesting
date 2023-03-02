@@ -8,8 +8,6 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import java.io.IOException;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
-
 public class CheckRegBtnTicIndicesTests extends MethodsWithAllure {
 
   @ParameterizedTest

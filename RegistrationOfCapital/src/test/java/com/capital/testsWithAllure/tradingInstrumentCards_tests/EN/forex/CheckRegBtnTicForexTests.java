@@ -2,13 +2,11 @@ package com.capital.testsWithAllure.tradingInstrumentCards_tests.EN.forex;
 
 import com.capital.Locators;
 import com.capital.testsWithAllure.MethodsWithAllure;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 import java.io.IOException;
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 public class CheckRegBtnTicForexTests extends MethodsWithAllure {
 

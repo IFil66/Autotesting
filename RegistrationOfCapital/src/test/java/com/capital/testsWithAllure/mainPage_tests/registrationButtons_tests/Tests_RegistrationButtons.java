@@ -3,10 +3,11 @@ package com.capital.testsWithAllure.mainPage_tests.registrationButtons_tests;
 import com.capital.Licenses;
 import com.capital.Locators;
 import com.capital.testsWithAllure.MethodsWithAllure;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.openqa.selenium.By;
+
 import java.io.IOException;
 
 @DisplayName("Tests checking registration and authorization buttons on Main page in English version")

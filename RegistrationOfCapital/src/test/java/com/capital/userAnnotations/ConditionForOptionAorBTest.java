@@ -1,4 +1,5 @@
 package com.capital.userAnnotations;
+
 import com.capital.Locators;
 import com.capital.testsWithAllure.mainPage_tests.registrationButtons_tests.specific_tests.MethodsOfSpecificTests;
 import org.junit.jupiter.api.extension.ConditionEvaluationResult;
@@ -6,6 +7,7 @@ import org.junit.jupiter.api.extension.ExecutionCondition;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.platform.commons.support.AnnotationSupport;
 import org.openqa.selenium.By;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
