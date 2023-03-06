@@ -1,4 +1,4 @@
-package com.capital.testsWithAllure.tradingInstrumentCards_tests.EN.shares;
+package com.capital.testsWithAllure.tradingInstrumentCards_tests.EN.indices.shares;
 
 import com.capital.Locators;
 import com.capital.testsWithAllure.MethodsWithAllure;

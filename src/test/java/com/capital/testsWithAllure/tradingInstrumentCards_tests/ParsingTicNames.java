@@ -73,8 +73,8 @@ public class ParsingTicNames extends MethodsWithAllure {
 
     ArrayList<String> licenses = new ArrayList<>();
 //    licenses.add("ASIC");    // Capital Com Australia Pty Ltd
-//    licenses.add("FCA");     // Capital Com UK Limited
-    licenses.add("CYSEC");   // Capital Com SV Investments Limited
+    licenses.add("FCA");     // Capital Com UK Limited
+//    licenses.add("CYSEC");   // Capital Com SV Investments Limited
 //    licenses.add("NBRB");    // Сlosed Joint Stock Company «FinTech Solutions»
 //    licenses.add("CCSTV");   // Smart Forex Broker LLC
 //    licenses.add("FSA");     // Capital Com Stock and CFD Investing Ltd

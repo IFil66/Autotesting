@@ -233,25 +233,25 @@ public class Locators {
 
   // Trading instrument cards ------------------------------------ START
   // Files with trading instrument cards name
-  public static final String ADDRESS_TIC_NAME_FOREX = "data/tradingInstrumentCards/url/tradingInstrumentCardsName/forexTicName.txt";
-  public static final String ADDRESS_TIC_NAME_INDICES = "data/tradingInstrumentCards/url/tradingInstrumentCardsName/indicesTicName.txt";
-  public static final String ADDRESS_TIC_NAME_COMMODITIES = "data/tradingInstrumentCards/url/tradingInstrumentCardsName/commoditiesTicName.txt";
-  public static final String ADDRESS_TIC_NAME_CRYPTOCURRENCIES = "data/tradingInstrumentCards/url/tradingInstrumentCardsName/cryptocurrenciesTicName.txt";
-  public static final String ADDRESS_TIC_NAME_SHARES = "data/tradingInstrumentCards/url/tradingInstrumentCardsName/sharesTicName.txt";
+  public static final String ADDRESS_TIC_NAME_FOREX = "src/test/resources/data/tradingInstrumentCards/url/forexPageUrl.txt";
+  public static final String ADDRESS_TIC_NAME_INDICES = "src/test/resources/data/tradingInstrumentCards/url/indicesPageUrl.txt";
+  public static final String ADDRESS_TIC_NAME_COMMODITIES = "src/test/resources/data/tradingInstrumentCards/url/commoditiesPageUrl.txt";
+  public static final String ADDRESS_TIC_NAME_CRYPTOCURRENCIES = "src/test/resources/data/tradingInstrumentCards/url/cryptocurrenciesPageUrl.txt";
+  public static final String ADDRESS_TIC_NAME_SHARES = "src/test/resources/data/tradingInstrumentCards/url/sharesPageUrl.txt";
 
   // CSV files
-  public static final String ADDRESS_CSV_FILE_FOREX = "data/tradingInstrumentCards/csvFiles/forexTicName.csv";
-  public static final String ADDRESS_CSV_FILE_INDICES = "data/tradingInstrumentCards/csvFiles/indicesTicName.csv";
-  public static final String ADDRESS_CSV_FILE_COMMODITIES = "data/tradingInstrumentCards/csvFiles/commoditiesTicName.csv";
-  public static final String ADDRESS_CSV_FILE_CRYPTOCURRENCIES = "data/tradingInstrumentCards/csvFiles/cryptocurrenciesTicName.csv";
-  public static final String ADDRESS_CSV_FILE_SHARES = "data/tradingInstrumentCards/csvFiles/sharesTicName.csv";
+  public static final String ADDRESS_CSV_FILE_FOREX = "src/test/resources/data/tradingInstrumentCards/csvFiles/allDataFiles/forexTicName.csv";
+  public static final String ADDRESS_CSV_FILE_INDICES = "src/test/resources/data/tradingInstrumentCards/csvFiles/allDataFiles/indicesTicName.csv";
+  public static final String ADDRESS_CSV_FILE_COMMODITIES = "src/test/resources/data/tradingInstrumentCards/csvFiles/allDataFiles/commoditiesTicName.csv";
+  public static final String ADDRESS_CSV_FILE_CRYPTOCURRENCIES = "src/test/resources/data/tradingInstrumentCards/csvFiles/allDataFiles/cryptocurrenciesTicName.csv";
+  public static final String ADDRESS_CSV_FILE_SHARES = "src/test/resources/data/tradingInstrumentCards/csvFiles/allDataFiles/sharesTicName.csv";
 
   // Files with URL lists
-  public static final String addressOfUrlFileFromSectionForex = "data/tradingInstrumentCards/url/donePageURL/forexTicName.txt";
-  public static final String addressOfUrlFileFromSectionIndices = "data/tradingInstrumentCards/url/donePageURL/indicesPagesURL.txt";
-  public static final String addressOfUrlFileFromSectionCommodities = "data/tradingInstrumentCards/url/donePageURL/commoditiesPagesURL.txt";
-  public static final String addressOfUrlFileFromSectionCryptocurrencies = "data/tradingInstrumentCards/url/donePageURL/cryptocurrenciesPagesURL.txt";
-  public static final String addressOfUrlFileFromSectionShares = "data/tradingInstrumentCards/url/donePageURL/sharesPagesURL.txt";
+  public static final String addressOfUrlFileFromSectionForex = "src/test/resources/data/tradingInstrumentCards/url/donePageURL/forexTicName.txt";
+  public static final String addressOfUrlFileFromSectionIndices = "src/test/resources/data/tradingInstrumentCards/url/donePageURL/indicesPagesURL.txt";
+  public static final String addressOfUrlFileFromSectionCommodities = "src/test/resources/data/tradingInstrumentCards/url/donePageURL/commoditiesPagesURL.txt";
+  public static final String addressOfUrlFileFromSectionCryptocurrencies = "src/test/resources/data/tradingInstrumentCards/url/donePageURL/cryptocurrenciesPagesURL.txt";
+  public static final String addressOfUrlFileFromSectionShares = "src/test/resources/data/tradingInstrumentCards/url/donePageURL/sharesPagesURL.txt";
 
   // Files with report about checking trading instrument card
   public static final String addressOfReportFileSectionForex = "data/com.capital_tests.testsWithCustomReport.tradingInstrumentCards_tests.registrationButtons_tests.TradingInstrumentCards/Url of trading instrument pages/Result reports/Report (Forex).txt";
