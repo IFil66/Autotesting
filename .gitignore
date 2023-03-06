@@ -1,4 +1,11 @@
-/RegistrationOfCapital/data/12/
-/RegistrationOfCapital/data/screenshots/
-/RegistrationOfCapital/data/*.txt
-/RegistrationOfCapital/data/*.png
+*.iml
+.idea
+*.class
+target/
+local.properties
+debug.log
+.settings
+/shelf/
+/workspace.xml
+/.allure/
+.png
