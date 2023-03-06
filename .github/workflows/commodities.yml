@@ -46,7 +46,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: allure-results
-        path: RegistrationOfCapital/target/allure-results/
+        path: target/allure-results/
         retention-days: 10
     
       
