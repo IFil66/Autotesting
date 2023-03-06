@@ -22,23 +22,23 @@ jobs:
       
 #     - name: 2.1 Section Forex tests Run
 #       if: always()
-#       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicForexTests";
+#       run: mvn clean test -Dtest="CheckRegBtnTicForexTests";
     
 #     - name: 2.2 Section Indeces tests Run
 #       if: always()
-#       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicIndicesTests";
+#       run: mvn clean test -Dtest="CheckRegBtnTicIndicesTests";
     
     - name: 2.3 Section Cryptocurrencies tests Run
       if: always()
-      run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicCryptocurrenciesTests_2";
+      run: mvn clean test -Dtest="CheckRegBtnTicCryptocurrenciesTests_2";
            
 #     - name: 2.4 Section Commodities tests Run - OK
 #       if: always()
-#       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicCommoditiesTests";
+#       run: mvn clean test -Dtest="CheckRegBtnTicCommoditiesTests";
     
 #     - name: 2.5 Section Shares tests Run
 #       if: always()
-#       run: mvn -f /Users/runner/work/Autotesting/Autotesting/RegistrationOfCapital/pom.xml clean test -Dtest="CheckRegBtnTicSharesTests";
+#       run: mvn clean test -Dtest="CheckRegBtnTicSharesTests";
  
        
     - name: 3. Upload artifact "allure-results"
@@ -46,7 +46,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: allure-results
-        path: RegistrationOfCapital/target/allure-results/
+        path: target/allure-results/
         retention-days: 10
     
       
