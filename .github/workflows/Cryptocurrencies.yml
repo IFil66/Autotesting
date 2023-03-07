@@ -30,7 +30,7 @@ jobs:
     
     - name: 2.3 Section Cryptocurrencies tests Run
       if: always()
-      run: mvn clean test -Dtest="CheckRegBtnTicCryptocurrenciesTests_2";
+      run: mvn clean test -Dtest="CheckRegBtnTicCryptocurrenciesTests_1";
            
 #     - name: 2.4 Section Commodities tests Run - OK
 #       if: always()
