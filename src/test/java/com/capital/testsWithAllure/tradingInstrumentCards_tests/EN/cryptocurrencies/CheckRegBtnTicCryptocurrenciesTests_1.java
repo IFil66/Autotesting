@@ -10,7 +10,7 @@ import java.io.IOException;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
-public class CheckRegBtnTicCryptocurrenciesTests extends MethodsWithAllure {
+public class CheckRegBtnTicCryptocurrenciesTests_1 extends MethodsWithAllure {
 
   @ParameterizedTest
   @CsvFileSource(files = "src/test/resources/data/tradingInstrumentCards/csvFiles/cryptocurrenciesTicName.csv", numLinesToSkip = 1)
