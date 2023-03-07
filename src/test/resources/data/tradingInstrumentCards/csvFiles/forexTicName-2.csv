@@ -1,4 +1,14 @@
 LANGUAGE, LICENCE, TRADING_INSTRUMENT_NAME
+"", FCA, canadian-dollar-hong-kong-dollar-rate
+"", FCA, swiss-franc-mexican-peso-rate
+"", FCA, zloty-turkish-lira-rate
+"", FCA, gbp-pln-rate
+"", FCA, usd-hkd-rate
+"", FCA, british-pound-hungarian-forint-rate
+"", FCA, pound-sterling-chinese-yuan-rate
+"", FCA, us-dollar-czech-koruna-rate
+"", FCA, new-zealand-dollar-swedish-krona-rate
+"", FCA, british-pound-danish-krone-rate
 "", FCA, eur-usd-rate
 "", FCA, usd-jpy-rate
 "", FCA, gbp-usd-rate

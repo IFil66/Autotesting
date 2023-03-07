@@ -33,6 +33,9 @@ public class Locators {
   public static final By signUpFormFieldPassword = By.cssSelector("#s_overlay input[type = 'password']");
   public static final By signUpFormBtnCancel = By.cssSelector("#s_overlay button.button-cleared");
 
+  public static final By signUpFormLinkPrivacyPolicy = By.cssSelector(
+      "div.form-container-small-footer a[href*='http'], div.form-container-small-footer a[target='_blank']");
+
 
   // Sign up form on new page
   public static final By signUpFormH1_onNewPage = By.cssSelector("#testwrap div.h1");

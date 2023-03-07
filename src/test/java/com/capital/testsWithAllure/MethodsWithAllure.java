@@ -189,6 +189,7 @@ public class MethodsWithAllure {
       localReport = waitAndCheckingVisibilityOfElement(Locators.signUpFormH1) &&
               waitAndCheckingVisibilityOfElement(Locators.signUpFormFieldEmail) &&
               waitAndCheckingVisibilityOfElement(Locators.signUpFormFieldPassword) &&
+              waitAndCheckingVisibilityOfElement(Locators.signUpFormLinkPrivacyPolicy) &&
               waitAndCheckingVisibilityOfElement(Locators.signUpFormBtnCancel) ?
               "Sign up form was appears ==> Pass" : "Sign up form was appears ==> Fail";
 
