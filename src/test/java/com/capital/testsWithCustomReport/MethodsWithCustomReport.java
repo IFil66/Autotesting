@@ -226,7 +226,7 @@ public class MethodsWithCustomReport {
             + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.widgetBtnViewDetailedChart) + "\t"
             + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.widgetBtnSell) + "\t"
             + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.widgetBtnBuy) + "\t"
-            + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.locatorWidgetBtnCreateAccount) + "\t"
+            + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.widgetBtnCreateAccount) + "\t"
             + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.moduleWhyChooseCapitalComBtnTryNow) + "\t"
             + checkingTheBtnToGoToSignUpFormAndCreateReport(Locators.moduleTradingCalculatorBtnStartTrading) + "\t"
             + checkingModuleWidgetPromoMarketForTradingInstrumentCard() + "\t"

@@ -1,4 +1,4 @@
-package com.capital.testsWithAllure.tradingInstrumentCards_tests.EN.indices.shares;
+package com.capital.testsWithAllure.tradingInstrumentCards_tests.EN.shares;
 
 import com.capital.Locators;
 import com.capital.testsWithAllure.MethodsWithAllure;
@@ -121,9 +121,15 @@ public class CheckRegBtnTicSharesTests extends MethodsWithAllure {
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
 
     // act
-    scrollToElement(Locators.widgetBtnSell);
-    waitForElement(Locators.widgetBtnSell);
-    clickOnElement(Locators.widgetBtnSell);
+    if (waitForElementAndReturnOfVisibilityResult(Locators.widgetBtnSell)) {
+      scrollToElement(Locators.widgetBtnSell);
+      saveScreenshot();
+      clickOnElement(Locators.widgetBtnSell);
+    } else {
+      scrollToElement(Locators.widgetBtnCreateAccount);
+      saveScreenshot();
+      clickOnElement(Locators.widgetBtnCreateAccount);
+    }
 
     // assert
     checkShowingUpSignUpForm();
@@ -141,9 +147,15 @@ public class CheckRegBtnTicSharesTests extends MethodsWithAllure {
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
 
     // act
-    scrollToElement(Locators.widgetBtnBuy);
-    waitForElement(Locators.widgetBtnBuy);
-    clickOnElement(Locators.widgetBtnBuy);
+    if (waitForElementAndReturnOfVisibilityResult(Locators.widgetBtnBuy)) {
+      scrollToElement(Locators.widgetBtnBuy);
+      saveScreenshot();
+      clickOnElement(Locators.widgetBtnBuy);
+    } else {
+      scrollToElement(Locators.widgetBtnCreateAccount);
+      saveScreenshot();
+      clickOnElement(Locators.widgetBtnCreateAccount);
+    }
 
     // assert
     checkShowingUpSignUpForm();

@@ -293,7 +293,7 @@ public class Locators {
   public static final By widgetBtnViewDetailedChart = By.cssSelector("a[data-type = 'detailed_chart']");
   public static final By widgetBtnSell = By.cssSelector("a[data-type = 'market_sell']");
   public static final By widgetBtnBuy = By.cssSelector("a[data-type = 'market_buy']");
-  public static final By locatorWidgetBtnCreateAccount = By.cssSelector("div.sharesName__notTrading a");
+  public static final By widgetBtnCreateAccount = By.cssSelector("div.sharesName__notTrading a");
   // Section "Trading Conditions"
   // "Long position overnight fee" - "Go to platform" button
   public static final By LONG_POSITION = By.cssSelector("table.table--num tr:nth-child(2) div.toolInfo");

@@ -3,6 +3,7 @@ package com.capital.testsWithAllure.tradingInstrumentCards_tests.EN.commodities;
 import com.capital.Locators;
 import com.capital.testsWithAllure.MethodsWithAllure;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -20,10 +21,11 @@ public class CheckRegBtnTicCommoditiesTests extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
-    saveScreenshot();
 
     // act
     scrollToElement(Locators.headerBtnLogIn);
+    saveScreenshot();
+
     waitForElement(Locators.headerBtnLogIn);
     clickOnElement(Locators.headerBtnLogIn);
 
@@ -40,10 +42,11 @@ public class CheckRegBtnTicCommoditiesTests extends MethodsWithAllure {
           String language, String licence, String nameTradingInstrument) throws IOException {
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
-    saveScreenshot();
 
     // act
     scrollToElement(Locators.headerBtnTradeNow);
+    saveScreenshot();
+
     waitForElement(Locators.headerBtnTradeNow);
     clickOnElement(Locators.headerBtnTradeNow);
 
@@ -60,10 +63,11 @@ public class CheckRegBtnTicCommoditiesTests extends MethodsWithAllure {
           String language, String licence, String nameTradingInstrument) throws IOException {
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
-    saveScreenshot();
 
     // act
     scrollToElement(Locators.tradingInstrumentNamePanelBtnAddToFavourite);
+    saveScreenshot();
+
     waitForElement(Locators.tradingInstrumentNamePanelBtnAddToFavourite);
     clickOnElement(Locators.tradingInstrumentNamePanelBtnAddToFavourite);
 
@@ -81,10 +85,11 @@ public class CheckRegBtnTicCommoditiesTests extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
-    saveScreenshot();
 
     // act
     scrollToElement(Locators.widgetBtnBell);
+    saveScreenshot();
+
     waitForElement(Locators.widgetBtnBell);
     clickOnElement(Locators.widgetBtnBell);
 
@@ -102,10 +107,11 @@ public class CheckRegBtnTicCommoditiesTests extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
-    saveScreenshot();
 
     // act
     scrollToElement(Locators.widgetBtnViewDetailedChart);
+    saveScreenshot();
+
     waitForElement(Locators.widgetBtnViewDetailedChart);
     clickOnElement(Locators.widgetBtnViewDetailedChart);
 
@@ -123,12 +129,17 @@ public class CheckRegBtnTicCommoditiesTests extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
-    saveScreenshot();
 
     // act
-    scrollToElement(Locators.widgetBtnSell);
-    waitForElement(Locators.widgetBtnSell);
-    clickOnElement(Locators.widgetBtnSell);
+    if (waitForElementAndReturnOfVisibilityResult(Locators.widgetBtnSell)) {
+      scrollToElement(Locators.widgetBtnSell);
+      saveScreenshot();
+      clickOnElement(Locators.widgetBtnSell);
+    } else {
+      scrollToElement(Locators.widgetBtnCreateAccount);
+      saveScreenshot();
+      clickOnElement(Locators.widgetBtnCreateAccount);
+    }
 
     // assert
     checkShowingUpSignUpForm();
@@ -144,12 +155,17 @@ public class CheckRegBtnTicCommoditiesTests extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
-    saveScreenshot();
 
     // act
-    scrollToElement(Locators.widgetBtnBuy);
-    waitForElement(Locators.widgetBtnBuy);
-    clickOnElement(Locators.widgetBtnBuy);
+    if (waitForElementAndReturnOfVisibilityResult(Locators.widgetBtnBuy)) {
+      scrollToElement(Locators.widgetBtnBuy);
+      saveScreenshot();
+      clickOnElement(Locators.widgetBtnBuy);
+    } else {
+      scrollToElement(Locators.widgetBtnCreateAccount);
+      saveScreenshot();
+      clickOnElement(Locators.widgetBtnCreateAccount);
+    }
 
     // assert
     checkShowingUpSignUpForm();
@@ -165,10 +181,11 @@ public class CheckRegBtnTicCommoditiesTests extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
-    saveScreenshot();
 
     // act
     scrollToElement(Locators.LONG_POSITION);
+    saveScreenshot();
+
     waitForElement(Locators.LONG_POSITION);
     clickOnElement(Locators.LONG_POSITION);
     elementToBeClickable(Locators.LONG_POSITION_BTN);
@@ -188,10 +205,11 @@ public class CheckRegBtnTicCommoditiesTests extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
-    saveScreenshot();
 
     // act
     scrollToElement(Locators.SHORT_POSITION);
+    saveScreenshot();
+
     waitForElement(Locators.SHORT_POSITION);
     clickOnElement(Locators.SHORT_POSITION);
     elementToBeClickable(Locators.SHORT_POSITION_BTN);
@@ -211,10 +229,11 @@ public class CheckRegBtnTicCommoditiesTests extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
-    saveScreenshot();
 
     // act
     scrollToElement(Locators.moduleWhyChooseCapitalComBtnTryNow);
+    saveScreenshot();
+
     waitForElement(Locators.moduleWhyChooseCapitalComBtnTryNow);
     clickOnElement(Locators.moduleWhyChooseCapitalComBtnTryNow);
 
@@ -232,10 +251,11 @@ public class CheckRegBtnTicCommoditiesTests extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
-    saveScreenshot();
 
     // act
     scrollToElement(Locators.moduleTradingCalculatorBtnStartTrading);
+    saveScreenshot();
+
     waitForElement(Locators.moduleTradingCalculatorBtnStartTrading);
     clickOnElement(Locators.moduleTradingCalculatorBtnStartTrading);
 
@@ -269,10 +289,11 @@ public class CheckRegBtnTicCommoditiesTests extends MethodsWithAllure {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
-    saveScreenshot();
 
     // act
     scrollToElement(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus);
+    saveScreenshot();
+
     waitForElement(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus);
     clickOnElement(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus);
 

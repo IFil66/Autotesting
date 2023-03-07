@@ -126,9 +126,15 @@ public class CheckRegBtnTicCryptocurrenciesTests_2 extends MethodsWithAllure {
     saveScreenshot();
 
     // act
-    scrollToElement(Locators.widgetBtnSell);
-    waitForElement(Locators.widgetBtnSell);
-    clickOnElement(Locators.widgetBtnSell);
+    if (waitForElementAndReturnOfVisibilityResult(Locators.widgetBtnSell)) {
+      scrollToElement(Locators.widgetBtnSell);
+      saveScreenshot();
+      clickOnElement(Locators.widgetBtnSell);
+    } else {
+      scrollToElement(Locators.widgetBtnCreateAccount);
+      saveScreenshot();
+      clickOnElement(Locators.widgetBtnCreateAccount);
+    }
 
     // assert
     checkShowingUpSignUpForm();
@@ -147,9 +153,15 @@ public class CheckRegBtnTicCryptocurrenciesTests_2 extends MethodsWithAllure {
     saveScreenshot();
 
     // act
-    scrollToElement(Locators.widgetBtnBuy);
-    waitForElement(Locators.widgetBtnBuy);
-    clickOnElement(Locators.widgetBtnBuy);
+    if (waitForElementAndReturnOfVisibilityResult(Locators.widgetBtnBuy)) {
+      scrollToElement(Locators.widgetBtnBuy);
+      saveScreenshot();
+      clickOnElement(Locators.widgetBtnBuy);
+    } else {
+      scrollToElement(Locators.widgetBtnCreateAccount);
+      saveScreenshot();
+      clickOnElement(Locators.widgetBtnCreateAccount);
+    }
 
     // assert
     checkShowingUpSignUpForm();
