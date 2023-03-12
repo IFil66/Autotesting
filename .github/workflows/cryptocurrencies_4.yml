@@ -1,8 +1,9 @@
 name: Testing capital.com
 
 on:
-  schedule:
-    - cron: "30 2 * * 6"
+  workflow_dispatch
+#   schedule:
+#     - cron: "30 2 * * 6"
 
 jobs:
   tests:
