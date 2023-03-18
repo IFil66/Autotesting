@@ -138,7 +138,7 @@ public class MethodsWithAllure {
   }
 
   public String constructTradingInstrumentCardsUrl (String language, String name, String license) {
-    System.out.println(String.format("https://capital.com/%s%s?license=%s",language, name, license));
+    System.out.println("\n" + String.format("https://capital.com/%s%s?license=%s",language, name, license) + "\n");
     return String.format("https://capital.com/%s%s?license=%s",language, name, license);
   }
 
