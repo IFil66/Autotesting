@@ -72,6 +72,7 @@ public class Locators {
 
   // Module "Why choose Capital.com? Our numbers speak for themselves."
   public static final By moduleWhyChooseCapitalComBtnTryNow = By.cssSelector("a[data-type *= 'banner_with_counter_hor_counter_hor']");
+  public static final By moduleWhyChooseCapitalComBtnTryNow2 = By.cssSelector("a[data-type *= 'b_hor_new_style_876']");
   // Modules --------------------------------------------- END
 
 

@@ -16,7 +16,7 @@ public class CheckRegBtnTicCryptocurrenciesTests_4 extends MethodsWithAllure {
   @CsvFileSource(files = "src/test/resources/data/tradingInstrumentCards/csvFiles/cryptocurrenciesTicName4.csv", numLinesToSkip = 1)
   @DisplayName("Check 'Log In' button on page header")
   public void ticPageHeader_ClickOnBtnLogIn_LoginFormWasAppear(
-          String language,  String licence, String nameTradingInstrument) throws IOException {
+          String language,  String licence, String nameTradingInstrument) {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
@@ -37,7 +37,7 @@ public class CheckRegBtnTicCryptocurrenciesTests_4 extends MethodsWithAllure {
   @CsvFileSource(files = "src/test/resources/data/tradingInstrumentCards/csvFiles/cryptocurrenciesTicName4.csv", numLinesToSkip = 1)
   @DisplayName("Check 'Trade Now' button on page header")
   public void ticPageHeader_ClickOnBtnTradeNow_SignUpFormWasAppear(
-          String language, String licence, String nameTradingInstrument) throws IOException {
+          String language, String licence, String nameTradingInstrument) {
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
     saveScreenshot();
@@ -57,7 +57,7 @@ public class CheckRegBtnTicCryptocurrenciesTests_4 extends MethodsWithAllure {
   @CsvFileSource(files = "src/test/resources/data/tradingInstrumentCards/csvFiles/cryptocurrenciesTicName4.csv", numLinesToSkip = 1)
   @DisplayName("Check 'Add to favourite' button on title block")
   public void ticPage_ClickOnBtnAddToFavourite_SignUpFormWasAppear(
-          String language, String licence, String nameTradingInstrument) throws IOException {
+          String language, String licence, String nameTradingInstrument) {
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
     saveScreenshot();
@@ -77,7 +77,7 @@ public class CheckRegBtnTicCryptocurrenciesTests_4 extends MethodsWithAllure {
   @CsvFileSource(files = "src/test/resources/data/tradingInstrumentCards/csvFiles/cryptocurrenciesTicName4.csv", numLinesToSkip = 1)
   @DisplayName("Check Bell on trading instrument widget")
   public void ticWidget_ClickOnBtnBell_SignUpFormWasAppear(
-          String language, String licence, String nameTradingInstrument) throws IOException {
+          String language, String licence, String nameTradingInstrument) {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
@@ -98,7 +98,7 @@ public class CheckRegBtnTicCryptocurrenciesTests_4 extends MethodsWithAllure {
   @CsvFileSource(files = "src/test/resources/data/tradingInstrumentCards/csvFiles/cryptocurrenciesTicName4.csv", numLinesToSkip = 1)
   @DisplayName("Check 'View detailed chart' button on trading instrument widget")
   public void ticWidget_ClickOnViewDetailedChart_SignUpFormWasAppear(
-          String language, String licence, String nameTradingInstrument) throws IOException {
+          String language, String licence, String nameTradingInstrument) {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
@@ -119,7 +119,7 @@ public class CheckRegBtnTicCryptocurrenciesTests_4 extends MethodsWithAllure {
   @CsvFileSource(files = "src/test/resources/data/tradingInstrumentCards/csvFiles/cryptocurrenciesTicName4.csv", numLinesToSkip = 1)
   @DisplayName("Check 'Sell' button on trading instrument widget")
   public void ticWidget_ClickOnBtnSell_SignUpFormWasAppear(
-          String language, String licence, String nameTradingInstrument) throws IOException {
+          String language, String licence, String nameTradingInstrument) {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
@@ -146,7 +146,7 @@ public class CheckRegBtnTicCryptocurrenciesTests_4 extends MethodsWithAllure {
   @CsvFileSource(files = "src/test/resources/data/tradingInstrumentCards/csvFiles/cryptocurrenciesTicName4.csv", numLinesToSkip = 1)
   @DisplayName("Check 'Buy' button on trading instrument widget")
   public void ticWidget_ClickOnBtnBuy_SignUpFormWasAppear(
-          String language, String licence, String nameTradingInstrument) throws IOException {
+          String language, String licence, String nameTradingInstrument) {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
@@ -173,7 +173,7 @@ public class CheckRegBtnTicCryptocurrenciesTests_4 extends MethodsWithAllure {
   @CsvFileSource(files = "src/test/resources/data/tradingInstrumentCards/csvFiles/cryptocurrenciesTicName4.csv", numLinesToSkip = 1)
   @DisplayName("Check button on Long position overnight fee")
   public void ticLongPosition_ClickOnGoToPlatform_SignUpFormWasAppear(
-          String language, String licence, String nameTradingInstrument) throws IOException {
+          String language, String licence, String nameTradingInstrument) {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
@@ -196,7 +196,7 @@ public class CheckRegBtnTicCryptocurrenciesTests_4 extends MethodsWithAllure {
   @CsvFileSource(files = "src/test/resources/data/tradingInstrumentCards/csvFiles/cryptocurrenciesTicName4.csv", numLinesToSkip = 1)
   @DisplayName("Check button on Short position overnight fee")
   public void ticShotPosition_ClickOnGoToPlatform_SignUpFormWasAppear(
-          String language, String licence, String nameTradingInstrument) throws IOException {
+          String language, String licence, String nameTradingInstrument) {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
@@ -219,16 +219,22 @@ public class CheckRegBtnTicCryptocurrenciesTests_4 extends MethodsWithAllure {
   @CsvFileSource(files = "src/test/resources/data/tradingInstrumentCards/csvFiles/cryptocurrenciesTicName4.csv", numLinesToSkip = 1)
   @DisplayName("Checking button 'Try Now' on module 'Why choose Capital.com? Our numbers speak for themselves.'")
   public void ticModuleWhyChooseCapitalCom_clickOnBtnTryNow_SignUpFormWasAppear(
-          String language, String licence, String nameTradingInstrument) throws IOException {
+          String language, String licence, String nameTradingInstrument) {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
     saveScreenshot();
 
     // act
-    scrollToElement(Locators.moduleWhyChooseCapitalComBtnTryNow);
-    waitForElement(Locators.moduleWhyChooseCapitalComBtnTryNow);
-    clickOnElement(Locators.moduleWhyChooseCapitalComBtnTryNow);
+    if (waitForElementAndReturnOfVisibilityResult(Locators.moduleWhyChooseCapitalComBtnTryNow)) {
+      scrollToElement(Locators.moduleWhyChooseCapitalComBtnTryNow);
+      waitForElement(Locators.moduleWhyChooseCapitalComBtnTryNow);
+      clickOnElement(Locators.moduleWhyChooseCapitalComBtnTryNow);
+    } else {
+      scrollToElement(Locators.moduleWhyChooseCapitalComBtnTryNow2);
+      waitForElement(Locators.moduleWhyChooseCapitalComBtnTryNow2);
+      clickOnElement(Locators.moduleWhyChooseCapitalComBtnTryNow2);
+    }
 
     // assert
     checkShowingUpSignUpForm();
@@ -240,7 +246,7 @@ public class CheckRegBtnTicCryptocurrenciesTests_4 extends MethodsWithAllure {
   @CsvFileSource(files = "src/test/resources/data/tradingInstrumentCards/csvFiles/cryptocurrenciesTicName4.csv", numLinesToSkip = 1)
   @DisplayName("Checking button 'Start trading' on module 'Trading calculator'")
   public void ticModuleTradingCalculator_clickOnBtnStartTrading_SignUpFormWasAppear(
-          String language, String licence, String nameTradingInstrument) throws IOException {
+          String language, String licence, String nameTradingInstrument) {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
@@ -261,7 +267,7 @@ public class CheckRegBtnTicCryptocurrenciesTests_4 extends MethodsWithAllure {
   @CsvFileSource(files = "src/test/resources/data/tradingInstrumentCards/csvFiles/cryptocurrenciesTicName4.csv", numLinesToSkip = 1)
   @DisplayName("Checking buttons 'Trade Now' (4 items) on module widget promo market")
   public void ticModuleWidgetPromoMarket_clickOnBtnTradeNow_SignUpFormWasAppear(
-          String language, String licence, String nameTradingInstrument) throws IOException {
+          String language, String licence, String nameTradingInstrument) {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
@@ -277,7 +283,7 @@ public class CheckRegBtnTicCryptocurrenciesTests_4 extends MethodsWithAllure {
   @CsvFileSource(files = "src/test/resources/data/tradingInstrumentCards/csvFiles/cryptocurrenciesTicName4.csv", numLinesToSkip = 1)
   @DisplayName("Checking user plus button on module 'Still looking for a broker you can trust?'")
   public void ticModuleStillLookingForBrokerYouCanTrust_clickOnBtnUserPlus_SignUpFormWasAppear(
-          String language, String licence, String nameTradingInstrument) throws IOException {
+          String language, String licence, String nameTradingInstrument) {
 
     // arrange
     goToPageAndCheckUrl(constructTradingInstrumentCardsUrl(language, nameTradingInstrument, licence));
