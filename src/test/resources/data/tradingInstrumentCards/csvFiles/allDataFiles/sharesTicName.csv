@@ -5422,6 +5422,7 @@ LANGUAGE, LICENCE, TRADING_INSTRUMENT_NAME
 "", FCA, venture-share-price
 "", FCA, vera-bradley-share-price
 "", FCA, veracyte-inc-share-price
+
 "", FCA, verastem-share-price
 "", FCA, vericel-corp-ord-share-price
 "", FCA, verint-systems-inc-share-price
@@ -5511,7 +5512,6 @@ LANGUAGE, LICENCE, TRADING_INSTRUMENT_NAME
 "", FCA, werner-share-price
 "", FCA, wesbanco-share-price
 "", FCA, wesizwe-platinum-limited-share-price
-
 "", FCA, west-bancorporation-share-price
 "", FCA, westamerica-bancorporation-share-price
 "", FCA, westlake-chemical-share-price
