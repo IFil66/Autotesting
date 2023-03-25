@@ -1,4 +1,4 @@
-name: Testing capital.com
+name: capital.com (Shares)
 
 on: workflow_dispatch
   
