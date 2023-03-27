@@ -5345,6 +5345,7 @@ LANGUAGE, LICENCE, TRADING_INSTRUMENT_NAME
 "", FCA, ums-share-price
 "", FCA, unicycive-therapeutics-inc-share-price
 "", FCA, unite-share-price
+
 "", FCA, united-bankshares-share-price
 "", FCA, united-community-banks-share-price
 "", FCA, united-company-rusal-share-price
@@ -5422,7 +5423,6 @@ LANGUAGE, LICENCE, TRADING_INSTRUMENT_NAME
 "", FCA, venture-share-price
 "", FCA, vera-bradley-share-price
 "", FCA, veracyte-inc-share-price
-
 "", FCA, verastem-share-price
 "", FCA, vericel-corp-ord-share-price
 "", FCA, verint-systems-inc-share-price
