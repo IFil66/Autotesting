@@ -28,7 +28,7 @@ public class MethodsWithAllure {
   public void setUp() {
     FirefoxOptions options = new FirefoxOptions();
     options.setPageLoadStrategy(PageLoadStrategy.EAGER);
-//    options.addArguments("-headless");
+    options.addArguments("-headless");
     driver = new FirefoxDriver(options);
 
 
