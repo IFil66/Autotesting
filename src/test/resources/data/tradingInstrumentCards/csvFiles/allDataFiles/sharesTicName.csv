@@ -5202,6 +5202,7 @@ LANGUAGE, LICENCE, TRADING_INSTRUMENT_NAME
 "", FCA, tfs-financial-share-price
 "", FCA, tg-therapeutics-inc-share-price
 "", FCA, thai-airways-international-public-company-limited-share-price
+
 "", FCA, thai-oil-public-company-limited-share-price
 "", FCA, the-bancorp-share-price
 "", FCA, the-beauty-health-company-share-price
@@ -5291,6 +5292,7 @@ LANGUAGE, LICENCE, TRADING_INSTRUMENT_NAME
 "", FCA, travelers-companies-share-price
 "", FCA, travelzoo-share-price
 "", FCA, travere-therapeutics-inc-share-price
+
 "", FCA, treace-medical-concepts-inc-share-price
 "", FCA, trean-insurance-group-inc-share-price
 "", FCA, treasury-wine-estates-share-price
@@ -5345,7 +5347,6 @@ LANGUAGE, LICENCE, TRADING_INSTRUMENT_NAME
 "", FCA, ums-share-price
 "", FCA, unicycive-therapeutics-inc-share-price
 "", FCA, unite-share-price
-
 "", FCA, united-bankshares-share-price
 "", FCA, united-community-banks-share-price
 "", FCA, united-company-rusal-share-price

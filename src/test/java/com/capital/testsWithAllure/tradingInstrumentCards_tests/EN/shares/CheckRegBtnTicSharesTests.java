@@ -3,8 +3,11 @@ package com.capital.testsWithAllure.tradingInstrumentCards_tests.EN.shares;
 import com.capital.Locators;
 import com.capital.testsWithAllure.MethodsWithAllure;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
 
 import java.io.IOException;
 
@@ -24,6 +27,7 @@ public class CheckRegBtnTicSharesTests extends MethodsWithAllure {
 
     // act
     scrollToElement(Locators.headerBtnLogIn);
+    saveScreenshot();
     waitForElement(Locators.headerBtnLogIn);
     clickOnElement(Locators.headerBtnLogIn);
 
@@ -43,6 +47,7 @@ public class CheckRegBtnTicSharesTests extends MethodsWithAllure {
 
     // act
     scrollToElement(Locators.headerBtnTradeNow);
+    saveScreenshot();
     waitForElement(Locators.headerBtnTradeNow);
     clickOnElement(Locators.headerBtnTradeNow);
 
@@ -62,6 +67,7 @@ public class CheckRegBtnTicSharesTests extends MethodsWithAllure {
 
     // act
     scrollToElement(Locators.tradingInstrumentNamePanelBtnAddToFavourite);
+    saveScreenshot();
     waitForElement(Locators.tradingInstrumentNamePanelBtnAddToFavourite);
     clickOnElement(Locators.tradingInstrumentNamePanelBtnAddToFavourite);
 
@@ -82,6 +88,7 @@ public class CheckRegBtnTicSharesTests extends MethodsWithAllure {
 
     // act
     scrollToElement(Locators.widgetBtnBell);
+    saveScreenshot();
     waitForElement(Locators.widgetBtnBell);
     clickOnElement(Locators.widgetBtnBell);
 
@@ -102,6 +109,7 @@ public class CheckRegBtnTicSharesTests extends MethodsWithAllure {
 
     // act
     scrollToElement(Locators.widgetBtnViewDetailedChart);
+    saveScreenshot();
     waitForElement(Locators.widgetBtnViewDetailedChart);
     clickOnElement(Locators.widgetBtnViewDetailedChart);
 
@@ -174,9 +182,10 @@ public class CheckRegBtnTicSharesTests extends MethodsWithAllure {
 
     // act
     scrollToElement(Locators.LONG_POSITION);
+    saveScreenshot();
     waitForElement(Locators.LONG_POSITION);
     clickOnElement(Locators.LONG_POSITION);
-    elementToBeClickable(Locators.LONG_POSITION_BTN);
+//    elementToBeClickable(Locators.LONG_POSITION_BTN);
     clickOnElement(Locators.LONG_POSITION_BTN);
 
     // assert
@@ -196,9 +205,10 @@ public class CheckRegBtnTicSharesTests extends MethodsWithAllure {
 
     // act
     scrollToElement(Locators.SHORT_POSITION);
+    saveScreenshot();
     waitForElement(Locators.SHORT_POSITION);
     clickOnElement(Locators.SHORT_POSITION);
-    elementToBeClickable(Locators.SHORT_POSITION_BTN);
+//    elementToBeClickable(Locators.SHORT_POSITION_BTN);
     clickOnElement(Locators.SHORT_POSITION_BTN);
 
     // assert
@@ -219,10 +229,12 @@ public class CheckRegBtnTicSharesTests extends MethodsWithAllure {
     // act
     if (waitForElementAndReturnOfVisibilityResult(Locators.moduleWhyChooseCapitalComBtnTryNow)) {
       scrollToElement(Locators.moduleWhyChooseCapitalComBtnTryNow);
+      saveScreenshot();
       waitForElement(Locators.moduleWhyChooseCapitalComBtnTryNow);
       clickOnElement(Locators.moduleWhyChooseCapitalComBtnTryNow);
     } else {
       scrollToElement(Locators.moduleWhyChooseCapitalComBtnTryNow2);
+      saveScreenshot();
       waitForElement(Locators.moduleWhyChooseCapitalComBtnTryNow2);
       clickOnElement(Locators.moduleWhyChooseCapitalComBtnTryNow2);
     }
@@ -244,6 +256,7 @@ public class CheckRegBtnTicSharesTests extends MethodsWithAllure {
 
     // act
     scrollToElement(Locators.moduleTradingCalculatorBtnStartTrading);
+    saveScreenshot();
     waitForElement(Locators.moduleTradingCalculatorBtnStartTrading);
     clickOnElement(Locators.moduleTradingCalculatorBtnStartTrading);
 
@@ -279,6 +292,7 @@ public class CheckRegBtnTicSharesTests extends MethodsWithAllure {
 
     // act
     scrollToElement(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus);
+    saveScreenshot();
     waitForElement(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus);
     clickOnElement(Locators.moduleStillLookingForBrokerYouCanTrustIconUserPlus);
 
